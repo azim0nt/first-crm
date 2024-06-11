@@ -1,0 +1,22 @@
+@import '../../assets/styles/settings';
+
+.accordion-item{
+    
+    .accordion-title{
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        button{
+            color: $light-gray;
+            margin: 5px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        svg{
+            fill: $light-gray;
+            
+        }
+    }
+}

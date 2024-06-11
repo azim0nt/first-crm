@@ -1,0 +1,41 @@
+@import '../../assets/styles/settings';
+.general-wrapper{
+    background: $dark-blue;
+    height: 100vh;
+    position: relative;
+    padding: 10px;
+    width: 250px;
+    .general-header{
+        width: inherit;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $transparent-gray;
+        position: fixed;
+        background: $dark-blue;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        .general-toggle-sidebar{
+
+            background: $transparent-gray;
+            border-radius: 50%;
+            display: flex;
+            button{
+                padding: 10px;
+                display: flex;
+            }
+        }
+    }
+    .general-menu{
+        position: relative;
+        margin-top: 80px;
+        padding-left: 20px;
+        z-index: 0;
+        #title{
+            @extend %title;
+        }
+        }
+    }
