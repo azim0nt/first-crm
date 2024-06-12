@@ -3,26 +3,27 @@ import Logo from '../../assets/images/logo.png'
 import Accordion from '../common/Accordion';
 const generalItems = [
     {
-      title: 'Section 1',
+      title: 'Dashboards',
       content: [
-        { name: 'Link 1.1', url: '/link1-1' },
-        { name: 'Link 1.2', url: '/link1-2' },
-        { name: 'Link 1.3', url: '/link1-3' }
+        { name: 'Default', url: '/link1-1' },
+        { name: 'Ecommerce', url: '/link1-2' },
+        { name: 'Project', url: '/link1-3' }
       ]
     },
     {
-      title: 'Section 2',
+      title: 'Widgets',
       content: [
-        { name: 'Link 2.1', url: '/link2-1' },
-        { name: 'Link 2.2', url: '/link2-2' }
+        { name: 'Genaral', url: '/link2-1' },
+        { name: 'Chart', url: '/link2-2' }
       ]
     },
     {
-      title: 'Section 3',
+      title: 'Page Layout',
       content: [
-        { name: 'Link 3.1', url: '/link3-1' },
-        { name: 'Link 3.2', url: '/link3-2' },
-        { name: 'Link 3.3', url: '/link3-3' }
+        { name: 'Boxed', url: '/link3-1' },
+        { name: 'RTL', url: '/link3-2' },
+        { name: 'Dark Layout', url: '/link3-3' },
+        { name: 'Hide Nav Scroll', url: '/link3-3' }
       ]
     }
   ];

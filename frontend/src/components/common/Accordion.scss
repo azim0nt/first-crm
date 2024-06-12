@@ -19,4 +19,20 @@
             
         }
     }
+    .accordion-content{
+        border-left: 2px dotted $light-gray ;
+        padding-left: 15px;
+        ul{
+            a{
+                color: #6A7185;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                
+                &:hover{
+                    color: $light-gray;
+                }
+            }
+        }
+    }
 }

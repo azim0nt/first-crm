@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Accordion.scss';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-
+import {NavLink} from 'react-router-dom'
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
