@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import './Accordion.scss';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import {NavLink} from 'react-router-dom'
-
-const AccordionItem = ({ title, content }) => {
+import * as ReactIcons from 'react-icons/fa';
+  
+function IconByName({ name }) {
+    const IconComponent = ReactIcons[name];
+    if (!IconComponent) return null;
+    return <IconComponent />;
+}
+const AccordionItem = ({ title, content, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -13,7 +19,7 @@ const AccordionItem = ({ title, content }) => {
   return (
     <div className="accordion-item">
       <div className="accordion-title" onClick={toggleOpen}>
-        <button>{title}</button>
+        <button><IconByName name={icon}/> <span className="text">{title}</span></button>
         {isOpen ? <MdKeyboardArrowUp/>: <MdKeyboardArrowDown/>}
       </div>
       {isOpen && (
@@ -35,7 +41,7 @@ const Accordion = ({ items }) => {
   return (
     <div className="accordion">
       {items.map((item, index) => (
-        <AccordionItem key={index} title={item.title} content={item.content} />
+        <AccordionItem key={index} title={item.title} icon={item.icon} content={item.content} />
       ))}
     </div>
   );
