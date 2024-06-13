@@ -1,11 +1,11 @@
 @import '../../assets/styles/settings';
 
 .header-wrapper {
-    flex: 1;
     height: 80px;
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.07);
     display: flex;
     align-items: center;
+
     .header-content {
         width: 100%;
         display: flex;
@@ -32,7 +32,7 @@
             }
         }
         .right{
-            width: 50%;
+            width: 30%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,9 +44,17 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
             }
             .user{
                 display: flex;
+                gap: 5px;
+                .info{
+                    
+                    display: flex;
+                    flex-direction: column ;
+                    justify-content: center;
+                }
             }
         }
     }

@@ -5,25 +5,25 @@ const generalItems = [
     {
       title: 'Dashboards',
       content: [
-        { name: 'Default', url: '/link1-1' },
-        { name: 'Ecommerce', url: '/link1-2' },
-        { name: 'Project', url: '/link1-3' }
+        { name: 'Default', url: 'index' },
+        { name: 'Ecommerce', url: 'dashboard_02' },
+        { name: 'Project', url: 'dashboard_03' }
       ]
     },
     {
       title: 'Widgets',
       content: [
-        { name: 'Genaral', url: '/link2-1' },
-        { name: 'Chart', url: '/link2-2' }
+        { name: 'Genaral', url: 'general_widget' },
+        { name: 'Chart', url: 'chart_widget' }
       ]
     },
     {
       title: 'Page Layout',
       content: [
-        { name: 'Boxed', url: '/link3-1' },
-        { name: 'RTL', url: '/link3-2' },
-        { name: 'Dark Layout', url: '/link3-3' },
-        { name: 'Hide Nav Scroll', url: '/link3-3' }
+        { name: 'Boxed', url: 'box_layout' },
+        { name: 'RTL', url: 'layout_rtl' },
+        { name: 'Dark Layout', url: 'layout_dark' },
+        { name: 'Hide Nav Scroll', url: 'hide_on_scroll' }
       ]
     }
   ];

@@ -21,7 +21,7 @@ const AccordionItem = ({ title, content }) => {
           <ul>
             {content.map((item, index) => (
               <li key={index}>
-                <a href={item.url}><span className="line"></span>{item.name}</a>
+                <NavLink to={item.url}>{item.name}</NavLink>
               </li>
             ))}
           </ul>
