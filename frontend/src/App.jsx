@@ -1,4 +1,5 @@
 import General from "./components/General"
+import Header from './components/Header'
 import './index.scss'
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <> 
     <div className="app-wrapper">
     <General/>
+    <Header />
     </div>
     </>
   )
