@@ -9,6 +9,77 @@
         .top{
             display: flex;
             justify-content: space-between;
+            margin: 0 0 20px 0;
         }
+        .middle{
+            display: flex;
+            .premium-card{
+                width: 500px;
+                height: 350px;
+                background: url('../../../assets/images/bg.png') no-repeat;
+                background-size: cover;
+                position: relative;
+                border-radius: 20px;
+                padding: 30px 20px;
+                overflow: hidden;
+                &:hover{
+                    transform: translateY(-10px);
+                }
+                .card-body{
+                    .info{
+                        h1{
+                            color: #fff;
+                            margin: 0 0 10px 0;
+                        }
+                        p{
+                            color: $white-transparent;
+                            font-weight: 600;
+                            text-wrap: pretty;
+                            font-size: 18px;
+                            width: 300px;
+                            word-spacing: 5px;
+                            margin: 0 0 100px 0;
+                        }
+                        button{
+                            padding: 15px 20px;
+                            border: 2px solid #fff;
+                            border-radius: 5px;
+                            color: #fff;
+                            font-weight: 600;
+                        }
+                    }
+                    .image{
+                        position: absolute;
+                        z-index: 1;
+                        right: -10px;
+                        bottom: -50px;
+                        animation: imageAnimation 5s ease-in-out infinite;
+                    }
+                    
+                }
+            }
+            .total-earnings-card{
+                width: 250px;
+                height: 350px;
+                background-color: #fff;
+                position: relative;
+                
+                #line-chart{
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes imageAnimation {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
