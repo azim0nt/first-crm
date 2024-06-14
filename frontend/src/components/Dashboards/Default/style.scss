@@ -1,1 +1,14 @@
 @import '../../../assets/styles/settings';
+
+.default-wrapper{
+    background: $bg-color;
+    height: 100vh;
+    .default-content{
+        // padding-top: 20px;
+        padding: 30px 50px 0;
+        .top{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

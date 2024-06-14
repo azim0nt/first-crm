@@ -1,0 +1,22 @@
+@import '../../assets/styles/settings';
+
+.path-to-tab-wrapper{
+    .path-to-tab-content{
+        span{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $blue;
+            font-weight: 600;
+            a{
+                padding: 5px;
+                background: #5c61f21a;
+
+                border-radius: 5px;
+            }
+            #tab{
+                color: #5c61f299;
+            }
+        }
+    }
+}
