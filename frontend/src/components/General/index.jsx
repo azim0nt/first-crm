@@ -6,7 +6,7 @@ const generalItems = [
     title: 'Dashboards',
     icon: 'FaHome',
     content: [
-      { name: 'Default', url: 'index' },
+      { name: 'Default', url: 'dashboard_01' },
       { name: 'Ecommerce', url: 'dashboard_02' },
       { name: 'Project', url: 'dashboard_03' }
     ]
