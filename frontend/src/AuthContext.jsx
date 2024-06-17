@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Проверяем localStorage при загрузке компонента
     const storedAuthState = localStorage.getItem('isAuthenticated');
     if (storedAuthState === 'true') {
       setIsAuthenticated(true);
@@ -17,13 +16,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     setIsAuthenticated(true);
-    localStorage.setItem('isAuthenticated', 'true'); // Сохраняем состояние аутентификации
+    localStorage.setItem('isAuthenticated', 'true'); 
     navigate('/');
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem('isAuthenticated'); // Удаляем состояние аутентификации
+    localStorage.removeItem('isAuthenticated'); 
     navigate('/login');
   };
 

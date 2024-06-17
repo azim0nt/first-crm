@@ -13,6 +13,7 @@
         }
         .middle{
             display: flex;
+            gap: 20px;
             .premium-card{
                 width: 500px;
                 height: 350px;
@@ -20,7 +21,7 @@
                 background-size: cover;
                 position: relative;
                 border-radius: 20px;
-                padding: 30px 20px;
+                padding: 30px 20px; 
                 overflow: hidden;
                 &:hover{
                     transform: translateY(-10px);
@@ -63,9 +64,78 @@
                 height: 350px;
                 background-color: #fff;
                 position: relative;
-                
+                padding: 20px 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 #line-chart{
                     height: 200px;
+                }
+            }
+            .total-expenses-card{
+                width: 250px;
+                height: 350px;
+                background-color: #fff;
+                position: relative;
+                padding: 20px 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                #line-chart{
+                    height: 200px;
+                }
+            }
+            .top-selling-product-card{
+                width: 500px;
+                height: 350px;
+                background-color: #fff;
+                border-radius: 20px;
+                padding: 20px;
+                
+                .cards{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    margin-top: 5   px;
+                    .card{
+                        display: flex;
+                        justify-content: space-between;
+                        height: 40px;
+                        border-top: 1px solid $light-blue;
+                        padding-top: 20px;
+                        &:first-child{
+                            border-top: none;
+                        }
+                        .left{
+                            display: flex;
+                            gap: 5px;
+                            align-items: center;
+                            .img-container{
+                                background-color: $light-blue;
+                                width: 40px ;
+                                height: 40px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 10px;
+                            }
+                            div{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                                .title{
+                                    font-weight: 600;
+                                }
+                                .article{
+                                    color: $gray;
+                                    font-size: 13px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

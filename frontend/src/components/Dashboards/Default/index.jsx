@@ -1,23 +1,29 @@
 import './style.scss'
 import PathToTab from '../../common/PathToTab';
 import Welcome from '../../../assets/images/welcome.png'
-import { Bar, Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements } from 'chart.js';
+import { Line, Bar } from 'react-chartjs-2';
+import priceData from '../../../db/priceData.json'
+import productData from '../../../db/productData.json'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements, BarElement } from 'chart.js';
 
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend,  elements);
+import Product1 from '../../../assets/images/products/1.png'
+import Product2 from '../../../assets/images/products/2.png'
+import Product3 from '../../../assets/images/products/3.png'
+import Product4 from '../../../assets/images/products/4.png'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 
 function Default() {
-    const priceData = [
-        { price: 25, count: 3 },
-        { price: 30, count: 2 },
-        { price: 35, count: 5 },
-        { price: 40, count: 3 },
-        { price: 45, count: 7 },
-        { price: 50, count: 13 },
-    ]
-    const chartData = {
-        labels: priceData.map(item => `${item.price}`),
+    const images = [Product1, Product2, Product3, Product4]
+
+
+    const totalPrices = priceData.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue.price;
+    }, 0);
+
+    const lineChartData = {
+        labels: priceData.map(item => `${item.price}$`),
         datasets: [
             {
                 label: 'Total Earnings',
@@ -25,9 +31,21 @@ function Default() {
                 backgroundColor: '#fff',
                 borderColor: '#5c60f2',
                 borderWidth: 2,
-                pointRadius: 0,
+                pointRadius: 5,
                 borderCapStyle: 'round',
 
+            }
+        ]
+    }
+    const barChartData = {
+        labels: priceData.map(item => `${item.price}$`),
+        datasets: [
+            {
+                label: 'Total Expenses',
+                data: priceData.map(item => item.price),
+                backgroundColor: '#FF443350',
+                borderColor: '#FF4433',
+                borderWidth: 1
             }
         ]
     }
@@ -95,13 +113,63 @@ function Default() {
                             </div>
                         </div>
                         <div className="total-earnings-card">
-                            <h5>
-                            Total Earnings
-                            </h5>
+                            <h4>
+                                Total Earnings
+                            </h4>
                             <div id='line-chart' >
-                            <Line data={chartData} options={options} />
+                                <Line data={lineChartData} options={options} />
                             </div>
-                    
+                            <div className="total-sum">
+                                <h2>
+                                    $ {
+                                        totalPrices
+                                    }
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="total-expenses-card">
+                            <h4>
+                                Total Expenses
+                            </h4>
+                            <div id="bar-chart">
+                                <Bar data={barChartData} options={options}></Bar>
+                            </div>
+                            <div className="total-expenses">
+                                <h2>
+
+                                $ {
+                                    totalPrices
+                                }
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="top-selling-product-card">
+                            <h4>
+                            Top Selling Product
+                            </h4>
+                            <div className="cards">
+                            {
+                                productData.map((item, index)=>{
+                                    return (
+                                        <div className="card" key={index}>
+                                            <div className="left">
+                                                <span className='img-container'>
+
+                                                <img width={30} height={30} src={images[index]} alt="" />
+                                                </span>
+                                                <div>
+                                                <p className='title'>{item.name}</p>
+                                                <p className='article'>#{item.article}</p>
+                                                </div>
+                                            </div>
+                                            <div className="right">
+                                                <p className='price'>$ {item.price}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                            </div>
                         </div>
                     </div>
                 </div>
