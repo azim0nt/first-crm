@@ -6,13 +6,13 @@ import Ecommerce from './components/Dashboards/Ecommerce';
 import Project from './components/Dashboards/Project';
 import Login from './components/Login';
 import Register from './components/Register';
-import { AuthProvider } from './AuthContext.jsx';
-import ProtectedRoute from './ProtectedRoute.jsx';
+
+
 
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+
         <div className="app-wrapper">
           <div id="container">
             <Routes>
@@ -20,9 +20,9 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <ProtectedRoute>
+
                     <CurrentPage />
-                  </ProtectedRoute>
+
                 }
               >
                 <Route index element={<Default />} />
@@ -36,7 +36,6 @@ function App() {
             </Routes>
           </div>
         </div>
-      </AuthProvider>
     </BrowserRouter>
   );
 }
