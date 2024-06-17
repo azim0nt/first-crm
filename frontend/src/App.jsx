@@ -16,7 +16,7 @@ function App() {
         <div className="app-wrapper">
           <div id="container">
             <Routes>
-              {/* Защищенные маршруты */}
+
               <Route
                 path="/"
                 element={
@@ -30,7 +30,7 @@ function App() {
                 <Route path="dashboard_02" element={<Ecommerce />} />
                 <Route path="dashboard_03" element={<Project />} />
               </Route>
-              {/* Маршруты для Login и Register */}
+
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
             </Routes>
