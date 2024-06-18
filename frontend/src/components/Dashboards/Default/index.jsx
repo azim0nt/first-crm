@@ -4,7 +4,8 @@ import Welcome from '../../../assets/images/welcome.png'
 import { Line, Bar } from 'react-chartjs-2';
 import priceData from '../../../db/priceData.json'
 import productData from '../../../db/productData.json'
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements, BarElement } from 'chart.js';
+import userData from '../../../db/userData.json'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements } from 'chart.js';
 
 
 import Product1 from '../../../assets/images/products/1.png'
@@ -12,11 +13,17 @@ import Product2 from '../../../assets/images/products/2.png'
 import Product3 from '../../../assets/images/products/3.png'
 import Product4 from '../../../assets/images/products/4.png'
 
+import User1 from '../../../assets/images/users/1.png'
+import User2 from '../../../assets/images/users/2.png'
+import User3 from '../../../assets/images/users/3.png'
+import User4 from '../../../assets/images/users/4.png'
+
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 
 function Default() {
     const images = [Product1, Product2, Product3, Product4]
-
+    const usersImages = [User1, User2, User3, User4]
 
     const totalPrices = priceData.reduce((accumulator, currentValue) => {
         return accumulator + currentValue.price;
@@ -101,78 +108,146 @@ function Default() {
                         <PathToTab parent={'Dashboad'} tab={'Default'} />
                     </div>
                     <div className="middle">
-                        <div class="premium-card">
-                            <div class="card-body">
-                                <div class="info">
-                                    <h1>Hello,Anna Miller.</h1>
-                                    <p>Welcome to the Admin clan!   We appreciate your interest in our dashboard.</p>
-                                    <button>Go Premium</button>
+                        <div className="section-1">
+                            <div class="premium-card">
+                                <div class="card-body">
+                                    <div class="info">
+                                        <h1>Hello,Anna Miller.</h1>
+                                        <p>Welcome to the Admin clan!   We appreciate your interest in our dashboard.</p>
+                                        <button>Go Premium</button>
+                                    </div>
+                                    <div class="image"> <img src={Welcome} width={'100%'} alt="" /></div>
+
                                 </div>
-                                <div class="image"> <img src={Welcome} width={'100%'} alt="" /></div>
+                            </div>
+                            <div className="total-earnings-card">
+                                <h4>
+                                    Total Earnings
+                                </h4>
+                                <div id='line-chart' >
+                                    <Line data={lineChartData} options={options} />
+                                </div>
+                                <div className="total-sum">
+                                    <h2>
+                                        $ {
+                                            totalPrices
+                                        }
+                                    </h2>
+                                </div>
+                            </div>
+                            <div className="total-expenses-card">
+                                <h4>
+                                    Total Expenses
+                                </h4>
+                                <div id="bar-chart">
+                                    <Bar data={barChartData} options={options}></Bar>
+                                </div>
+                                <div className="total-expenses">
+                                    <h2>
 
+                                        $ {
+                                            totalPrices
+                                        }
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
-                        <div className="total-earnings-card">
-                            <h4>
-                                Total Earnings
-                            </h4>
-                            <div id='line-chart' >
-                                <Line data={lineChartData} options={options} />
-                            </div>
-                            <div className="total-sum">
-                                <h2>
-                                    $ {
-                                        totalPrices
-                                    }
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="total-expenses-card">
-                            <h4>
-                                Total Expenses
-                            </h4>
-                            <div id="bar-chart">
-                                <Bar data={barChartData} options={options}></Bar>
-                            </div>
-                            <div className="total-expenses">
-                                <h2>
+                            <div className="top-selling-product-card">
+                                <h4>
+                                    Top Selling Product
+                                </h4>
+                                <div className="cards">
+                                    {
+                                        productData.map((item, index) => {
+                                            return (
+                                                <div className={`card product-${index + 1}`} key={index}>
+                                                    <div className="left">
+                                                        <span className='img-container'>
 
-                                $ {
-                                    totalPrices
-                                }
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="top-selling-product-card">
-                            <h4>
-                            Top Selling Product
-                            </h4>
-                            <div className="cards">
-                            {
-                                productData.map((item, index)=>{
-                                    return (
-                                        <div className="card" key={index}>
-                                            <div className="left">
-                                                <span className='img-container'>
-
-                                                <img width={30} height={30} src={images[index]} alt="" />
-                                                </span>
-                                                <div>
-                                                <p className='title'>{item.name}</p>
-                                                <p className='article'>#{item.article}</p>
+                                                            <img width={30} height={30} src={images[index]} alt="" />
+                                                        </span>
+                                                        <div>
+                                                            <p className='title'>{item.name}</p>
+                                                            <p className='article'>#{item.article}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="right">
+                                                        <p className='price'>$ {item.price}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="right">
-                                                <p className='price'>$ {item.price}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="section-2">
+                            <div className="recent-order-card">
+
+                                <div className="cards">
+                                    <table>
+                                        <tr>
+                                            <th><input type="checkbox" /></th>
+                                            <th>
+                                                <p>No.</p>
+                                            </th>
+                                            <th>
+                                                <p>Customer Name</p>
+                                            </th>
+                                            <th>
+                                                <p>ID</p>
+                                            </th>
+                                            <th>
+                                                <p>Date</p>
+                                            </th>
+                                            <th>
+                                                <p>City</p>
+                                            </th>
+                                            <th>
+                                                <p>Status</p>
+                                            </th>
+                                            <th>
+                                                <p>Amount</p>
+                                            </th>
+                                        </tr>
+                                        {
+                                            userData.map((user, index) => {
+                                                return (
+                                                    <tr key={index}>
+                                                        <td>
+                                                            <input type="checkbox" />
+                                                        </td>
+                                                        <td>
+                                                            <p>{index + 1}</p>
+                                                        </td>
+                                                        <td className='avatar-fullname'>
+                                                            <img src={usersImages[index]} alt="" /><p>{user.fullname}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>#{user.id}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p className='date'>{user.date}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>{user.city}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p className={`${user.status.toLowerCase()}`}>{user.status}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>${user.amount}</p>
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </>
     );

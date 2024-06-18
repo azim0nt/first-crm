@@ -1,137 +1,233 @@
 @import '../../../assets/styles/settings';
 
-.default-wrapper{
+.default-wrapper {
     background: $bg-color;
     height: 90%;
-    .default-content{
+    overflow: scroll;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+
+    scrollbar-width: none;
+
+    .default-content {
         // padding-top: 20px;
-        padding: 30px 50px 0;
-        .top{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
             display: flex;
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
+
+        .middle {
             display: flex;
+            flex-direction: column;
             gap: 20px;
-            .premium-card{
-                width: 500px;
-                height: 350px;
-                background: url('../../../assets/images/bg.png') no-repeat;
-                background-size: cover;
-                position: relative;
-                border-radius: 20px;
-                padding: 30px 20px; 
-                overflow: hidden;
-                &:hover{
-                    transform: translateY(-10px);
-                }
-                .card-body{
-                    .info{
-                        h1{
-                            color: #fff;
-                            margin: 0 0 10px 0;
-                        }
-                        p{
-                            color: $white-transparent;
-                            font-weight: 600;
-                            text-wrap: pretty;
-                            font-size: 18px;
-                            width: 300px;
-                            word-spacing: 5px;
-                            margin: 0 0 100px 0;
-                        }
-                        button{
-                            padding: 15px 20px;
-                            border: 2px solid #fff;
-                            border-radius: 5px;
-                            color: #fff;
-                            font-weight: 600;
-                        }
+
+            .section-1 {
+                display: grid;
+                gap: 20px;
+                grid-template-columns: 2fr 1fr 1fr 2fr;
+
+                .premium-card {
+                    width: 500px;
+                    height: 350px;
+                    background: url('../../../assets/images/bg.png') no-repeat;
+                    background-size: cover;
+                    position: relative;
+                    border-radius: 20px;
+                    padding: 30px 20px;
+                    overflow: hidden;
+
+                    &:hover {
+                        transform: translateY(-10px);
                     }
-                    .image{
-                        position: absolute;
-                        z-index: 1;
-                        right: -10px;
-                        bottom: -50px;
-                        animation: imageAnimation 5s ease-in-out infinite;
+
+                    .card-body {
+                        .info {
+                            h1 {
+                                color: #fff;
+                                margin: 0 0 10px 0;
+                            }
+
+                            p {
+                                color: $white-transparent;
+                                font-weight: 600;
+                                text-wrap: pretty;
+                                font-size: 18px;
+                                width: 300px;
+                                word-spacing: 5px;
+                                margin: 0 0 100px 0;
+                            }
+
+                            button {
+                                padding: 15px 20px;
+                                border: 2px solid #fff;
+                                border-radius: 5px;
+                                color: #fff;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .image {
+                            position: absolute;
+                            z-index: 1;
+                            right: -10px;
+                            bottom: -50px;
+                            animation: imageAnimation 5s ease-in-out infinite;
+                        }
+
                     }
-                    
                 }
-            }
-            .total-earnings-card{
-                width: 250px;
-                height: 350px;
-                background-color: #fff;
-                position: relative;
-                padding: 20px 15px;
-                border-radius: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                #line-chart{
-                    height: 200px;
-                }
-            }
-            .total-expenses-card{
-                width: 250px;
-                height: 350px;
-                background-color: #fff;
-                position: relative;
-                padding: 20px 15px;
-                border-radius: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                #line-chart{
-                    height: 200px;
-                }
-            }
-            .top-selling-product-card{
-                width: 500px;
-                height: 350px;
-                background-color: #fff;
-                border-radius: 20px;
-                padding: 20px;
-                
-                .cards{
+
+                .total-earnings-card {
+                    width: 250px;
+                    height: 350px;
+                    background-color: #fff;
+                    position: relative;
+                    padding: 20px 15px;
+                    border-radius: 20px;
                     display: flex;
                     flex-direction: column;
-                    gap: 30px;
-                    margin-top: 5px;
-                    .card{
+                    justify-content: space-between;
+
+                    #line-chart {
+                        height: 200px;
+                    }
+                }
+
+                .total-expenses-card {
+                    width: 250px;
+                    height: 350px;
+                    background-color: #fff;
+                    position: relative;
+                    padding: 20px 15px;
+                    border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    #line-chart {
+                        height: 200px;
+                    }
+                }
+
+                .top-selling-product-card {
+                    width: 500px;
+                    height: 350px;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    padding: 20px;
+
+                    .cards {
                         display: flex;
-                        justify-content: space-between;
-                        height: 40px;
-                        border-top: 1px solid $light-blue;
-                        padding-top: 20px;
-                        &:first-child{
-                            border-top: none;
-                        }
-                        .left{
+                        flex-direction: column;
+                        gap: 30px;
+                        margin-top: 5px;
+
+                        .card {
                             display: flex;
-                            gap: 5px;
-                            align-items: center;
-                            .img-container{
-                                background-color: $light-blue;
-                                width: 40px ;
-                                height: 40px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                border-radius: 10px;
+                            justify-content: space-between;
+                            height: 40px;
+                            border-top: 1px solid $light-blue;
+                            padding-top: 20px;
+
+                            &:first-child {
+                                border-top: none;
                             }
-                            div{
+
+                            .left {
                                 display: flex;
-                                flex-direction: column;
                                 gap: 5px;
-                                .title{
-                                    font-weight: 600;
+                                align-items: center;
+
+                                .img-container {
+                                    background-color: $light-blue;
+                                    width: 40px;
+                                    height: 40px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 10px;
                                 }
-                                .article{
-                                    color: $gray;
-                                    font-size: 13px;
-                                    font-weight: 600;
+
+                                div {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 5px;
+
+                                    .title {
+                                        font-weight: 600;
+                                    }
+
+                                    .article {
+                                        color: $gray;
+                                        font-size: 13px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-2 {
+                .recent-order-card {
+                    width: 900px;
+                    height: 400px;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    padding: 10px;
+
+                    .cards {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        margin-top: 5px;
+
+                        table {
+                            tr {
+
+                                td {
+                                    text-align: center;
+                                    margin: 20px 0;
+
+                                    &.avatar-fullname {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: left;
+                                        padding-left: 50px;
+                                        gap: 10px;
+
+                                        p {
+                                            text-wrap: balanced;
+                                        }
+                                    }
+
+                                    p {
+                                        &.done {
+                                            @extend %green-btn;
+                                        }
+
+                                        &.pending {
+                                            @extend %orange-btn;
+                                        }
+
+                                        &.paid {
+                                            @extend %blue-btn;
+                                        }
+
+                                        &.cancel {
+                                            @extend %red-btn;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -143,13 +239,15 @@
 }
 
 @keyframes imageAnimation {
-    0%{
+    0% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-20px);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
 }
