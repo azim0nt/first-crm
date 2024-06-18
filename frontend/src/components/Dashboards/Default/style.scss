@@ -184,8 +184,15 @@
                     height: 400px;
                     background-color: #fff;
                     border-radius: 20px;
-                    padding: 10px;
-
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .top-part{
+                        display: flex;
+                        justify-content: space-between;
+                        // padding: 10px 0 ;
+                    }
                     .cards {
                         display: flex;
                         flex-direction: column;
@@ -193,41 +200,45 @@
                         margin-top: 5px;
 
                         table {
-                            tr {
-
-                                td {
-                                    text-align: center;
-                                    margin: 20px 0;
-
-                                    &.avatar-fullname {
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: left;
-                                        padding-left: 50px;
-                                        gap: 10px;
-
+                            tbody{
+                                tr {
+    
+                                    td {
+                                        text-align: center;
+                                        margin: 20px 0;
+    
+                                        &.avatar-fullname {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: left;
+                                            padding-left: 50px;
+                                            gap: 10px;
+    
+                                            p {
+                                                text-wrap: balanced;
+                                            }
+                                        }
+    
                                         p {
-                                            text-wrap: balanced;
+                                            &.done {
+                                                @extend %green-btn;
+                                            }
+    
+                                            &.pending {
+                                                @extend %orange-btn;
+                                            }
+    
+                                            &.paid {
+                                                @extend %blue-btn;
+                                            }
+    
+                                            &.cancel {
+                                                @extend %red-btn;
+                                            }
                                         }
                                     }
-
-                                    p {
-                                        &.done {
-                                            @extend %green-btn;
-                                        }
-
-                                        &.pending {
-                                            @extend %orange-btn;
-                                        }
-
-                                        &.paid {
-                                            @extend %blue-btn;
-                                        }
-
-                                        &.cancel {
-                                            @extend %red-btn;
-                                        }
-                                    }
+                                    
+                                   
                                 }
                             }
                         }
