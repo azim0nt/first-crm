@@ -244,6 +244,41 @@ function Default() {
                                     </table>
                                 </div>
                             </div>
+                            <div className="our-growth-card">
+                                <h4>
+                                    Our Growth
+                                </h4>
+                                <div className="growth-chart">
+                                    <Line
+                                        data={{
+                                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep'],
+                                            datasets: [
+                                                {
+                                                    label: 'Dataset',
+                                                    data: [220, 195, 280, 180, 250, 195, 250, 170, 290, 190, 220, 190, 230, 250, 190, 225, 225],
+                                                    borderColor: '#5c61f2',
+                                                    fill: false,
+                                                    stepped: true,
+                                                }
+                                            ]
+                                        }}
+                                        options={{
+                                            responsive: true,
+                                            maintainAspectRatio: false,
+                                            plugins:{
+                                                legend:false,
+                                            },
+                                            scales:{
+                                                x:{
+
+                                                    grid:{
+                                                        display:false
+                                                    }
+                                                }
+                                            }
+                                        }} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

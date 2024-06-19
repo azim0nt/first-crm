@@ -2,16 +2,17 @@
 
 $dark-blue: #171829;
 $even-darker-blue: #10101c;
-$blue:#5c61f2;
 $light-blue:#5c61f21a;
 $transparent-gray: #c9c9c921;
 $light-gray: #9FA8C1;
 $gray:#959595;
 $bg-color:#f2f5fa;
 $white-transparent: #ffffff99;
+$blue:#5c61f2;
 $green:#61ae41;
 $orange:#ff9766;
 $red:#f81f58;
+$skyblue:#44A8D7;
 * {
   padding: 0;
   margin: 0;
@@ -19,6 +20,7 @@ $red:#f81f58;
   transition: 0.5s;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+
 }
 
 button {
