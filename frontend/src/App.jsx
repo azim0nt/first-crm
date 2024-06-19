@@ -6,11 +6,17 @@ import Ecommerce from './components/Dashboards/Ecommerce';
 import Project from './components/Dashboards/Project';
 import Login from './components/Login';
 import Register from './components/Register';
-
-
+import { useReducer } from 'react';
+import { context, initialState, globalReducer } from './store';
 
 function App() {
+  const [state, dispatch] = useReducer(globalReducer, initialState)
+  const contextPayload = {
+    store:state,
+    setStore: dispatch
+  }
   return (
+    <context.Provider value={contextPayload}>
     <BrowserRouter>
 
         <div className="app-wrapper">
@@ -37,6 +43,7 @@ function App() {
           </div>
         </div>
     </BrowserRouter>
+    </context.Provider>
   );
 }
 
