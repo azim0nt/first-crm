@@ -37,7 +37,11 @@
                     width: 100%;
                     height: 120px;
                     border-radius: 20px;
-
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 1fr ;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
                     &:hover {
                         transform: translateY(-10px);
                         box-shadow: 1px 1px 20px #97979762;
@@ -46,7 +50,10 @@
                         }
 
                     }
-
+                    .chart{
+                        width: 100px;
+                        height: 50px;
+                    }
                  
                 }
             }
