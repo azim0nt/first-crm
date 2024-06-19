@@ -3,7 +3,7 @@
 .default-wrapper {
     background: $bg-color;
     height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 
     ::-webkit-scrollbar {
         width: 0;
