@@ -64,7 +64,7 @@ function OrdersTable(props) {
                                 <div className="top-part">
                                     <h4>{props.title}</h4>
                                     <div className="input">
-                                        <p>Search: <input  style={{backgroundColor:store.theme.backBgColor}} type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                                        <p>Search: <input  style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}} type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                                         </p>
                                     </div>
                                 </div>
