@@ -5,10 +5,10 @@ import { Line, Bar } from 'react-chartjs-2';
 import priceData from '../../../db/priceData.json'
 import productData from '../../../db/productData.json'
 import userData from '../../../db/userData.json'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements } from 'chart.js';
 
-
+import {context} from '../../../store'
 import Product1 from '../../../assets/images/products/1.png'
 import Product2 from '../../../assets/images/products/2.png'
 import Product3 from '../../../assets/images/products/3.png'
@@ -26,7 +26,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 function Default() {
     const images = [Product1, Product2, Product3, Product4]
     const usersImages = [User1, User2, User3, User4]
-
+    const {store, setStore} = useContext(context)
     const totalPrices = priceData.reduce((accumulator, currentValue) => {
         return accumulator + currentValue.price;
     }, 0);
@@ -104,7 +104,7 @@ function Default() {
     
     return (
         <>
-            <div className="default-wrapper">
+            <div className="default-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
                 <div className="default-content">
                     <div className="top">
                         <h3>Default Dashboard</h3>
@@ -123,7 +123,7 @@ function Default() {
 
                                 </div>
                             </div>
-                            <div className="total-earnings-card">
+                            <div className="total-earnings-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
                                 <h4>
                                     Total Earnings
                                 </h4>
@@ -138,7 +138,7 @@ function Default() {
                                     </h2>
                                 </div>
                             </div>
-                            <div className="total-expenses-card">
+                            <div className="total-expenses-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
                                 <h4>
                                     Total Expenses
                                 </h4>
@@ -154,7 +154,7 @@ function Default() {
                                     </h2>
                                 </div>
                             </div>
-                            <div className="top-selling-product-card">
+                            <div className="top-selling-product-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
                                 <h4>
                                     Top Selling Product
                                 </h4>
@@ -184,10 +184,10 @@ function Default() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="recent-order-card">
+                            <div className="recent-order-card" >
                                <OrdersTable data={userData} title={'R'} images={usersImages}/>
                             </div>
-                            <div className="our-growth-card">
+                            <div className="our-growth-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
                                 <h4>
                                     Our Growth
                                 </h4>

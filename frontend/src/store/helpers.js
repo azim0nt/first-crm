@@ -1,12 +1,14 @@
-function globalReducer(state, payload){
-    switch (payload.type){
+function globalReducer(state, payload) {
+    switch (payload.type) {
         case "changeTotalPrice":
-            return {...state, totalPrice:payload.totalPrice}
+            return { ...state, totalPrice: payload.totalPrice };
+        case 'changeTheme': // Corrected action type
+            return { ...state, theme: payload.theme };
         default:
-            return state
+            return state;
     }
 }
 
 export {
     globalReducer
-}
+};

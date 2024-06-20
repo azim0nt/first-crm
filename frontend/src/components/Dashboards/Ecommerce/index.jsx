@@ -7,7 +7,8 @@ import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import Circle from '../../common/Circle'
 import CardImage from '../../../assets/images/cardImage.png'
 import OrdersTable from '../../common/OrdersTable'
-
+import { useContext } from 'react';
+import { context } from '../../../store';
 import User1 from '../../../assets/images/users/1.png'
 import User2 from '../../../assets/images/users/2.png'
 import User3 from '../../../assets/images/users/3.png'
@@ -17,6 +18,7 @@ import User4 from '../../../assets/images/users/4.png'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 
 function Ecommerce() {
+    const {store, setStore} = useContext(context)
     const usersImages = [User1, User2, User3, User4]
     const barChartData = {
         labels: priceData.map(item => `${item.price}$`),
@@ -75,7 +77,7 @@ function Ecommerce() {
     };
     return (
         <>
-            <div className="ecommerce-wrapper">
+            <div className="ecommerce-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
                 <div className="ecommerce-content">
                     <div className="top">
                         <h2>Ecommerce Dashboard</h2>
@@ -84,7 +86,7 @@ function Ecommerce() {
                     <div className="middle">
                         <div className="section-1">
                             <div className="four-cards">
-                                <div className="card 1">
+                                <div className="card 1"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#5c61f2'} />
                                     <div className="info">
                                         <div className="total">
@@ -98,7 +100,7 @@ function Ecommerce() {
                                         <Bar data={barChartData} options={options}></Bar>
                                     </div>
                                 </div>
-                                <div className="card 2">
+                                <div className="card 2"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#ff9766'} />
                                     <div className="info">
                                         <div className="total">
@@ -123,7 +125,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="card 3">
+                                <div className="card 3"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#61ae41'} />
                                     <div className="info">
                                         <div className="total">
@@ -148,7 +150,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="card 4">
+                                <div className="card 4"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#44A8D7'} />
                                     <div className="info">
                                         <div className="total">
@@ -173,7 +175,7 @@ function Ecommerce() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="daily-visitors-card">
+                            <div className="daily-visitors-card" style={{backgroundColor:store.theme.bgColor}}>
                                 <div className="left">
                                     <h4>Daily Visitors</h4>
                                     <div className="chart">
@@ -264,7 +266,7 @@ function Ecommerce() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="top-product-card">
+                            <div className="top-product-card"  style={{backgroundColor:store.theme.bgColor}}>
                                 <h4>Top Product</h4>
                                 <p id='subtitle'>According to overall sales, the top 4 this week</p>
                                 <div className="cards">

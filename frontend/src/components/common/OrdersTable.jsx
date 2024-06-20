@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { context } from '../../store';
 import './OrdersTable.scss'
 function OrdersTable(props) {
-
+    const {store, setStore} = useContext(context)
     const [data, setData] = useState(props.data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [searchQuery, setSearchQuery] = useState('');
@@ -59,11 +60,11 @@ function OrdersTable(props) {
     };
     return (
         <>
-           <div className="order-table">
+           <div className="order-table" style={{backgroundColor:store.theme.bgColor, color:store.theme.textColor}}>
                                 <div className="top-part">
                                     <h4>{props.title}</h4>
                                     <div className="input">
-                                        <p>Search: <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                                        <p>Search: <input  style={{backgroundColor:store.theme.backBgColor}} type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                                         </p>
                                     </div>
                                 </div>
@@ -72,13 +73,13 @@ function OrdersTable(props) {
                                         <thead>
                                             <tr>
                                                 <th><input type="checkbox" /></th>
-                                                <th><button onClick={() => sortData('index')}>No</button>.</th>
-                                                <th><button onClick={() => sortData('fullname')}>CustomerName</button></th>
-                                                <th><button onClick={() => sortData('id')}>ID</button></th>
-                                                <th><button onClick={() => sortData('date')}>Date</button></th>
-                                                <th><button onClick={() => sortData('city')}>City</button></th>
-                                                <th><button onClick={() => sortData('status')}>Status</button></th>
-                                                <th><button onClick={() => sortData('amount')}>Amount</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('index')}>No</button>.</th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('fullname')}>CustomerName</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('id')}>ID</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('date')}>Date</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('city')}>City</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('status')}>Status</button></th>
+                                                <th><button  style={{color:store.theme.textColor}} onClick={() => sortData('amount')}>Amount</button></th>
                                             </tr>
                                         </thead>
                                         <tbody>

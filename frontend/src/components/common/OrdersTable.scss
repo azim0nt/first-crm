@@ -13,6 +13,12 @@
     .top-part {
         display: flex;
         justify-content: space-between;
+        .input{
+            input{
+                border: none;
+                outline: none;
+            }
+        }
     }
 
     .cards {

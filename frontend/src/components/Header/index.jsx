@@ -4,42 +4,54 @@ import { IoMdNotifications } from "react-icons/io";
 import { FaBookmark, FaShoppingCart  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Profile from '../../assets/images/profile.png';
+import { useContext } from 'react';
+import {context} from '../../store'
 function Header() {
+    const {store, setStore} = useContext(context)
+    const handleThemeChange = () => {
+        const newBgColor = store.theme.bgColor === '#171829' ? '#FFFFFF' : '#171829';
+        const newTextColor = store.theme.textColor === '#ffffff99' ? '#171829' : '#ffffff99';
+        const newBackBgColor = store.theme.backBgColor === '#f2f5fa' ? '#10101c' : '#f2f5fa'
+        setStore({ type: 'changeTheme', theme: { bgColor: newBgColor, textColor: newTextColor, backBgColor:newBackBgColor } });
+    };
+    
     return ( 
         <>
-        <div className="header-wrapper">
+        <div className="header-wrapper" style={{backgroundColor:store.theme.bgColor, color:store.theme.textColor}}>
             <div className="header-content">
                 <div className="left">
-                    <div className="input-wrapper">
+                    <div className="input-wrapper" style={{backgroundColor:store.theme.backBgColor}}>
                         <IoSearch size={30} color='#6A7185' /> <input type="text" placeholder='Search anything' />
                     </div>
                 </div>
                 <div className="right">
-                    <div className="notifications icon">
+                    <div className="notifications icon" style={{backgroundColor:store.theme.backBgColor}}>
                         <IoMdNotifications size={20} color='#5c61f2' />
                     </div>
-                    <div className="bookmark icon">
+                    <div className="bookmark icon" style={{backgroundColor:store.theme.backBgColor}}>
                         <FaBookmark size={20} color='#5c61f2'/>
                     </div>
-                    <div className="theme icon">
+                    <div className="theme icon" style={{backgroundColor:store.theme.backBgColor}}>
+                        <button onClick={handleThemeChange}>
                         <IoInvertMode size={20} color='#5c61f2' />
+                        </button>
                     </div>
-                    <div className="message icon">
+                    <div className="message icon" style={{backgroundColor:store.theme.backBgColor}}>
                         <MdEmail size={20} color='#5c61f2' />
                     </div>
-                    <div className="cart icon">
+                    <div className="cart icon" style={{backgroundColor:store.theme.backBgColor}}>
                         <FaShoppingCart size={20} color='#5c61f2' />
                     </div>
                     <div className="user">
                         <div className="avatar">
                         <img src={Profile} alt="" />
                         </div>
-                        <div className="info">
-                            <div className="fullname">
-                                Alen Miller
+                        <div className="info" style={{color:store.theme.textColor}}>
+                            <div className="fullname" >
+                               <p>Alen Miller</p> 
                             </div>
                             <div className="profession">
-                                UI DEsigner
+                               <p>UI DEsigner</p> 
                             </div>
                         </div>
                     </div>
