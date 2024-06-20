@@ -1,0 +1,68 @@
+@import '../../assets/styles/settings';
+
+.order-table {
+    width: 900px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .top-part {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 5px;
+
+        table {
+            tbody {
+                tr {
+
+                    td {
+                        text-align: center;
+                        margin: 20px 0;
+
+                        &.avatar-fullname {
+                            display: flex;
+                            align-items: center;
+                            justify-content: left;
+                            padding-left: 50px;
+                            gap: 10px;
+
+                            p {
+                                text-wrap: balanced;
+                            }
+                        }
+
+                        p {
+                            &.done {
+                                @extend %green-btn;
+                            }
+
+                            &.pending {
+                                @extend %orange-btn;
+                            }
+
+                            &.paid {
+                                @extend %blue-btn;
+                            }
+
+                            &.cancel {
+                                @extend %red-btn;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}

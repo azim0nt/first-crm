@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './OrdersTable.scss'
 function OrdersTable(props) {
 
     const [data, setData] = useState(props.data);
