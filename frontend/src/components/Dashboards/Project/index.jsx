@@ -1,16 +1,24 @@
 import './style.scss'
 import PathToTab from '../../common/PathToTab'
 import priceData from '../../../db/priceData.json'
+import usersData from '../../../db/userData.json'
 import { useContext } from 'react';
 import { context } from '../../../store'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements, plugins } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import tasksData from '../../../db/tasksData.json'
 import Upgrade from '../../../assets/images/upgrade.png'
+import OrdersTable from '../../common/OrdersTable'
+
+import User1 from '../../../assets/images/users/1.png'
+import User2 from '../../../assets/images/users/2.png'
+import User3 from '../../../assets/images/users/3.png'
+import User4 from '../../../assets/images/users/4.png'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 function Project() {
     const { store, setStore } = useContext(context)
-
+    const usersImages = [User1, User2, User3, User4]
     return (
         <>
             <div className="project-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
@@ -188,11 +196,44 @@ function Project() {
                                 <h4>Upgrade Your Subscription Plan</h4>
                                 <p>The goal of this message is to welcome you to our app.</p>
                                 <div>
-                                <button className="blue-btn">
-                                    Go Premium
-                                </button>
+                                    <button className="blue-btn">
+                                        Go Premium
+                                    </button>
                                 </div>
                                 <img src={Upgrade} alt="" />
+                            </div>
+                        </div>
+                        <div className="section-2">
+                            <div className="today-task-card" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
+                                <div className="top"><h4>Today Task</h4></div>
+                                <div className="filters">
+                                    <button>All</button>
+                                    <button>Important</button>
+                                    <button>Notes</button>
+                                    <button>Links</button>
+                                </div>
+                                <div className="tasks">
+                                    {
+                                        tasksData.map((task, index) => {
+                                            return (
+                                                <div key={index} className={`task ${index + 1}`}>
+                                                    <div className="left">
+                                                        <input type="checkbox" name="" id="" /><p>{task.task}</p>
+                                                    </div>
+                                                    <div className="middle">
+                                                        <button className={`${task.status.toLocaleLowerCase()}`}>{task.status}</button>
+                                                    </div>
+                                                    <div className="right">
+                                                        <p>{task.date}</p>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div className="project-summery">
+                                <OrdersTable data={usersData} title={'Project Summery'} images={usersImages}/>
                             </div>
                         </div>
                     </div>

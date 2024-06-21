@@ -29,6 +29,16 @@ const generalItems = [
     ]
   }
 ];
+const appItems = [
+  {
+    title: 'Project',
+    icon: 'FaHome',
+    content: [
+      { name: 'Project List', url: 'projects' },
+      { name: 'Create New', url: 'project_create' },
+    ]
+  }
+]
 function General() {
   return (
     <>
@@ -50,6 +60,10 @@ function General() {
             <p id="title">General</p>
 
             <Accordion items={generalItems} />
+          </div>
+          <div id="applications">
+            <p id="title">Applications</p>
+            <Accordion items={appItems}/>
           </div>
         </div>
       </div>

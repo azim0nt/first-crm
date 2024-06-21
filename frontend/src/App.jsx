@@ -8,7 +8,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { useReducer } from 'react';
 import { context, initialState, globalReducer } from './store';
-
+import ProjectList from './components/Applications/ProjectList'
+import CreateNew from './components/Applications/CreateNew'
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -35,6 +36,8 @@ function App() {
                 <Route path='dashboard_01' element={<Default />} />
                 <Route path="dashboard_02" element={<Ecommerce />} />
                 <Route path="dashboard_03" element={<Project />} />
+                <Route path="projects" element={<ProjectList />} />
+                <Route path="project_create" element={<CreateNew />} />
               </Route>
 
               <Route path="login" element={<Login />} />

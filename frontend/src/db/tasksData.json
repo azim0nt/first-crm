@@ -1,0 +1,31 @@
+[
+    {
+        "task":"Create a Userflow. Social Application Design",
+        "status":"Done",
+        "date":"Nov 03,2024",
+        "type":["important","notes","links"]
+    },
+    {
+        "task":"Slimmuch Product Design Main Page",
+        "status":"Pending",
+        "date":"Aug 06,2024",
+        "type":["important","notes","links"]
+    },
+    {
+        "task":"Design of Interactive Prototypes",
+        "status":"In Progress",
+        "date":"Nov 03,2024",
+        "type":["important","links"]
+    },
+    {
+        "task":"Create Userflow Social Application Design",
+        "status":"Done",
+        "date":"Dec 20,2024",
+        "type":["links"]
+    },
+    {
+        "task":"Create Userflow Social Application Design",
+        "status":"In Progress",
+        "date":"Sep 20,2024"
+    }
+]
