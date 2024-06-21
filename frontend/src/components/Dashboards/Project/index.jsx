@@ -6,6 +6,7 @@ import { context } from '../../../store'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements, plugins } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import Upgrade from '../../../assets/images/upgrade.png'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 function Project() {
     const { store, setStore } = useContext(context)
@@ -117,73 +118,82 @@ function Project() {
                                     <h2>$25,837</h2>
                                     <p>Total : 23,000</p>
                                     <div className="chart">
-                                    <Line
-                                        data={{
-                                            labels: [1, 2, 3, 4, 5, 6, 7],
-                                            datasets: [
-                                                {
-                                                    label: 'Total Earnings',
-                                                    data: [20, 54, 8, 634, 42, 54, 12],
-                                                    backgroundColor: '#fff',
-                                                    borderColor: '#5c60f2',
-                                                    borderWidth: 2,
-                                                    pointRadius: 0,
-                                                    borderCapStyle: 'round',
+                                        <Line
+                                            data={{
+                                                labels: [1, 2, 3, 4, 5, 6, 7],
+                                                datasets: [
+                                                    {
+                                                        label: 'Total Earnings',
+                                                        data: [20, 54, 8, 634, 42, 54, 12],
+                                                        backgroundColor: '#fff',
+                                                        borderColor: '#5c60f2',
+                                                        borderWidth: 2,
+                                                        pointRadius: 0,
+                                                        borderCapStyle: 'round',
 
-                                                }
-                                            ]
-                                        }}
-                                        options={{
-                                            responsive: true,
-                                            maintainAspectRatio: false,
-                                            plugins: {
-                                                legend: {
-                                                    display: false,
-
-
-                                                },
-                                                title: {
-                                                    display: false
-
-                                                },
-                                                tooltip: {
-                                                    enable: false
-                                                }
-                                            },
-                                            scales: {
-                                                x: {
-                                                    display: false,
-                                                    grid: {
+                                                    }
+                                                ]
+                                            }}
+                                            options={{
+                                                responsive: true,
+                                                maintainAspectRatio: false,
+                                                plugins: {
+                                                    legend: {
                                                         display: false,
+
+
+                                                    },
+                                                    title: {
+                                                        display: false
+
+                                                    },
+                                                    tooltip: {
+                                                        enable: false
+                                                    }
+                                                },
+                                                scales: {
+                                                    x: {
+                                                        display: false,
+                                                        grid: {
+                                                            display: false,
+                                                        },
+                                                    },
+                                                    y: {
+                                                        display: false,
+                                                        grid: {
+                                                            display: false,
+                                                        },
+                                                        beginAtZero: true,
                                                     },
                                                 },
-                                                y: {
-                                                    display: false,
-                                                    grid: {
-                                                        display: false,
+                                                elements: {
+                                                    line: {
+
+
+                                                        borderCapStyle: 'round',
+                                                        tension: 0.3,
+
+
                                                     },
-                                                    beginAtZero: true,
-                                                },
-                                            },
-                                            elements: {
-                                                line: {
+                                                }
+                                            }}
+                                        >
 
-
-                                                    borderCapStyle: 'round',
-                                                    tension: 0.3,
-
-
-                                                },
-                                            }
-                                        }}
-                                    >
-
-                                    </Line>
+                                        </Line>
                                     </div>
                                     <button className='blue-btn'>Increase</button>
                                 </div>
                             </div>
-                            
+                            <div className="upgrade-card" style={{ backgroundColor: store.theme.bgColor }}>
+                                <h4>Upgrade Your Subscription Plan</h4>
+                                <p>The goal of this message is to welcome you to our app.</p>
+                                <div>
+                                <button className="blue-btn">
+                                    Go Premium
+                                </button>
+                                </div>
+                                <img src={Upgrade} alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>

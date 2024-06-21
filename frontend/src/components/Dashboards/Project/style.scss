@@ -22,116 +22,136 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
-            .section-1{
+
+        .middle {
+            .section-1 {
                 display: flex;
                 gap: 20px;
-                .two-cards{
+
+                .two-cards {
                     display: flex;
                     flex-direction: column;
                     width: 400px;
                     height: 400px;
                     gap: 20px;
-                    .card{
+
+                    .card {
                         height: 190px;
                         border-radius: 20px;
                         padding: 20px;
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        .top-part{
+
+                        .top-part {
                             display: flex;
                             justify-content: space-between;
-                            p:last-child{
+
+                            p:last-child {
                                 color: $gray;
                                 font-weight: 600;
                             }
                         }
-                        .middle-part{
-                            p{
+
+                        .middle-part {
+                            p {
                                 font-weight: 700;
                             }
-                            .chart-line{
+
+                            .chart-line {
                                 width: 100%;
                                 height: 5px;
                                 border-radius: 10px;
                                 margin-top: 10px;
-                                .chart{
+
+                                .chart {
                                     width: 60%;
                                     height: 5px;
                                     border-radius: 10px;
                                 }
                             }
                         }
-                        .bottom-part{
+
+                        .bottom-part {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                            .left{
-                                p{
+
+                            .left {
+                                p {
                                     font-weight: 700;
-                                    &:last-child{
+
+                                    &:last-child {
                                         color: $gray;
                                     }
                                 }
                             }
-                            .right{
-                                .rank{
-                                    width: 50px ;
+
+                            .right {
+                                .rank {
+                                    width: 50px;
                                     height: 50px;
                                     border-radius: 10px;
                                 }
                             }
                         }
-                        &.n-1{
 
-                            .top-part{
-                                p{
-                                    &:first-child{
+                        &.n-1 {
+
+                            .top-part {
+                                p {
+                                    &:first-child {
                                         color: $blue;
-                                        font-weight:600 ;
+                                        font-weight: 600;
                                         font-size: 17px;
                                     }
                                 }
                             }
-                            .middle-part{
-                                .chart-line{
+
+                            .middle-part {
+                                .chart-line {
                                     background-color: $light-blue;
-                                    .chart{
+
+                                    .chart {
                                         background-color: $blue;
                                     }
                                 }
                             }
-                            .bottom-part{
-                                .right{
-                                    .rank{
+
+                            .bottom-part {
+                                .right {
+                                    .rank {
                                         background-color: $light-blue;
                                     }
                                 }
                             }
                         }
-                        &.n-2   {
 
-                            .top-part{
-                                p{
-                                    &:first-child{
+                        &.n-2 {
+
+                            .top-part {
+                                p {
+                                    &:first-child {
                                         color: $orange;
-                                        font-weight:600 ;
+                                        font-weight: 600;
                                         font-size: 17px;
                                     }
                                 }
                             }
-                            .middle-part{
-                                .chart-line{
+
+                            .middle-part {
+                                .chart-line {
                                     background-color: $light-orange;
-                                    .chart{
+
+                                    .chart {
                                         background-color: $orange;
                                     }
                                 }
                             }
-                            .bottom-part{
-                                .right{
-                                    .rank{
+
+                            .bottom-part {
+                                .right {
+                                    .rank {
                                         background-color: $light-orange;
                                     }
                                 }
@@ -139,21 +159,25 @@
                         }
                     }
                 }
-                .total-revenue-card{
+
+                .total-revenue-card {
                     width: 770px;
                     height: 400px;
                     border-radius: 20px;
                     padding: 20px;
                     display: flex;
-                    .left{
+
+                    .left {
                         width: 80%;
-                        .chart{
-                            
+
+                        .chart {
+
                             height: 360px;
                         }
-                       
+
                     }
-                    .right{
+
+                    .right {
                         width: 20%;
                         border-left: 2px solid $transparent-gray;
                         padding: 0 10px;
@@ -161,18 +185,74 @@
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        .chart{
+
+                        .chart {
                             width: 130px;
                             height: 100px;
                         }
-                        .blue-btn{
+
+                        .blue-btn {
                             @extend %blue-btn;
                             padding: 10px 20px;
                             margin-top: 30px;
                         }
                     }
                 }
+
+                .upgrade-card {
+                    position: relative;
+                    border-radius: 20px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    background: url('../../../assets/images/shap.png');
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    background-size: cover;
+                    background-size: 80% 100%;
+                    overflow: hidden;
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+
+                    div {
+                        button {
+                            @extend %blue-btn;
+                            padding: 15px 20px;
+                        }
+                    }
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 500;
+                        text-wrap: balance;
+                    }
+
+                    img {
+                        position: absolute;
+                        z-index: 2;
+
+                        right: -10px;
+                        bottom: -10px;
+                        animation: imageAnimation 5s ease-in-out infinite;
+                    }
+                }
             }
         }
+    }
+}
+
+@keyframes imageAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
