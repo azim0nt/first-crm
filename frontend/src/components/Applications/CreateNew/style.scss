@@ -1,1 +1,112 @@
 @import '../../../assets/styles/settings';
+
+.create-new-wrapper{
+    height: 100vh;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .create-new-content{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+        .middle{
+            .form-card{
+                padding: 20px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .card{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    input{
+                        border: none;
+                        outline: none;
+                        padding: 15px 10px;
+                        border: 1px solid $transparent-gray;
+                        border-radius: 10px;
+                    }
+                }
+                .three-inputs{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 50px;
+                    div{
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 10px;
+                        input{
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
+                        }
+                        select{
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+                .date{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 50px;
+                    div.project-size{
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 10px;
+                        input:not(.react-datepicker-ignore-onclickoutside){
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
+                        }
+                        select:not(.react-datepicker-ignore-onclickoutside){
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
+                        }
+                    }
+                    .starting-date{
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 10px;
+                        display: flex;
+                        div#datepick{
+                            width: 100%;
+                
+                            input{
+                                border: none;
+                                outline: none;
+                                padding: 15px 10px;
+                                width: 100%;
+                                border: 1px solid $transparent-gray;
+                                border-radius: 10px;
+                            }
+ 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
