@@ -10,6 +10,7 @@ import { useReducer } from 'react';
 import { context, initialState, globalReducer } from './store';
 import ProjectList from './components/Applications/ProjectList'
 import CreateNew from './components/Applications/CreateNew'
+import Kanban from './components/Kanban'
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -38,6 +39,7 @@ function App() {
                 <Route path="dashboard_03" element={<Project />} />
                 <Route path="projects" element={<ProjectList />} />
                 <Route path="project_create" element={<CreateNew />} />
+                <Route path="kanban" element={<Kanban />} />
               </Route>
 
               <Route path="login" element={<Login />} />

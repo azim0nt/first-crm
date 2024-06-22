@@ -1,6 +1,7 @@
 import './style.scss'
 import Logo from '../../assets/images/logo.png'
 import Accordion from '../common/Accordion';
+import { NavLink } from 'react-router-dom';
 const generalItems = [
   {
     title: 'Dashboards',
@@ -64,6 +65,9 @@ function General() {
           <div id="applications">
             <p id="title">Applications</p>
             <Accordion items={appItems}/>
+            <div className="kanban-board">
+              <NavLink to={'kanban'}>Kanban Board</NavLink>
+            </div>
           </div>
         </div>
       </div>

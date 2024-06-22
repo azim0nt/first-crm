@@ -33,7 +33,11 @@ button {
   outline: none;
   cursor: pointer;
 }
-
+a{
+  text-decoration: none;
+  color: $light-gray;
+  font-weight: 700;
+}
 %title {
   background: $even-darker-blue;
   font-size: 15px;

@@ -2,7 +2,7 @@ import './style.scss'
 import PathToTab from '../../common/PathToTab'
 import priceData from '../../../db/priceData.json'
 import usersData from '../../../db/userData.json'
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { context } from '../../../store'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements, plugins } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
@@ -19,6 +19,22 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 function Project() {
     const { store, setStore } = useContext(context)
     const usersImages = [User1, User2, User3, User4]
+
+    const [tasks, setTasks] = useState(tasksData);
+    const [filter, setFilter] = useState('All');
+
+    useEffect(() => {
+        if (filter === 'All') {
+            setTasks(tasksData);
+        } else {
+            const filteredTasks = tasksData.filter(task => task.type && task.type.includes(filter.toLowerCase()));
+            setTasks(filteredTasks);
+        }
+    }, [filter]);
+
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+    };
     return (
         <>
             <div className="project-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
@@ -207,33 +223,31 @@ function Project() {
                             <div className="today-task-card" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
                                 <div className="top"><h4>Today Task</h4></div>
                                 <div className="filters">
-                                    <button>All</button>
-                                    <button>Important</button>
-                                    <button>Notes</button>
-                                    <button>Links</button>
+                                    <button className={filter === 'All' ? 'active' : ''} onClick={() => handleFilterChange('All')}>All</button>
+                                    <button className={filter === 'important' ? 'active' : ''} onClick={() => handleFilterChange('important')}>Important</button>
+                                    <button className={filter === 'notes' ? 'active' : ''} onClick={() => handleFilterChange('notes')}>Notes</button>
+                                    <button className={filter === 'links' ? 'active' : ''} onClick={() => handleFilterChange('links')}>Links</button>
                                 </div>
                                 <div className="tasks">
                                     {
-                                        tasksData.map((task, index) => {
-                                            return (
-                                                <div key={index} className={`task ${index + 1}`}>
-                                                    <div className="left">
-                                                        <input type="checkbox" name="" id="" /><p>{task.task}</p>
-                                                    </div>
-                                                    <div className="middle">
-                                                        <button className={`${task.status.toLocaleLowerCase()}`}>{task.status}</button>
-                                                    </div>
-                                                    <div className="right">
-                                                        <p>{task.date}</p>
-                                                    </div>
+                                        tasks.map((task, index) => (
+                                            <div key={index} className={`task ${index + 1}`}>
+                                                <div className="left">
+                                                    <input type="checkbox" name="" id="" /><p>{task.task}</p>
                                                 </div>
-                                            )
-                                        })
+                                                <div className="middle">
+                                                    <button className={`${task.status.toLowerCase()}`}>{task.status}</button>
+                                                </div>
+                                                <div className="right">
+                                                    <p>{task.date}</p>
+                                                </div>
+                                            </div>
+                                        ))
                                     }
                                 </div>
                             </div>
                             <div className="project-summery">
-                                <OrdersTable data={usersData} title={'Project Summery'} images={usersImages}/>
+                                <OrdersTable data={usersData} title={'Project Summery'} images={usersImages} />
                             </div>
                         </div>
                     </div>
