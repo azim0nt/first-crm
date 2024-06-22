@@ -1,1 +1,142 @@
 @import '../../../assets/styles/settings';
+
+.project-list-wrapper {
+    height: 110vh;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+
+    scrollbar-width: none;
+
+    .project-list-content {
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+        .middle{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .section-1{
+                .filter-card{
+                    border-radius: 20px;
+                    padding: 25px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    .left{
+                        display: flex;
+                        gap: 20px;
+                        button{
+                            font-weight: 600;
+                            font-size: 16px
+                        }
+                    }
+                    .right{
+                        a{
+                            @extend %blue-btn;
+                            padding: 10px ;
+                        }
+                    }
+                }
+            }
+            .section-2{
+                .projects-board-card{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    padding: 20px;
+                    border-radius: 20px;
+                    gap: 20px;
+                    .project{
+                        width: 95%;
+                        height: 350px;
+                        padding: 20px;
+                        border-radius: 5px;
+                        box-shadow: 0.1px 0.1px 1px $blue;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        .top-part{
+                            display: flex;
+                            flex-direction: column;
+                            div:first-child{
+                                display: flex;
+                                justify-content: space-between;
+                                span{
+                                    font-size: 13px;
+                                    border-radius: 5px;
+                                    font-weight: 600;
+                                    color: #fff;
+                                    padding: 5px 5px;
+                                }
+                            }
+                            div:last-child{
+                                display: flex; 
+                                gap: 10px;
+                                .circle{
+                                    width: 20px;
+                                    height: 20px;
+                                    background-color: $gray;
+                                    display: flex;
+                                }
+                                .where{
+                                    font-weight: 600;
+                                    color: #{$gray}90;
+                                }
+                            }
+                        }
+                        .middle-part{
+                            .desc{
+                                font-weight: 500;
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                            }
+                            .statistics{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                div{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 200px;
+                                    p:first-child{
+                                        color: #{$gray}90;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                    }
+                                    p:last-child{
+                                        text-align: left;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        .bottom-part{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            .progress{
+                                width: 100%;
+                                height: 5px;
+                                background-color: $light-blue;
+                                border-radius: 5px;
+                                div{
+                                    height: 5px;
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

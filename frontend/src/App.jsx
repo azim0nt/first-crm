@@ -10,7 +10,7 @@ import { useReducer } from 'react';
 import { context, initialState, globalReducer } from './store';
 import ProjectList from './components/Applications/ProjectList'
 import CreateNew from './components/Applications/CreateNew'
-import Kanban from './components/Kanban'
+import Kanban from './components/Applications/Kanban';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
