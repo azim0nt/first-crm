@@ -36,6 +36,16 @@
                         border: 1px solid $transparent-gray;
                         border-radius: 10px;
                     }
+                    textarea{
+                        border: none;
+                        outline: none;
+                        padding: 15px 10px;
+                        border: 1px solid $transparent-gray;
+                        border-radius: 10px;
+                        resize: vertical;
+                        height: 200px;
+                        transition: 0s;
+                    }
                 }
                 .three-inputs{
                     display: flex;
@@ -63,22 +73,22 @@
                     }
                 }
                 .date{
-                    display: flex;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
                     gap: 50px;
                     div.project-size{
                         display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        input:not(.react-datepicker-ignore-onclickoutside){
+                        input{
                             border: none;
                             outline: none;
                             padding: 15px 10px;
                             border: 1px solid $transparent-gray;
                             border-radius: 10px;
                         }
-                        select:not(.react-datepicker-ignore-onclickoutside){
+                        select{
                             border: none;
                             outline: none;
                             padding: 15px 10px;
@@ -87,22 +97,33 @@
                         }
                     }
                     .starting-date{
+                        display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        display: flex;
-                        div#datepick{
+                        ::-webkit-calendar-picker-indicator {background-color: $blue;}
+                        input{
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
                             width: 100%;
-                
-                            input{
-                                border: none;
-                                outline: none;
-                                padding: 15px 10px;
-                                width: 100%;
-                                border: 1px solid $transparent-gray;
-                                border-radius: 10px;
-                            }
- 
+                        }
+                    }
+                    .ending-date{
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 10px;
+                        ::-webkit-calendar-picker-indicator {background-color: $blue;}
+                        input{
+                            border: none;
+                            outline: none;
+                            padding: 15px 10px;
+                            border: 1px solid $transparent-gray;
+                            border-radius: 10px;
+                            width: 100%;
                         }
                     }
                 }

@@ -3,7 +3,7 @@ import '../../common/PathToTab'
 import { useContext ,useState } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab';
-import DatePicker from "react-datepicker";
+import FileUploader from '../../common/FileUploader';
 
 import "react-datepicker/dist/react-datepicker.css";
 function CreateNew() {
@@ -61,15 +61,24 @@ function CreateNew() {
                                 <div className="starting-date">
                                     <h3>Starting date</h3>
                                     <div id='datepick'>
-                                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                    <input type="date" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}/>
                                     </div>
                                 </div>
-                                <div className="starting-date">
-                                    <h3>Starting date</h3>
+                                <div className="ending-date">
+                                    <h3>Ending date</h3>
                                     <div id='datepick'>
-                                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                    <input type="date" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}/>
                                     </div>
                                 </div>
+
+                            </div>
+                            <div className="enter-some-details card">
+                                <h4>Enter some Details</h4>
+                                <textarea  style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}></textarea>
+                            </div>
+                            <div className="upload-project-file card">
+                                <h4>Upload project file</h4>
+                                <FileUploader/>
                             </div>
                         </div>
                     </div>
