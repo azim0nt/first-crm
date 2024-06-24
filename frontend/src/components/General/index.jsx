@@ -40,6 +40,17 @@ const appItems = [
     ]
   }
 ]
+const usersItems = [
+  {
+    title:'Users',
+    icon:'FaHome',
+    content:[
+      {name:'User Profile', url:'user_profile'},
+      {name:'User Edit', url:'edit_profile'},
+      {name:'User Cards', url:'user_cards'}
+    ]
+  }
+]
 function General() {
   return (
     <>
@@ -57,6 +68,7 @@ function General() {
           </div>
         </div>
         <div className="general-menu">
+
           <div id="general">
             <p id="title">General</p>
 
@@ -67,7 +79,9 @@ function General() {
             <Accordion items={appItems}/>
             <div className="kanban-board">
               <NavLink to={'kanban'}>Kanban Board</NavLink>
+            
             </div>
+            <Accordion items={usersItems}/>
           </div>
         </div>
       </div>
