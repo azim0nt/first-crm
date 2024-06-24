@@ -5,7 +5,7 @@ import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab';
 import FileUploader from '../../common/FileUploader';
 
-import "react-datepicker/dist/react-datepicker.css";
+
 function CreateNew() {
     const { store, setStore } = useContext(context)
     const [startDate, setStartDate] = useState(new Date());
