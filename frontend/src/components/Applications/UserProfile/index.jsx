@@ -4,6 +4,9 @@ import { context } from '../../../store'
 import { useContext } from 'react';
 import BgProfile from '../../../assets/images/bg-profile.png'
 import Avatar from '../../../assets/images/avatar.jpg'
+import PostImage1 from '../../../assets/images/profile-style-img3.png'
+import PostImage2 from '../../../assets/images/profile-style-img.png'
+import PostImage3 from '../../../assets/images/img.png'
 import { MdEmail } from "react-icons/md";
 import { IoCall, IoNavigate } from "react-icons/io5";
 import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
@@ -77,7 +80,62 @@ function UserProfile() {
                                     </span>
                                 </div>
                             </div>
-                            
+
+                        </div>
+                        <div className="section-2">
+                            <div className="post 1" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className="top-part">
+                                    <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
+                                    <span><p className="date">10 Hours ago</p></span>
+                                </div>
+                                <div className="bottom-part">
+                                    <p className="about">
+                                        Dressing is a way of life. My customers are successful working women. I want people to be afraid of the women I dress. Age is something only in your head or a stereotype. Age means nothing when you are passionate about something. There has to be a balance between your mental satisfaction and the financial needs of your company.
+                                    </p>
+                                    <div className="image">
+                                        <img src={PostImage1} alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="post two" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className="top-part">
+                                    <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
+                                    <span><p className="date">10 Hours ago</p></span>
+                                </div>
+                                <div className="bottom-part">
+                                    <div className="about">
+                                        <p>
+                                            Success isn't about the end result, it's about what you learn along the way. Confidence. If you have it, you can make anything look good. Grunge is a hippied romantic version of punk. I'm an accomplice to helping women get what they want. Clothes can transform your mood and confidence. I think it's an old fashioned notion that fashion needs to be exclusive to be fashionable.
+                                        </p>
+                                    </div>
+                                    <div className="image">
+                                    <img src={PostImage2} alt="" />
+                                    <img src={PostImage2} alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="post 3" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className="top-part">
+                                    <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
+                                    <span><p className="date">10 Hours ago</p></span>
+                                </div>
+                                <div className="bottom-part">
+                                    <p>
+                                    Comfort is very important to me. I think people live better in big houses and in big clothes. Design and style should work toward making you look good and feel good without a lot of effort so you can get on with the things that matter. My shows are about the complete woman who swallows it all. Its a question of survival. Those fashion designers are just crazy; but arent we all? You can only go forward by making mistakes.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="post four" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className="top-part">
+                                    <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
+                                    <span><p className="date">10 Hours ago</p></span>
+                                </div>
+                                <div className="bottom-part">
+                                    <div className="image-about">
+                                        <img src={PostImage3} alt="" /> <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consecteturContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

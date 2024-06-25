@@ -1,1 +1,133 @@
 @import '../../../assets/styles/settings';
+
+.user-edit-wrapper {
+    height: 100vh;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    scrollbar-width: none;
+
+    .user-edit-content {
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+        .middle{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .section-1{
+                display: flex;
+                gap: 20px;
+                .blue-btn{
+                    @extend %blue-btn;
+                    padding: 10px 20px;
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    padding: 10px 10px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                }
+                textarea{
+                    resize: vertical;
+                    transition: 0s;
+                    border: 0;
+                    outline: none;
+                    width: 100%;
+                    height: 100px ;
+                    padding: 10px;
+                }
+                select{
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    padding: 10px 10px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                }
+                .edit-rofile-card{
+                    width: 1000px;
+                    padding: 20px;
+                    border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .company-username-email{
+                        display: grid;
+
+                        grid-template-columns: 1.5fr 1fr 1.3fr;
+                        gap: 20px;
+                    }
+                    .company-name{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 20px;
+                    }
+                    .city-zip-country{
+                        display: grid;
+
+                        grid-template-columns: 1.3fr 1fr 1.5fr;
+                        gap: 20px;
+                    }
+                    .button{
+                        display: flex;
+                        justify-content: right;
+                    }
+                }
+                .my-profile-card{
+                    width: 530px;
+                    border-radius: 20px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .account{
+                        span{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            img{
+                                width: 70px;
+                                height: 70px;
+                                border-radius: 50%;
+                            }
+                            span{
+                                flex-direction: column;
+                                text-align: left;
+                                gap: 5px;
+                            }
+                        }
+                    }
+                    .bio{
+                    }
+                }
+            }
+            .section-2{
+                .projects{
+                    table{
+                        width: 100%;
+                        height: 300px;
+                        text-align: left;
+                        padding: 20px;
+                        border-radius: 20px;
+                        tbody{
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

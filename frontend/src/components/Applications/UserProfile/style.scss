@@ -24,11 +24,16 @@
         }
 
         .middle {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
             .section-1 {
                 .profile-card {
                     display: flex;
                     flex-direction: column;
                     border-radius: 20px;
+
                     .header {
                         img {
                             border-radius: 10px 10px 0 0;
@@ -72,6 +77,7 @@
                             gap: 30px;
                             display: flex;
                             justify-content: space-between;
+
                             p {
                                 display: flex;
                                 align-items: center;
@@ -93,27 +99,103 @@
                             gap: 50px;
                         }
                     }
-                    .followers{
+
+                    .followers {
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         margin: 50px 0;
                         gap: 20px;
-                        span{
 
-                            p{
+                        span {
+
+                            p {
                                 text-align: center;
-                                &:first-child{
+
+                                &:first-child {
                                     font-size: 20px;
                                     font-weight: 700;
                                     margin: 10px 0;
                                 }
-                                &:last-child{
+
+                                &:last-child {
                                     font-size: 15px;
-                                    
+
                                 }
                             }
                         }
+                    }
+                }
+            }
+
+            .section-2 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .post {
+                    border-radius: 20px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .top-part {
+                        display: flex;
+                        justify-content: space-between;
+
+                        span {
+                            &:first-child {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                p {
+                                    font-weight: 600;
+                                }
+
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom-part {
+                        .about {
+                            margin: 50px 0;
+                        }
+
+                        .image {
+                            img {
+                                display: flex;
+                                gap: 20px;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+
+                    &.two {
+                        .bottom-part {
+                            .image {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                            }
+                        }
+                    }
+                    &.four{
+                    .bottom-part{
+                        .image-about{
+                            display: flex;
+                            gap: 20px;
+                            line-height: 30px;
+                            img{
+                                border-radius: 10px;
+                            }
+                        }
+                    }
                     }
                 }
             }

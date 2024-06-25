@@ -15,6 +15,7 @@ function CurrentPage() {
                 <General />
             </div>
             <div className="right-panel">
+
                 <Header />
                 <Outlet />
                 <div className="footer" style={{backgroundColor:store.theme.bgColor, color:store.theme.textColor}}>
