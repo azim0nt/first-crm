@@ -54,6 +54,22 @@ function UserCards() {
                                     </div>
                                 </div>
                                     </div>
+                                    <div className="bottom-part">
+                                        <div className="activ">
+                                            <div className="posts">
+                                                <h5>460</h5>
+                                                <p>Posts</p>
+                                            </div>
+                                            <div className="followers">
+                                                <h5>3.5k</h5>
+                                                <p>Followers</p>
+                                            </div>
+                                            <div className="following">
+                                                <h5>724</h5>
+                                                <p>Following</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             )
                         })}

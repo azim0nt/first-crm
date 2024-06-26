@@ -53,7 +53,7 @@ const usersItems = [
 ]
 const ecommerceItems = [
   {
-    title:'Users',
+    title:'Ecommerce',
     icon:'FaHome',
     content:[
       {name:"Add Product", url:"add_products"},
@@ -100,6 +100,7 @@ function General() {
             
             </div>
             <Accordion items={usersItems}/>
+            <Accordion items={ecommerceItems}/>
           </div>
         </div>
       </div>

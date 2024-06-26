@@ -1,0 +1,25 @@
+@import '../../../assets/styles/settings';
+
+.wishlist-wrapper{
+    height: 100vh;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+
+    scrollbar-width: none;
+    .wishlist-content{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+    }
+}

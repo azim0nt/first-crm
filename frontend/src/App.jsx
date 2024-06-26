@@ -14,6 +14,16 @@ import Kanban from './components/Applications/Kanban';
 import UserProfile from './components/Applications/UserProfile';
 import UserEdit from './components/Applications/UserEdit';
 import UserCards from './components/Applications/UserCards'
+import AddProduct from './components/Applications/AddProduct';
+import Product from './components/Applications/Product';
+import ProductPage from './components/Applications/ProductPage';
+import ProductList from './components/Applications/ProductList';
+import PaymentDetails from './components/Applications/PaymentDetails';
+import OrderHistory from './components/Applications/OrderHistory';
+import Cart from './components/Applications/Cart';
+import Wishlist from './components/Applications/Wishlist';
+import Checkout from './components/Applications/Checkout';
+import Pricing from './components/Applications/Pricing';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -46,6 +56,16 @@ function App() {
                 <Route path="user_profile" element={<UserProfile />} />
                 <Route path="edit_profile" element={<UserEdit />} />
                 <Route path="user_cards" element={<UserCards />} />
+                <Route path="add_products" element={<AddProduct />} />
+                <Route path="product_cards" element={<Product />} />
+                <Route path="product_page" element={<ProductPage />} />
+                <Route path="list_products" element={<ProductList />} />
+                <Route path="payment_details" element={<PaymentDetails />} />
+                <Route path="order_history" element={<OrderHistory />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="list_wish" element={<Wishlist />} />
+                <Route path="checkout" element={<Checkout />} />
+                <Route path="pricing" element={<Pricing />} />
               </Route>
 
               <Route path="login" element={<Login />} />
