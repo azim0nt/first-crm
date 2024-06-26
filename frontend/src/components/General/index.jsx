@@ -51,6 +51,24 @@ const usersItems = [
     ]
   }
 ]
+const ecommerceItems = [
+  {
+    title:'Users',
+    icon:'FaHome',
+    content:[
+      {name:"Add Product", url:"add_products"},
+      {name:"Product", url:"product_cards"},
+      {name:"Product Page", url:"product_page"},
+      {name:"Product List", url:"list_products"},
+      {name:"Payment Details", url:"payment_details"},
+      {name:"Order History", url:"order_history"},
+      {name:"Cart", url:"cart"},
+      {name:"Wishlist", url:"list_wish"},
+      {name:"Checkout", url:"checkout"},
+      {name:"Pricing", url:"pricing"},
+    ]
+  }
+]
 function General() {
   return (
     <>
