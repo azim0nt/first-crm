@@ -21,5 +21,113 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
+        .middle{
+            .section-1{
+                .billing-details-card{
+                    padding: 20px;
+                    border-radius: 20px;
+                    .content{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 20px;
+                        .left{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                            h4{
+                                margin-bottom: 10px;
+                            }
+                            .firstname-lastname{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 20px;
+                            }
+                            .phone-email{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 20px;
+                               
+                            }
+                            .checkbox{
+                                display: grid;
+                                justify-content: left;
+                                grid-template-columns: 50px 150px;
+                                
+                            }
+                        }
+                        .right{
+                            .defails{
+                                width: 750px;
+                                height: 600px;
+                                padding: 40px;
+                                display: flex;
+                                flex-direction: column;
+                                
+                                .product-title{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    border-bottom: 1px solid $transparent-gray;
+                                    padding-bottom: 40px;
+                                }
+                                .total{
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    padding-bottom: 20px;
+                                }
+                                .products{
+                                    display: flex;
+                                    flex-direction: column;
+                                    padding-top: 20px;
+                                    gap: 20px;
+                                    border-bottom: 1px solid $transparent-gray;
+                                    padding-bottom: 20px;
+                                    div{
+                                        display: flex;
+                                        justify-content: space-between;
+                                    }
+                                }
+                                .sub-total{
+                                    display: flex;
+                                    flex-direction: column;
+                                    padding-top: 20px;
+                                    gap: 20px;
+
+                                    padding-bottom: 40px;
+                                    div{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        span{
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 10px;
+                                            span{
+                                                flex-direction: row;
+                                            }
+                                        }
+                                    }
+                                }
+                                .pay{
+
+                                    span{
+                                        display: flex;
+                                        align-items: center ;
+                                        margin: 10px 0;
+                                        gap: 10px;
+                                    }
+                                }
+                                .btn{
+                                    .blue-btn{
+                                        @extend %blue-btn;
+                                        padding: 10px 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

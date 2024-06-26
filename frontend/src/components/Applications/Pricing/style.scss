@@ -1,6 +1,6 @@
 @import '../../../assets/styles/settings';
 
-.pricing-wrapper{
+.pricing-wrapper {
     height: 100vh;
     overflow: auto;
 
@@ -11,7 +11,8 @@
 
 
     scrollbar-width: none;
-    .pricing-content{
+
+    .pricing-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -20,6 +21,102 @@
             display: flex;
             justify-content: space-between;
             margin: 0 0 20px 0;
+        }
+
+        .middle {
+            .section-1 {
+                .become-member-card {
+                    padding: 20px;
+                    border-radius: 20px;
+
+                    .cards {
+                        display: flex;
+
+                        .card {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            overflow: hidden;
+                            align-items: center;
+                            padding: 40px 0;
+                            gap: 20px;
+                            height: 500px;
+                            border-radius: 10px;
+                            cursor: default;
+                            // box-shadow: 1px 1px 10px $transparent-gray;
+                            .price {
+                                border-radius: 50%;
+                                background-color: $blue;
+                                width: 150px;
+                                height: 150px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: #fff;
+
+                                p {
+
+                                    font-weight: 600;
+
+                                    &:nth-child(1) {
+                                        padding-bottom: 25px;
+                                        margin-right: 2px;
+                                    }
+
+                                    &:nth-child(2) {
+                                        font-size: 58px;
+                                        font-weight: 800;
+                                    }
+
+                                    &:nth-child(3) {
+                                        padding-top: 35px;
+                                    }
+                                }
+                            }
+
+                            .circle {
+                                position: absolute;
+                                width: 300px;
+                                height: 300px;
+                                background-color: $blue;
+                                opacity: 0.1;
+
+                                &.n-1 {
+                                    right: -210px;
+                                }
+
+                                &.n-2 {
+                                    bottom: -200px;
+                                    left: -200px;
+                                }
+                            }
+
+                            .included {
+                                ul {
+                                    li {
+                                        list-style: none;
+                                        margin: 10px 0;
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                        &::before {
+                                            content: '\2713\0020';
+                                            color: $blue;
+                                            font-weight: bold;
+                                           
+                                        }
+                                    }
+                                }
+                            }
+                            .btn{
+                                .blue-btn{
+                                    @extend %blue-btn;
+                                    padding: 10px 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
