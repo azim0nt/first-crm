@@ -21,5 +21,85 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
+        .middle{
+            .section-1{
+                .cart-card{
+                    padding: 20px;
+                    border-radius: 20px;
+                    table{
+                        width: 100%;
+                        border-collapse: collapse;
+                        border: $transparent-gray solid 1px;
+                        thead{
+                            tr{
+                                th{
+                                    padding: 20px 10px;
+                                    border: $transparent-gray solid 1px ;
+                                }
+                            }
+                        }
+                        tbody{
+                            tr{
+                                td{
+                                    padding: 10px 10px;
+                                    border: $transparent-gray solid 1px ;
+                                    text-align: center;
+                                    img{
+                                        width: 40px;
+                                        height: 40px;
+                                        border-radius: 10px;
+                                    }
+                                    
+                                    div.counter{
+                                        display: flex;
+                                        width: 100px;
+                                        overflow: hidden;
+                                        justify-content: space-between;
+                                        border-radius: 5px;
+                                        border: $transparent-gray solid 1px;
+                                        margin: 0 auto;
+                                        div{
+                                            width: 30px;
+                                            height: 30px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+                                    }
+                                    div.coupan{
+                                        text-align: left;
+                                        input{
+                                            padding: 10px;
+                                            border-radius: 5px 0 0 5px;
+                                            border: 1px solid $transparent-gray;
+                                            outline: none;
+                                        }
+                                        .blue-btn{
+                                            @extend %blue-btn;
+                                            border-radius: 0 5px 5px 0;
+                                            padding: 10px;
+                                        }
+                                    }
+                                    div.btn{
+                                        text-align: right;
+                                        .orange-btn{
+                                            @extend %orange-btn;
+                                            padding: 10px;
+                                        }
+                                    }
+                                    div.btn-green{
+                                        text-align: center;
+                                        .green-btn{
+                                            @extend %green-btn;
+                                            padding: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

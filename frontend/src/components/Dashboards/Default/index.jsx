@@ -162,7 +162,7 @@ function Default() {
                                     {
                                         productData.map((item, index) => {
                                             return (
-                                                <div className={`card product-${index + 1}`} key={index}>
+                                                <div className={`cardd product-${index + 1}`} key={index}>
                                                     <div className="left">
                                                         <span className='img-container'>
 

@@ -86,7 +86,7 @@ function Ecommerce() {
                     <div className="middle">
                         <div className="section-1">
                             <div className="four-cards">
-                                <div className="card 1"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className="cardd 1"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#5c61f2'} />
                                     <div className="info">
                                         <div className="total">
@@ -100,7 +100,7 @@ function Ecommerce() {
                                         <Bar data={barChartData} options={options}></Bar>
                                     </div>
                                 </div>
-                                <div className="card 2"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className="cardd 2"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#ff9766'} />
                                     <div className="info">
                                         <div className="total">
@@ -125,7 +125,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="card 3"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className="cardd 3"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#61ae41'} />
                                     <div className="info">
                                         <div className="total">
@@ -150,7 +150,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="card 4"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className="cardd 4"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
                                     <Circle color={'#44A8D7'} />
                                     <div className="info">
                                         <div className="total">
@@ -270,7 +270,7 @@ function Ecommerce() {
                                 <h4>Top Product</h4>
                                 <p id='subtitle'>According to overall sales, the top 4 this week</p>
                                 <div className="cards">
-                                        <div className="card">
+                                        <div className="cardd">
                                             <div className="image">
                                                 <img src={CardImage} alt="" />
                                             </div>
@@ -279,7 +279,7 @@ function Ecommerce() {
                                                 <span><p>$ 14.00 </p> <p>$ 15.00</p></span>
                                             </div>
                                         </div>
-                                        <div className="card">
+                                        <div className="cardd">
                                             <div className="image">
                                                 <img src={CardImage} alt="" />
                                             </div>
@@ -288,7 +288,7 @@ function Ecommerce() {
                                                 <span><p>$14.00 </p> <p>$15.00</p></span>
                                             </div>
                                         </div>
-                                        <div className="card">
+                                        <div className="cardd">
                                             <div className="image">
                                                 <img src={CardImage} alt="" />
                                             </div>
