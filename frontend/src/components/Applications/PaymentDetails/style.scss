@@ -21,5 +21,161 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
+        .middle{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .section-1{
+                display: flex;
+                gap: 20px;
+                .credit-card{
+                    padding: 20px;
+                    border-radius: 20px;
+                    display: grid;
+                    grid-template-columns: 60% 40%;
+                    gap: 50px;
+                    width: 1050px;
+                    .left{
+                        h4{
+                            margin-bottom: 20px;
+                        }
+                        .inputs{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 15px;
+                        }
+                    }
+                    .right{
+                        display: flex;
+                        // justify-content: center;
+                        align-items: center;
+                        img{
+                            max-width: 100%;
+                        }
+                    }
+                }
+                .debit-card{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    padding: 20px;
+                    border-radius: 20px;
+                    height: auto;
+                    width: 520px;
+                    .fullname-card{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .cvv-cvc-number{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .select-year-month{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    div{
+                        .blue-btn{
+                            @extend %blue-btn;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+            .section-2{
+                display: flex;
+                gap: 20px;
+                .cod-card{
+                    width: 530px;
+                    border-radius: 20px;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    .first-last-name{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .pin-mobile-number{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .state-city{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    textarea{
+                        resize: vertical;
+                        transition: 0s;
+                        height: 100px;
+                    }
+                    div{
+                        .blue-btn{
+                            @extend %blue-btn;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+                .emi-card{
+                    padding: 20px;
+                    border-radius: 20px;
+                    width: 530px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    .first-last-name{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .pin-mobile-number{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    .cards-logo{
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        div{
+                            img{
+                                width: 60px;
+                            }
+                        }
+                    }
+                    div{
+                        .blue-btn{
+                            @extend %blue-btn;  
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+                .net-banking{
+                    width: 530px;
+                    padding: 20px;
+                    border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    .bank-icfc-code{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 5px;
+                    }
+                    div{
+                        .blue-btn{
+                            @extend %blue-btn;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
