@@ -1,6 +1,6 @@
 @import '../../../assets/styles/settings';
 
-.add-product-wrapper{
+.add-product-wrapper {
     height: 100vh;
     overflow: auto;
 
@@ -11,7 +11,8 @@
 
 
     scrollbar-width: none;
-    .add-product-content{
+
+    .add-product-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -20,6 +21,138 @@
             display: flex;
             justify-content: space-between;
             margin: 0 0 20px 0;
+        }
+
+        .middle {
+            .section-1 {
+                .product-form-card {
+                    padding: 20px;
+                    border-radius: 20px;
+
+                    .body {
+                        display: grid;
+                        grid-template-columns: 40% 60%;
+                        padding-top: 20px;
+                        gap: 100px;
+                        .left {
+                            ul {
+                                list-style-type: none;
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: column;
+                                li {
+                                    .btn {
+                                        button {
+                                            display: flex;
+                                            gap: 10px;
+                                            align-items: center;
+
+                                            .left-part {
+                                                width: 50px;
+                                                height: 50px;
+                                                border-radius: 50%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                border: 1px solid $transparent-gray;
+                                                div{
+                                                    width: 40px;
+                                                    height: 40px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    
+                                                    border-radius: 50%;
+                                                }
+                                                &.active{
+                                                    border: 1px solid $blue;
+                                                    div{
+                                                        background-color: $blue;
+                                                        svg{
+                                                            fill: #fff;
+    
+                                                        }
+                                                    }
+                                                    &:hover{
+                                                        div{
+                                                            svg{
+                                                                fill: #fff;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                &:hover{
+                                                    
+                                                    border: 1px solid $blue;
+                                                    div{
+                                                        svg{
+                                                            fill: $blue;
+                                                            transition: 0s;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .right-part {
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+                                    position: relative;
+                                    padding-bottom: 70px;
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        border: 1px dashed $transparent-gray;
+                                        top: 60px;
+                                        height: 50px;
+                                        left: 20px;
+                                    }
+                                    &:last-child{
+                                        padding-bottom: 0;
+                                        &::before{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .right{
+                            width: 100%;
+                            .add-product-details{
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+                                .product-title{
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 10px;
+                                    input{
+                                        background-color:transparent !important;
+                                        outline: none;
+                                        border-radius: 5px;
+                                        padding: 10px;
+                                    }
+                                }
+                                .quill {
+                                    border: 1px solid $transparent-gray;
+                                    border-radius: 10px;
+                                    width: 100%;
+                                    height: 300px;
+                                    * {
+                                      border: none;
+                                    }
+                                  
+                                    &.snow {
+                                      border: 1px solid $gray;
+                                    }
+                                  }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
