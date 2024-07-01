@@ -3,7 +3,7 @@ import '../../common/PathToTab'
 import { useContext ,useState } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab';
-import FileUploader from '../../common/FileUploader';
+import DragDrop from '../../common/DragDrop';
 
 
 function CreateNew() {
@@ -19,11 +19,11 @@ function CreateNew() {
                     </div>
                     <div className="middle">
                         <div className="form-card" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
-                            <div className="project-title card">
+                            <div className="project-title cardd">
                                 <h4>Project Title</h4>
                                 <input type="text" placeholder='Project name' style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }} />
                             </div>
-                            <div className="client-name card">
+                            <div className="client-name cardd">
                                 <h4>Client name</h4>
                                 <input type="text" placeholder='Name client or company name' style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }} />
                             </div>
@@ -72,13 +72,13 @@ function CreateNew() {
                                 </div>
 
                             </div>
-                            <div className="enter-some-details card">
+                            <div className="enter-some-details cardd">
                                 <h4>Enter some Details</h4>
                                 <textarea  style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}></textarea>
                             </div>
-                            <div className="upload-project-file card">
+                            <div className="upload-project-file cardd">
                                 <h4>Upload project file</h4>
-                                <FileUploader/>
+                                <DragDrop></DragDrop>
                             </div>
                         </div>
                     </div>

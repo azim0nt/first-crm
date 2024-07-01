@@ -2,7 +2,6 @@ import './style.scss'
 import { useContext,useState } from 'react';
 import {context} from '../../../store'
 import PathToTab from '../../common/PathToTab'
-import ReactQuill from 'react-quill';
 import { MdAddchart } from "react-icons/md";
 import 'react-quill/dist/quill.snow.css';
 import { RiImageAddFill } from "react-icons/ri";
@@ -10,6 +9,7 @@ import { FiLayers } from "react-icons/fi";
 import { IoIosPricetag } from "react-icons/io";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import AddProductDetails from './AddProductDetails';
+import ProductGallery from './ProductGallery';
 function AddProduct() {
     const {store, setStore} = useContext(context)
     const cardStyle = {backgroundColor:store.theme.bgColor}
@@ -50,8 +50,8 @@ function AddProduct() {
                                         </li>
                                         <li>
                                             <div className="product-gallery btn">
-                                        <button>
-                                        <div className="left-part">
+                                        <button  onClick={() => handleComponentChange('ProductGallery')}>
+                                        <div className={`left-part ${activeComponent === 'ProductGallery' ? 'active' : ''}`}>
                                             <div>
                                             <RiImageAddFill size={25} color={'#c9c9c950'}/>
                                             </div>
@@ -114,6 +114,7 @@ function AddProduct() {
                                 </div>
                                 <div className="right">
                                 {activeComponent === 'AddProductDetails' && <AddProductDetails />}
+                                {activeComponent === 'ProductGallery' && <ProductGallery />}
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 @import '../../../assets/styles/settings';
 
-.create-new-wrapper{
+.create-new-wrapper {
     height: 100vh;
     overflow: auto;
 
@@ -8,7 +8,8 @@
         width: 0;
         height: 0;
     }
-    .create-new-content{
+
+    .create-new-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -18,25 +19,29 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
-            .form-card{
+
+        .middle {
+            .form-card {
                 padding: 20px;
                 border-radius: 20px;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                .card{
+
+                .cardd {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
-                    input{
+
+                    input {
                         border: none;
                         outline: none;
                         padding: 15px 10px;
                         border: 1px solid $transparent-gray;
                         border-radius: 10px;
                     }
-                    textarea{
+
+                    textarea {
                         border: none;
                         outline: none;
                         padding: 15px 10px;
@@ -47,23 +52,27 @@
                         transition: 0s;
                     }
                 }
-                .three-inputs{
+
+                .three-inputs {
                     display: flex;
                     justify-content: space-between;
                     gap: 50px;
-                    div{
+
+                    div {
                         display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        input{
+
+                        input {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
                             border: 1px solid $transparent-gray;
                             border-radius: 10px;
                         }
-                        select{
+
+                        select {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
@@ -72,23 +81,27 @@
                         }
                     }
                 }
-                .date{
+
+                .date {
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr;
                     gap: 50px;
-                    div.project-size{
+
+                    div.project-size {
                         display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        input{
+
+                        input {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
                             border: 1px solid $transparent-gray;
                             border-radius: 10px;
                         }
-                        select{
+
+                        select {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
@@ -96,13 +109,18 @@
                             border-radius: 10px;
                         }
                     }
-                    .starting-date{
+
+                    .starting-date {
                         display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        ::-webkit-calendar-picker-indicator {background-color: $blue;}
-                        input{
+
+                        ::-webkit-calendar-picker-indicator {
+                            background-color: $blue;
+                        }
+
+                        input {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
@@ -111,13 +129,18 @@
                             width: 100%;
                         }
                     }
-                    .ending-date{
+
+                    .ending-date {
                         display: flex;
                         width: 100%;
                         flex-direction: column;
                         gap: 10px;
-                        ::-webkit-calendar-picker-indicator {background-color: $blue;}
-                        input{
+
+                        ::-webkit-calendar-picker-indicator {
+                            background-color: $blue;
+                        }
+
+                        input {
                             border: none;
                             outline: none;
                             padding: 15px 10px;
@@ -126,6 +149,10 @@
                             width: 100%;
                         }
                     }
+                }
+
+                .upload-project-file{
+                
                 }
             }
         }

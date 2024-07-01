@@ -112,14 +112,14 @@ function Default() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div class="premium-card">
-                                <div class="card-body">
-                                    <div class="info">
+                            <div className="premium-card">
+                                <div className="card-body">
+                                    <div className="info">
                                         <h1>Hello,Anna Miller.</h1>
                                         <p>Welcome to the Admin clan!   We appreciate your interest in our dashboard.</p>
                                         <button>Go Premium</button>
                                     </div>
-                                    <div class="image"> <img src={Welcome} width={'100%'} alt="" /></div>
+                                    <div className="image"> <img src={Welcome} width={'100%'} alt="" /></div>
 
                                 </div>
                             </div>

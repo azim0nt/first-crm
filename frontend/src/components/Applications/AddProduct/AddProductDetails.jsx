@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.bubble.css';
+
 import { context } from '../../../store';
 
 function AddProductDetails() {
