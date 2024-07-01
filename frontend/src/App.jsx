@@ -6,7 +6,7 @@ import Ecommerce from './components/Dashboards/Ecommerce';
 import Project from './components/Dashboards/Project';
 import Login from './components/Login';
 import Register from './components/Register';
-import { useReducer } from 'react';
+import { useReducer,useContext } from 'react';
 import { context, initialState, globalReducer } from './store';
 import ProjectList from './components/Applications/ProjectList'
 import CreateNew from './components/Applications/CreateNew'
@@ -27,12 +27,13 @@ import Pricing from './components/Applications/Pricing';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
-    store:state,
+    store: state,
     setStore: dispatch
   }
+
   return (
     <context.Provider value={contextPayload}>
-    <BrowserRouter>
+      <BrowserRouter>
 
         <div className="app-wrapper">
           <div id="container">
@@ -42,7 +43,7 @@ function App() {
                 path="/"
                 element={
 
-                    <CurrentPage />
+                  <CurrentPage />
 
                 }
               >
@@ -72,8 +73,9 @@ function App() {
               <Route path="register" element={<Register />} />
             </Routes>
           </div>
+
         </div>
-    </BrowserRouter>
+      </BrowserRouter>
     </context.Provider>
   );
 }

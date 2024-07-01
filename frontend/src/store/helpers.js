@@ -4,6 +4,8 @@ function globalReducer(state, payload) {
             return { ...state, totalPrice: payload.totalPrice };
         case 'changeTheme': // Corrected action type
             return { ...state, theme: payload.theme };
+        case "changeModalDisplay":
+            return {...state, modalWindow:payload.modalWindow}
         default:
             return state;
     }

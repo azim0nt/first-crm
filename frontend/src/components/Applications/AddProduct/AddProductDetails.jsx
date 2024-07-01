@@ -4,8 +4,8 @@ import ReactQuill from 'react-quill';
 import { context } from '../../../store';
 
 function AddProductDetails() {
-    const [editorHtml, setEditorHtml] = useState('');
     const {store, setStore} = useContext(context)
+    const [editorHtml, setEditorHtml] = useState('');
     const theme = store.theme.textColor === '#171829' ? 'snow' : 'dark';
     const modules = {
         toolbar: [

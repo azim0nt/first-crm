@@ -7,7 +7,8 @@ const initialState = {
         bgColor:'#FFFFFF',
         textColor:'#171829',
         backBgColor:'#f2f5fa'
-    }
+    },
+    modalWindow:'none'
 }
 
 const context = createContext()
