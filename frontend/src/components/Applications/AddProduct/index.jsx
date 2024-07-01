@@ -5,11 +5,12 @@ import PathToTab from '../../common/PathToTab'
 import { MdAddchart } from "react-icons/md";
 import 'react-quill/dist/quill.snow.css';
 import { RiImageAddFill } from "react-icons/ri";
-import { FiLayers } from "react-icons/fi";
+import { FaLayerGroup } from "react-icons/fa";
 import { IoIosPricetag } from "react-icons/io";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import AddProductDetails from './AddProductDetails';
 import ProductGallery from './ProductGallery';
+import ProductCategories from './ProductCategories';
 function AddProduct() {
     const {store, setStore} = useContext(context)
     const cardStyle = {backgroundColor:store.theme.bgColor}
@@ -38,7 +39,7 @@ function AddProduct() {
                                         <button  onClick={() => handleComponentChange('AddProductDetails')}>
                                         <div className={`left-part ${activeComponent === 'AddProductDetails' ? 'active' : ''}`}>
                                             <div>
-                                            <MdAddchart size={25} color={'#c9c9c950'}/>
+                                            <MdAddchart size={20} color={'#c9c9c950'}/>
                                             </div>
                                         </div>
                                         <div className="right-part" style={{color:store.theme.textColor}}>
@@ -53,7 +54,7 @@ function AddProduct() {
                                         <button  onClick={() => handleComponentChange('ProductGallery')}>
                                         <div className={`left-part ${activeComponent === 'ProductGallery' ? 'active' : ''}`}>
                                             <div>
-                                            <RiImageAddFill size={25} color={'#c9c9c950'}/>
+                                            <RiImageAddFill size={20} color={'#c9c9c950'}/>
                                             </div>
                                         </div>
                                         <div className="right-part" style={{color:store.theme.textColor}}>
@@ -64,11 +65,11 @@ function AddProduct() {
                                     </div> 
                                         </li>
                                         <li>
-                                            <div className="product-gallery btn">
-                                        <button>
-                                        <div className="left-part">
+                                            <div className="product-categories btn">
+                                        <button onClick={() => handleComponentChange('ProductCategories')}>
+                                        <div className={`left-part ${activeComponent === 'ProductCategories' ? 'active' : ''}`}>
                                             <div>
-                                            <FiLayers size={25} color={'#c9c9c950'}/>
+                                            <FaLayerGroup size={20} color={'#c9c9c950'}/>
                                             </div>
                                         </div>
                                         <div className="right-part" style={{color:store.theme.textColor}}>
@@ -83,7 +84,7 @@ function AddProduct() {
                                         <button>
                                         <div className="left-part">
                                             <div>
-                                            <IoIosPricetag size={25} color={'#c9c9c950'}/>
+                                            <IoIosPricetag size={20} color={'#c9c9c950'}/>
                                             </div>
                                         </div>
                                         <div className="right-part" style={{color:store.theme.textColor}}>
@@ -98,7 +99,7 @@ function AddProduct() {
                                         <button>
                                         <div className="left-part">
                                             <div>
-                                            <FaHandHoldingDollar size={25} color={'#c9c9c950'}/>
+                                            <FaHandHoldingDollar size={20} color={'#c9c9c950'}/>
                                             </div>
                                         </div>
                                         <div className="right-part" style={{color:store.theme.textColor}}>
@@ -115,6 +116,7 @@ function AddProduct() {
                                 <div className="right">
                                 {activeComponent === 'AddProductDetails' && <AddProductDetails />}
                                 {activeComponent === 'ProductGallery' && <ProductGallery />}
+                                {activeComponent === 'ProductCategories' && <ProductCategories />}
                                 </div>
                             </div>
                         </div>
