@@ -216,6 +216,55 @@
                                 }
                                
                             }
+                            .selling-prices{
+                                input,select{
+                                    width: 100%;
+                                    padding: 10px;
+                                    border-radius: 10px;
+                                    outline: none;
+                                    border: 1px solid $transparent-gray;
+                                    margin: 10px 0;
+                                }
+                                .initial-cost-and-selling-price{
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    gap: 10px;
+                                }
+                                .choose-currency-and-product-stocks{
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    gap: 10px;
+                                }
+                                .product-discount{
+                                    .btns{
+                                        display: grid;
+                                        grid-template-columns: repeat(5, 1fr);
+                                        gap: 20px;
+                                        margin: 10px 0;
+                                        button{
+                                            width: 100%;
+                                            height: 80px;
+                                            border-radius: 10px;
+                                            border: 1px solid $transparent-gray;
+                                            font-weight: 700;
+                                            &.light{
+
+                                                &.active{
+                                                    border: 1px solid $blue;
+                                                    color: $blue;
+                                                }
+                                            }
+                                            &.dark{
+                                                color: $gray-50;
+                                                &.active{
+                                                    background-color: #1f2028a6;
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

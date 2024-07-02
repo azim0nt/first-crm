@@ -11,6 +11,7 @@ import { FaHandHoldingDollar } from "react-icons/fa6";
 import AddProductDetails from './AddProductDetails';
 import ProductGallery from './ProductGallery';
 import ProductCategories from './ProductCategories';
+import SellingPrices from './SellingPrices';
 function AddProduct() {
     const {store, setStore} = useContext(context)
     const cardStyle = {backgroundColor:store.theme.bgColor}
@@ -81,8 +82,8 @@ function AddProduct() {
                                         </li>
                                         <li>
                                             <div className="product-gallery btn">
-                                        <button>
-                                        <div className="left-part">
+                                        <button  onClick={() => handleComponentChange('SellingPrices')}>
+                                        <div className={`left-part ${activeComponent === 'SellingPrices' ? 'active' : ''}`}>
                                             <div>
                                             <IoIosPricetag size={20} color={'#c9c9c950'}/>
                                             </div>
@@ -117,6 +118,7 @@ function AddProduct() {
                                 {activeComponent === 'AddProductDetails' && <AddProductDetails />}
                                 {activeComponent === 'ProductGallery' && <ProductGallery />}
                                 {activeComponent === 'ProductCategories' && <ProductCategories />}
+                                {activeComponent === 'SellingPrices' && <SellingPrices />}
                                 </div>
                             </div>
                         </div>
