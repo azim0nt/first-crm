@@ -12,6 +12,7 @@ import AddProductDetails from './AddProductDetails';
 import ProductGallery from './ProductGallery';
 import ProductCategories from './ProductCategories';
 import SellingPrices from './SellingPrices';
+import Advance from './Advance';
 function AddProduct() {
     const {store, setStore} = useContext(context)
     const cardStyle = {backgroundColor:store.theme.bgColor}
@@ -97,8 +98,8 @@ function AddProduct() {
                                         </li>
                                         <li>
                                             <div className="product-gallery btn">
-                                        <button>
-                                        <div className="left-part">
+                                        <button  onClick={() => handleComponentChange('Advance')}>
+                                        <div className={`left-part ${activeComponent === 'Advance' ? 'active' : ''}`}>
                                             <div>
                                             <FaHandHoldingDollar size={20} color={'#c9c9c950'}/>
                                             </div>
@@ -119,6 +120,7 @@ function AddProduct() {
                                 {activeComponent === 'ProductGallery' && <ProductGallery />}
                                 {activeComponent === 'ProductCategories' && <ProductCategories />}
                                 {activeComponent === 'SellingPrices' && <SellingPrices />}
+                                {activeComponent === 'Advance' && <Advance />}
                                 </div>
                             </div>
                         </div>

@@ -5,8 +5,8 @@ import { context } from '../../../store';
 
 function AddProductDetails() {
     const {store, setStore} = useContext(context)
-    const [editorHtml, setEditorHtml] = useState('');
     const theme = store.theme.textColor === '#171829' ? 'snow' : 'dark';
+    const [editorHtml, setEditorHtml] = useState('');
     const modules = {
         toolbar: [
           [{ 'size': ['', 'small', 'large', 'huge'] }],

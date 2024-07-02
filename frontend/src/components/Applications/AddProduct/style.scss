@@ -265,6 +265,84 @@
                                     }
                                 }
                             }
+                            .advance{
+                                .top-part{
+                                    width: 60%;
+                                    margin-bottom: 20px;
+                                    button{
+                                        padding: 10px 50px;
+                                        font-size: 16px;
+                                        font-weight: 700;
+                                        &.dark{
+                                            color: $gray-50;
+                                        }
+                                        &.active{
+                                            color: $blue;
+                                            border-bottom: 2px solid $blue;
+                                        }
+                                    }
+                                }
+                                .bottom-part{
+                                    .inventory{
+                                        select, input:not(.check){
+                                            width: 100%;
+                                            padding: 10px;
+                                            border: 1px solid $transparent-gray;
+                                            border-radius: 10px;
+                                            margin: 10px 0;
+                                            outline: none;
+    
+                                            &.dark{
+                                                background-color: $even-darker-blue;
+                                                color: $gray-50;
+                                                font-weight: 500;
+                                            }
+                                            &.dark-input{
+                                                background-color: $dark-blue;
+                                                color: $gray-50;
+                                            }
+                                        }
+                                        .sku-stock-and-reststack-date-pre-order{
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr;
+                                            gap: 10px;
+                                            .sku-stock-quantity{
+                                                display: grid;
+                                                grid-template-columns: 1fr 1fr;
+                                                gap: 10px;
+                                            }
+                                            .restock-date-pre-order{
+                                                display: grid;
+                                                grid-template-columns: 1fr 1fr;
+                                                gap: 10px;
+                                            }
+                                        }
+                                        .stock-low{
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr;
+                                            gap: 10px;
+                                        }
+                                        .allow-backorders{
+                                            margin-top: 30px;
+                                            h4{
+                                                margin-bottom: 10px;
+                                            }
+                                            div{
+                                                display: flex;
+                                                gap: 20px;
+                                                div.input{
+                                                    // display: flex;
+                                                    width: 10px;
+                                                    input{
+                                                        // width: 10px;
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
