@@ -1,6 +1,6 @@
 @import '../../../assets/styles/settings';
 
-.product-wrapper{
+.product-wrapper {
     height: 100vh;
     overflow: auto;
 
@@ -11,7 +11,8 @@
 
 
     scrollbar-width: none;
-    .product-content{
+
+    .product-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -20,6 +21,299 @@
             display: flex;
             justify-content: space-between;
             margin: 0 0 20px 0;
+        }
+
+        .middle {
+            .section-1 {
+                margin-bottom: 20px;
+                .filters {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .grid-change {
+                        display: grid;
+                        grid-template-columns: 25% 80%;
+
+                        .left {
+                            display: flex;
+                            gap: 30px;
+                            justify-content: space-between;
+
+                            button {
+                                width: 20px;
+                                height: 20px;
+
+                                .column-2 {
+                                    display: grid;
+                                    width: 100%;
+                                    height: 100%;
+                                    grid-template-columns: 1fr 1fr;
+                                    gap: 5px;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    span {
+                                        background-color: $blue;
+                                        width: 10px;
+                                        height: 100%;
+                                    }
+                                }
+
+                                .column-3 {
+                                    display: grid;
+                                    height: 100%;
+                                    grid-template-columns: 1fr 1fr 1fr;
+                                    gap: 5px;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    span {
+                                        background-color: $blue;
+                                        width: 10px;
+                                        height: 100%;
+                                    }
+                                }
+
+                                .column-4 {
+                                    display: grid;
+                                    height: 100%;
+                                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                                    gap: 5px;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    span {
+                                        background-color: $blue;
+                                        width: 10px;
+                                        height: 100%;
+                                    }
+                                }
+
+                                .column-5 {
+                                    display: grid;
+                                    height: 100%;
+                                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                                    gap: 5px;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    span {
+                                        background-color: $blue;
+                                        width: 10px;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        .right {
+                            display: flex;
+                            justify-content: right;
+                            align-items: center;
+                            gap: 10px;
+                            padding-right: 100px;
+
+                            select {
+                                border: none;
+                                outline: none;
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+                    .filter-search{
+                        display: grid;
+                        grid-template-columns: 25% 75%;
+                        gap: 20px;
+                        .filter{
+                            width: 100%;
+                            height: 50px;
+                            border-radius: 10px ;
+                            position: relative;
+                            div{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 0 10px;
+                            }
+                            button{
+                                display: flex;
+                                // cursor: pointer;
+                                align-items: center;
+                            }
+                            .modal-filter{
+                                position: absolute;
+                                width: 100%;
+                                height: 500px;
+                                bottom: -510px;
+                                display: flex;
+                                flex-direction: column;
+                                overflow: scroll;
+                                align-items: start;
+                                padding: 10px;
+                                gap: 10px;
+                                .category{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: start;
+                                    align-items: start;
+                                    gap: 10px;
+                                    height: auto;
+                                    span{
+                                        display: flex;
+                                        gap: 5px;
+                                    }
+                                }
+                                .brand{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: start;
+                                    align-items: start;
+                                    gap: 10px;
+                                    border-bottom: 1px solid $transparent-gray;
+                                    padding-bottom: 10px;
+                                    span{
+                                        display: flex;
+                                        gap: 5px;
+                                    }
+                                }
+                                .colors{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: start;
+                                    align-items: start;
+                                    gap: 10px;
+                                    border-bottom: 1px solid $transparent-gray;
+                                    // padding-bottom: 10px;
+                                    // height: 100px;
+                                    div{
+                                        display: grid;
+                                        height: 20px;
+                                        width: 100%;
+                                        grid-template-columns: repeat(9, 1fr);
+                                        justify-content: space-between;
+                                        gap: 5px;
+                                        span{
+                                            width: 20px;
+                                            height: 20px;
+                                            border-radius: 50%;
+                                            cursor: pointer;
+                                            &:nth-child(1){
+                                                background-color: #fff;
+                                            }
+                                            &:nth-child(2){
+                                                background-color: #959595;
+                                            }
+                                            &:nth-child(3){
+                                                background-color: #000;
+                                            }
+                                            &:nth-child(4){
+                                                background-color: #ffb17a;
+                                            }
+                                            &:nth-child(5){
+                                                background-color: #6fb866;
+                                            }
+                                            &:nth-child(6){
+                                                background-color: #ffc0cb;
+                                            }
+                                            &:nth-child(7){
+                                                background-color: #f2f896;
+                                            }
+                                            &:nth-child(8){
+                                                background-color: #63b4f2;
+                                            }
+                                            &:nth-child(9){
+                                                background-color: #ff647f;
+                                            }
+                                        }
+                                    }
+                                }
+                                .price{
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+                        }
+                        .search{
+                            display: grid;
+                            grid-template-columns: 95% 5%;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            input{
+                                border: none;
+                                outline: none;
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-2 {
+                .products {
+                    display: grid;
+                    gap: 50px;
+                    justify-content: center;
+                    align-items: center;
+                    &.grid-1{
+                        gap: 20px;
+                        .product{
+                            display: grid;
+                            height: 300px;
+                            grid-template-columns: 20% 80%;
+                            .top-part{
+
+                                img {
+                                    max-width: 90%;
+                                }
+                            }
+                            .bottom-part{
+                                justify-content: center;
+                                
+                            }
+                        }
+                    }
+                    .product {
+                        width: 100%;
+                        border-radius: 20px;
+                        overflow: hidden;
+
+                        .top-part {
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+
+                        .bottom-part {
+                            padding: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            span {
+
+                                .current-price {
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    color: $blue;
+                                    margin-right: 20px;
+                                }
+
+                                .old-price {
+
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    text-decoration: line-through;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
