@@ -34,12 +34,14 @@
                         grid-template-columns: 40% 60%;
                         padding-top: 20px;
                         gap: 100px;
+
                         .left {
                             ul {
                                 list-style-type: none;
                                 display: flex;
                                 justify-content: center;
                                 flex-direction: column;
+
                                 li {
                                     .btn {
                                         button {
@@ -55,8 +57,8 @@
                                                 justify-content: center;
                                                 align-items: center;
                                                 border: 1px solid $transparent-gray;
-                                                
-                                                div{
+
+                                                div {
                                                     width: 50px;
                                                     height: 50px;
                                                     display: flex;
@@ -66,28 +68,34 @@
                                                     // margin: 2px;
                                                     border-radius: 50%;
                                                 }
-                                                &.active{
+
+                                                &.active {
                                                     border: 1px solid $blue;
-                                                    div{
+
+                                                    div {
                                                         background-color: $blue;
-                                                        svg{
+
+                                                        svg {
                                                             fill: #fff;
 
                                                         }
                                                     }
-                                                    &:hover{
-                                                        div{
-                                                            svg{
+
+                                                    &:hover {
+                                                        div {
+                                                            svg {
                                                                 fill: #fff;
                                                             }
                                                         }
                                                     }
                                                 }
-                                                &:hover{
-                                                    
+
+                                                &:hover {
+
                                                     border: 1px solid $blue;
-                                                    div{
-                                                        svg{
+
+                                                    div {
+                                                        svg {
                                                             fill: $blue;
                                                             transition: 0s;
                                                         }
@@ -100,8 +108,10 @@
                                             }
                                         }
                                     }
+
                                     position: relative;
                                     padding-bottom: 70px;
+
                                     &::before {
                                         content: "";
                                         position: absolute;
@@ -110,57 +120,68 @@
                                         height: 50px;
                                         left: 20px;
                                     }
-                                    &:last-child{
+
+                                    &:last-child {
                                         padding-bottom: 0;
-                                        &::before{
+
+                                        &::before {
                                             display: none;
                                         }
                                     }
                                 }
                             }
                         }
-                        .right{
+
+                        .right {
                             width: 100%;
-                            .add-product-details{
+
+                            .add-product-details {
                                 width: 100%;
                                 display: flex;
                                 flex-direction: column;
                                 gap: 20px;
-                                .product-title{
+
+                                .product-title {
                                     display: flex;
                                     flex-direction: column;
                                     gap: 10px;
-                                    input{
-                                        background-color:transparent !important;
+
+                                    input {
+                                        background-color: transparent !important;
                                         outline: none;
                                         border-radius: 5px;
                                         padding: 10px;
                                     }
                                 }
+
                                 .quill {
                                     border: 1px solid $transparent-gray;
                                     border-radius: 10px;
                                     width: 100%;
                                     height: 300px;
+
                                     * {
-                                      border: none;
+                                        border: none;
                                     }
-                                  
+
                                     &.snow {
-                                      border: 1px solid $gray;
+                                        border: 1px solid $gray;
                                     }
-                                  }
+                                }
                             }
-                            .product-categories{
+
+                            .product-categories {
                                 display: flex;
                                 gap: 20px;
-                                .left-part{
+
+                                .left-part {
                                     width: 50%;
                                     display: flex;
                                     flex-direction: column;
                                     gap: 20px;
-                                    .add-category{
-                                        select{
+
+                                    .add-category {
+                                        select {
                                             width: 100%;
                                             outline: none;
                                             border: 1px solid $transparent-gray;
@@ -169,8 +190,9 @@
                                             margin: 10px 0;
                                         }
                                     }
-                                    .publish-status{
-                                        select{
+
+                                    .publish-status {
+                                        select {
                                             width: 100%;
                                             outline: none;
                                             border: 1px solid $transparent-gray;
@@ -179,8 +201,9 @@
                                             margin: 10px 0;
                                         }
                                     }
-                                    .create-new-category{
-                                        .blue-btn{
+
+                                    .create-new-category {
+                                        .blue-btn {
                                             background-color: $light-blue;
                                             padding: 10px;
                                             display: flex;
@@ -192,19 +215,22 @@
                                         }
                                     }
                                 }
-                                .right-part{
+
+                                .right-part {
                                     width: 50%;
                                     display: flex;
                                     flex-direction: column;
                                     justify-content: space-between;
                                     gap: 20px;
-                                    .add-tag{
-                                        .tags-input{
+
+                                    .add-tag {
+                                        .tags-input {
                                             margin: 10px 0;
                                         }
                                     }
-                                    .publish-date-time{
-                                        input{
+
+                                    .publish-date-time {
+                                        input {
                                             width: 100%;
                                             outline: none;
                                             border: 1px solid $transparent-gray;
@@ -214,10 +240,13 @@
                                         }
                                     }
                                 }
-                               
+
                             }
-                            .selling-prices{
-                                input,select{
+
+                            .selling-prices {
+
+                                input,
+                                select {
                                     width: 100%;
                                     padding: 10px;
                                     border-radius: 10px;
@@ -225,38 +254,45 @@
                                     border: 1px solid $transparent-gray;
                                     margin: 10px 0;
                                 }
-                                .initial-cost-and-selling-price{
+
+                                .initial-cost-and-selling-price {
                                     display: grid;
                                     grid-template-columns: 1fr 1fr;
                                     gap: 10px;
                                 }
-                                .choose-currency-and-product-stocks{
+
+                                .choose-currency-and-product-stocks {
                                     display: grid;
                                     grid-template-columns: 1fr 1fr;
                                     gap: 10px;
                                 }
-                                .product-discount{
-                                    .btns{
+
+                                .product-discount {
+                                    .btns {
                                         display: grid;
                                         grid-template-columns: repeat(5, 1fr);
                                         gap: 20px;
                                         margin: 10px 0;
-                                        button{
+
+                                        button {
                                             width: 100%;
                                             height: 80px;
                                             border-radius: 10px;
                                             border: 1px solid $transparent-gray;
                                             font-weight: 700;
-                                            &.light{
 
-                                                &.active{
+                                            &.light {
+
+                                                &.active {
                                                     border: 1px solid $blue;
                                                     color: $blue;
                                                 }
                                             }
-                                            &.dark{
+
+                                            &.dark {
                                                 color: $gray-50;
-                                                &.active{
+
+                                                &.active {
                                                     background-color: #1f2028a6;
                                                 }
 
@@ -265,80 +301,143 @@
                                     }
                                 }
                             }
-                            .advance{
-                                .top-part{
+
+                            .advance {
+                                .top-part {
                                     width: 60%;
                                     margin-bottom: 20px;
-                                    button{
+
+                                    button {
                                         padding: 10px 50px;
                                         font-size: 16px;
                                         font-weight: 700;
-                                        &.dark{
+
+                                        &.dark {
                                             color: $gray-50;
                                         }
-                                        &.active{
+
+                                        &.active {
                                             color: $blue;
                                             border-bottom: 2px solid $blue;
                                         }
                                     }
                                 }
-                                .bottom-part{
-                                    .inventory{
-                                        select, input:not(.check){
-                                            width: 100%;
-                                            padding: 10px;
-                                            border: 1px solid $transparent-gray;
-                                            border-radius: 10px;
-                                            margin: 10px 0;
-                                            outline: none;
-    
-                                            &.dark{
-                                                background-color: $even-darker-blue;
-                                                color: $gray-50;
-                                                font-weight: 500;
-                                            }
-                                            &.dark-input{
-                                                background-color: $dark-blue;
-                                                color: $gray-50;
-                                            }
+
+                                .bottom-part {
+
+                                    select,
+                                    input {
+                                        width: 100%;
+                                        padding: 10px;
+                                        border: 1px solid $transparent-gray;
+                                        border-radius: 10px;
+                                        margin: 10px 0;
+                                        outline: none;
+
+                                        &.dark {
+                                            background-color: $even-darker-blue;
+                                            color: $gray-50;
+                                            font-weight: 500;
                                         }
-                                        .sku-stock-and-reststack-date-pre-order{
+
+                                        &.dark-input {
+                                            background-color: $dark-blue;
+                                            color: $gray-50;
+                                        }
+                                    }
+
+                                    .inventory {
+                                        .sku-stock-and-reststack-date-pre-order {
                                             display: grid;
                                             grid-template-columns: 1fr 1fr;
                                             gap: 10px;
-                                            .sku-stock-quantity{
+
+                                            .sku-stock-quantity {
                                                 display: grid;
                                                 grid-template-columns: 1fr 1fr;
                                                 gap: 10px;
                                             }
-                                            .restock-date-pre-order{
+
+                                            .restock-date-pre-order {
                                                 display: grid;
                                                 grid-template-columns: 1fr 1fr;
                                                 gap: 10px;
                                             }
                                         }
-                                        .stock-low{
+
+                                        .stock-low {
                                             display: grid;
                                             grid-template-columns: 1fr 1fr;
                                             gap: 10px;
                                         }
-                                        .allow-backorders{
+
+                                        .allow-backorders {
                                             margin-top: 30px;
-                                            h4{
+
+                                            h4 {
                                                 margin-bottom: 10px;
                                             }
-                                            div{
+
+                                            div {
                                                 display: flex;
                                                 gap: 20px;
-                                                div.input{
+
+                                                div.input {
                                                     // display: flex;
                                                     width: 10px;
-                                                    input{
+
+                                                    input {
                                                         // width: 10px;
                                                     }
+
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .additional-options {
+                                        .additional-tag-specific-tags {
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr;
+                                            gap: 10px;
+                                            .specific-tags{
+                                                h4{
+                                                    margin-bottom: 10px;
+                                                }
+                                            }
+                                        }
+                                        .additional-description{
+                                            margin-top: 20px;
+                                            .editor {
+                                                border: 1px solid $transparent-gray;
+                                                border-radius: 10px;
+                                                margin: 10px 0;
+                                                height: 150px;
+                                                *{
+                                                    border: none;
                                                     
                                                 }
                                             }
+                                        }
+                                    }
+                                    .shipping{
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 20px;
+                                        .zip-city-state{
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr 1fr;
+                                            gap: 10px;
+                                            align-items: center;
+                                            .city,.state{
+                                                    margin-top: 16px;
+                                            }
+                                        }
+                                        .dimensions{
+                                            display: grid;
+
+                                            grid-template-columns: 1fr 1fr 1fr;
+                                            gap:10px;
                                         }
                                     }
                                 }
