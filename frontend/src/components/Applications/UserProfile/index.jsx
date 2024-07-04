@@ -7,8 +7,8 @@ import Avatar from '../../../assets/images/avatar.jpg'
 import PostImage1 from '../../../assets/images/profile-style-img3.png'
 import PostImage2 from '../../../assets/images/profile-style-img.png'
 import PostImage3 from '../../../assets/images/img.png'
-import { MdEmail } from "react-icons/md";
 import { IoCall, IoNavigate } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
 
 function UserProfile() {

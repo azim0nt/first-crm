@@ -1,6 +1,6 @@
 @import '../../../assets/styles/settings';
 
-.product-page-wrapper{
+.product-page-wrapper {
     height: 100vh;
     overflow: auto;
 
@@ -11,7 +11,8 @@
 
 
     scrollbar-width: none;
-    .product-page-content{
+
+    .product-page-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -20,6 +21,164 @@
             display: flex;
             justify-content: space-between;
             margin: 0 0 20px 0;
+        }
+
+        .middle {
+            .section-1 {
+                display: grid;
+                grid-template-columns: 0.5fr 1.5fr 0.5fr;
+                gap: 20px;
+
+                .carousel-card {
+                    padding: 20px;
+                    height: 550px;
+                    border-radius: 20px;
+
+                    .carousel-root {
+                        .carousel {
+                            .thumbs-wrapper {
+                                padding-top: 10px;
+                                margin: 0;
+
+                                // display: none;
+                                .thumbs {
+                                    .thumb {
+                                        border: 1px solid $blue;
+                                        padding: 0;
+                                        border-radius: 10px;
+                                        // margin: 1px;
+                                    }
+                                }
+                            }
+
+                            &.carousel-slider {
+                                .image {
+                                    width: 100%;
+                                    height: 400px;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+
+                                    img {
+                                        border-radius: 10px;
+                                    }
+                                }
+
+                                height: 400px;
+                            }
+                        }
+                    }
+                }
+
+                .about-card {
+                    height: 550px;
+                    padding: 20px;
+                    border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .price {
+                        display: flex;
+                        gap: 5px;
+                        font-weight: 600;
+                        align-items: center;
+
+                        .current-price {
+                            font-size: 20px;
+                            color: $blue;
+                        }
+
+                        .old-price {
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .colors {
+                        display: flex;
+                        gap: 5px;
+
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+
+                            &:nth-child(1) {
+                                background-color: $blue;
+                            }
+
+                            &:nth-child(2) {
+                                background-color: $orange;
+                            }
+
+                            &:nth-child(3) {
+                                background-color: $green;
+                            }
+
+                            &:nth-child(4) {
+                                background-color: $skyblue;
+                            }
+
+                            &:nth-child(5) {
+                                background-color: $yellow;
+                            }
+                        }
+                    }
+
+                    .desc {
+
+                        p {
+                            text-wrap: balance;
+                            font-weight: 500;
+                            line-height: 30px;
+                        }
+                    }
+
+                    .params {
+                        ul {
+                            list-style-type: none;
+
+                            li {
+                                margin: 10px 0;
+
+                                .green {
+                                    color: $green;
+                                }
+                            }
+                        }
+                    }
+
+                    .share-it {
+                        .icons {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+
+                            a {
+                                border-radius: 50%;
+                                border: 1px solid $transparent-gray;
+                                width: 50px;
+                                height: 50px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                &:hover {
+                                    border: 1px solid $blue;
+                                    *{
+                                        fill: $blue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .rate-now{
+                        
+                    }
+                }
+            }
         }
     }
 }
