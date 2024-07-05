@@ -24,6 +24,9 @@
         }
 
         .middle {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             .section-1 {
                 display: grid;
                 grid-template-columns: 0.5fr 1.5fr 0.5fr;
@@ -246,6 +249,39 @@
                         }
                     }
                 }
+            }
+            .section-2{
+                    .more-details-card{
+                        padding: 20px;
+                        border-radius: 20px;
+                        .top-part{
+                            display: flex;
+                            gap: 10px;
+                            border-bottom: 1px solid $transparent-gray;
+                            button{
+                                padding: 10px 20px;
+                                font-size: 20px;
+                                font-weight: 600;
+                                &.active{
+                                    border-bottom: 2px solid $blue;
+                                    color: $blue;
+                                    &.dark{
+                                        color: $blue;
+                                    }
+                                }
+                                &.dark{
+                                    color: $gray-50;
+                                }
+                            }
+                        }
+                        .bottom-part{
+                            padding: 20px;
+                            p{
+                                text-wrap: balance;
+                                line-height: 25px;
+                            }
+                        }
+                    }
             }
         }
     }

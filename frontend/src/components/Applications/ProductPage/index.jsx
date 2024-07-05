@@ -1,5 +1,5 @@
 import './style.scss'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -15,12 +15,13 @@ import { BsCart4 } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { IoIosGift } from "react-icons/io";
 import { ImTruck } from "react-icons/im";
-import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegClock, FaShoppingBasket, FaHeart, FaRegCreditCard  } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegClock, FaShoppingBasket, FaHeart, FaRegCreditCard } from "react-icons/fa";
 
 function ProductPage() {
     const { store, setStore } = useContext(context)
+    const [text, setText] = useState('febric')
     const cardStyle = { backgroundColor: store.theme.bgColor }
-
+    const themeStatus = store.theme.textColor === '#171829' ? 'light' : 'dark'
     return (
         <>
             <div className="product-page-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
@@ -128,7 +129,7 @@ function ProductPage() {
                                         </span>
                                         <div className="right">
                                             <p>Festival Offer
-                                            New Online Special Festivalr</p>
+                                                New Online Special Festivalr</p>
                                         </div>
                                     </div>
                                     <div>
@@ -137,9 +138,33 @@ function ProductPage() {
                                         </span>
                                         <div className="right">
                                             <p>Online Payment
-                                            Contrary To Popular Belief.</p>
+                                                Contrary To Popular Belief.</p>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="section-2">
+                            <div className="more-details-card" style={cardStyle}>
+                                <div className="top-part">
+                                    <button className={`${text ==='febric' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('febric') }}>
+                                        Febric
+                                    </button>
+                                    <button className={`${text ==='video' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('video') }}>
+                                        Video
+                                    </button>
+                                    <button className={`${text ==='details' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('details') }}>
+                                        Details
+                                    </button>
+                                    <button className={`${text ==='brand' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('brand') }}>
+                                        Brand
+                                    </button>
+                                </div>
+                                <div className="bottom-part">
+                                    {text === 'febric' && <p>Refresh your wardrobe with this chic top. With an eye-catching square neck, this top also features pretty puff sleeves. Stunning pink colour Classic solid pattern Square neck Elasticated puff sleeves Belt included, Polyester fabric, machine wash.." Tee Stores is an Indian contemporary clothing brand. The product pages display a fine quality fabric with colorful description. We offer many vivid designs, art, styles that "combine heritage with modernity, simplicity, playfulness and street style"."</p>}
+                                    {text === 'video' && <p>Lorate Solid Men's Fashion Full Sleeves Latest Jacket for Men With Button Closure Long Sleeve Casual Torn Lycra Denim Jacket.</p>}
+                                    {text === 'details' &&<p>Rock Paper Scissors Various Dots Half Sleeves Girl’s Regular Fit T-Shirt I 100% Cotton T Shirt with Half Sleeve Round Neck I Regular Wear Solid Kids Tees and Black Sleeve.</p>}
+                                    {text === 'brand' && <p>Product Dimensions : 18 x 18 x 4 cm <br /> Date First Available : 31 March 2024 <br /> Manufacturer : Tee Stores <br /> Item part number : TS-WT721-XS-WHITE</p>}
                                 </div>
                             </div>
                         </div>
