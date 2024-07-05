@@ -11,9 +11,11 @@ import Product4 from '../../../assets/images/products-2/image_4.jpg'
 import Product5 from '../../../assets/images/products-2/image_5.jpg'
 import Product6 from '../../../assets/images/products-2/image_6.jpg'
 import { BsCart4 } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
+// import { MdEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
+import { IoIosGift } from "react-icons/io";
+import { ImTruck } from "react-icons/im";
+import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegClock, FaShoppingBasket, FaHeart, FaRegCreditCard  } from "react-icons/fa";
 
 function ProductPage() {
     const { store, setStore } = useContext(context)
@@ -75,7 +77,7 @@ function ProductPage() {
                                 </div>
                                 <div className="share-it">
                                     <h3>share it</h3>
-                                <div className="icons">
+                                    <div className="icons">
                                         <a href="facebook.com"><FaFacebookF size={20} color={store.theme.textColor} /></a>
                                         <a href="google.com"><FaGoogle size={20} color={store.theme.textColor} /></a>
                                         <a href="x.com"><FaTwitter size={20} color={store.theme.textColor} /></a>
@@ -84,7 +86,60 @@ function ProductPage() {
                                 </div>
                                 <div className="rate-now">
                                     <h3>Rate Now</h3>
-                                    <button><Link to={'/cart'}><BsCart4/> Add To Cart</Link></button>
+                                    <div className="btns">
+                                        <button className='blue-btn'><Link to={'/cart'}><FaShoppingBasket size={25} color='#fff' />Add To Cart</Link></button>
+                                        <button className='green-btn'><Link to={'/checkout'}><BsCart4 size={25} color='#fff' /> Buy Now</Link></button>
+                                        <button className='orange-btn'><Link to={'/list_wish'}><FaHeart size={25} color='#fff' />Add To WishList</Link></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="brand-and-delivery-cards">
+                                <div className="brand-card" style={cardStyle}>
+                                    <Link to={'/product_cards'}>
+                                        <h3>Brand</h3>
+                                        <p>Clothing</p>
+                                        <p>Bags</p>
+                                        <p>Footwear</p>
+                                        <p>Watches</p>
+                                        <p>ACCESSORIES</p>
+                                    </Link>
+                                </div>
+                                <div className="delivery-card" style={cardStyle}>
+                                    <div>
+                                        <span className="left">
+                                            <ImTruck size={25} />
+                                        </span>
+                                        <span className="right">
+                                            <p>Free Shipping Free Shipping World Wide</p>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span className="left">
+                                            <FaRegClock size={25} />
+                                        </span>
+                                        <div className="right">
+                                            <p>24 X 7 Service Online Service For New Customer</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span className="left">
+                                            <IoIosGift size={25} />
+                                        </span>
+                                        <div className="right">
+                                            <p>Festival Offer
+                                            New Online Special Festivalr</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span className="left">
+                                            <FaRegCreditCard size={25} />
+                                        </span>
+                                        <div className="right">
+                                            <p>Online Payment
+                                            Contrary To Popular Belief.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -167,15 +167,83 @@
 
                                 &:hover {
                                     border: 1px solid $blue;
-                                    *{
+
+                                    * {
                                         fill: $blue;
                                     }
                                 }
                             }
                         }
                     }
-                    .rate-now{
-                        
+
+                    .rate-now {
+                        .btns {
+                            display: flex;
+                            gap: 10px;
+                            margin-top: 25px;
+
+                            button {
+                                a {
+                                    color: #fff;
+                                    font-size: 16px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 2px 15px;
+                                    gap: 5px;
+                                }
+
+                                &.blue-btn {
+                                    @extend %blue-btn;
+                                }
+
+                                &.green-btn {
+                                    @extend %green-btn;
+                                }
+
+                                &.orange-btn {
+                                    @extend %orange-btn;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .brand-and-delivery-cards {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .brand-card {
+                        padding: 20px;
+                        border-radius: 20px;
+
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                        }
+                    }
+
+                    .delivery-card {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        padding: 20px;
+                        border-radius: 20px;
+
+                        div {
+                            display: flex;
+                            gap: 10px;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 14px;
+                            .left {
+                                * {
+                                    fill: $blue;
+                                }
+                            }
+                        }
                     }
                 }
             }
