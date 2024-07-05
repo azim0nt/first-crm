@@ -1,0 +1,210 @@
+[
+    {
+        "name": "Apple Desktop 2024",
+        "sku": "02145YK796",
+        "category": "Laptops",
+        "price": "56000.00",
+        "qty": "13",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Apple iphone 13 Pro",
+        "sku": "56379FG3AW",
+        "category": "Smart Phones",
+        "price": "19000.00",
+        "qty": "48",
+        "status": "In Stock"
+    },
+    {
+        "name": "Headphones",
+        "sku": "33KR5689B1",
+        "category": "Smart Headphones",
+        "price": "10000.00",
+        "qty": "5",
+        "status": "In Stock"
+    },
+    {
+        "name": "wireless-headphone",
+        "sku": "AD6789HEY0",
+        "category": "Smart Headphones",
+        "price": "15000.00",
+        "qty": "4",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood Chair",
+        "sku": "456DF78DFQ",
+        "category": "Furniture",
+        "price": "99000.00",
+        "qty": "2",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood Chair",
+        "sku": "5633GD3K54",
+        "category": "Furniture",
+        "price": "1000.00",
+        "qty": "8",
+        "status": "Sold Out"
+    },
+    {
+        "name": "MacBook Air 13.3-inch",
+        "sku": "589KO8PPQ8",
+        "category": "Laptops",
+        "price": "45000.00",
+        "qty": "10",
+        "status": "Sold Out"
+    },
+    {
+        "name": "M185 Compact Wireless Mouse",
+        "sku": "02145YK796",
+        "category": "E-Commerce",
+        "price": "56000.00",
+        "qty": "13",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood chairs",
+        "sku": "568GH3LLQ2",
+        "category": "Furniture",
+        "price": "78000.00",
+        "qty": "50",
+        "status": "In Stock"
+    },
+    {
+        "name": "Smart watch",
+        "sku": "58FR7K34F6",
+        "category": "Electric",
+        "price": "25000.00",
+        "qty": "48",
+        "status": "Sold Out"
+    },
+    {
+        "name": "DVD",
+        "sku": "HG5667DFQ1",
+        "category": "Electric",
+        "price": "5600.00",
+        "qty": "10",
+        "status": "In Stock"
+    },
+    {
+        "name": "Speakers",
+        "sku": "02145YK796",
+        "category": "Electric",
+        "price": "12200.00",
+        "qty": "50",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Apple iphone 13 Pro",
+        "sku": "56379FG3AW",
+        "category": "Smart Phones",
+        "price": "19000.00",
+        "qty": "48",
+        "status": "In Stock"
+    },
+    {
+        "name": "Headphones",
+        "sku": "33KR5689B1",
+        "category": "Smart Headphones",
+        "price": "10000.00",
+        "qty": "5",
+        "status": "In Stock"
+    },
+    {
+        "name": "Wood chairs",
+        "sku": "568GH3LLQ2",
+        "category": "Furniture",
+        "price": "78000.00",
+        "qty": "50",
+        "status": "In Stock"
+    },
+    {
+        "name": "Smart watch",
+        "sku": "58FR7K34F6",
+        "category": "Electric",
+        "price": "25000.00",
+        "qty": "48",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Apple iphone 13 Pro",
+        "sku": "56379FG3AW",
+        "category": "Smart Phones",
+        "price": "19000.00",
+        "qty": "48",
+        "status": "In Stock"
+    },
+    {
+        "name": "Headphones",
+        "sku": "33KR5689B1",
+        "category": "Smart Headphones",
+        "price": "10000.00",
+        "qty": "5",
+        "status": "In Stock"
+    },
+    {
+        "name": "wireless-headphone",
+        "sku": "AD6789HEY0",
+        "category": "Smart Headphones",
+        "price": "15000.00",
+        "qty": "4",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood Chair",
+        "sku": "456DF78DFQ",
+        "category": "Furniture",
+        "price": "99000.00",
+        "qty": "2",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood Chair",
+        "sku": "5633GD3K54",
+        "category": "Furniture",
+        "price": "1000.00",
+        "qty": "8",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Apple Desktop 2024",
+        "sku": "02145YK796",
+        "category": "Laptops",
+        "price": "56000.00",
+        "qty": "13",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Apple iphone 13 Pro",
+        "sku": "56379FG3AW",
+        "category": "Smart Phones",
+        "price": "19000.00",
+        "qty": "48",
+        "status": "In Stock"
+    },
+    {
+        "name": "Headphones",
+        "sku": "33KR5689B1",
+        "category": "Smart Headphones",
+        "price": "10000.00",
+        "qty": "5",
+        "status": "In Stock"
+    },
+    {
+        "name": "wireless-headphone",
+        "sku": "AD6789HEY0",
+        "category": "Smart Headphones",
+        "price": "15000.00",
+        "qty": "4",
+        "status": "Sold Out"
+    },
+    {
+        "name": "Wood Chair",
+        "sku": "456DF78DFQ",
+        "category": "Furniture",
+        "price": "99000.00",
+        "qty": "2",
+        "status": "Sold Out"
+    }
+]
