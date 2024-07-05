@@ -6,8 +6,8 @@ import productsList from '../../../db/productsList.json'
 import { Link } from 'react-router-dom'
 import { MdOutlineCancel } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
-import { FaFilter } from "react-icons/fa";
-
+import { FaFilter, FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import ReactPaginate from 'react-paginate';
 import Product1 from '../../../assets/images/productList/image_1.png'
 import Product2 from '../../../assets/images/productList/image_2.png'
 import Product3 from '../../../assets/images/productList/image_3.png'
@@ -68,6 +68,60 @@ function ProductList() {
         Product25,
         Product26
     ]
+    const [currentPage, setCurrentPage] = useState(0);
+    const [entriesPerPage, setEntriesPerPage] = useState(10);
+    const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'ascending' });
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handlePageClick = (data) => {
+        setCurrentPage(data.selected);
+    };
+
+    const handleEntriesChange = (e) => {
+        setEntriesPerPage(Number(e.target.value));
+        setCurrentPage(0);
+    };
+
+    const handleSort = (key) => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+        setCurrentPage(0);
+    };
+
+    const combinedList = productsList.map((product, index) => ({
+        ...product,
+        image: images[index]
+    }));
+
+    const sortedProducts = [...combinedList].sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+            return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+    });
+
+    const filteredProducts = sortedProducts.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.price.toString().includes(searchQuery) ||
+        product.qty.toString().includes(searchQuery) ||
+        product.status.toLowerCase().includes(searchQuery)
+    );
+
+    const offset = currentPage * entriesPerPage;
+    const currentProducts = filteredProducts.slice(offset, offset + entriesPerPage);
+
     return (
         <>
             <div className="product-list-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
@@ -124,29 +178,45 @@ function ProductList() {
                                 </div>
                                 <div className="bottom-part">
                                     <div className="search">
-                                        <select className={themeStatus}><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="100">25</option></select>
+                                        <select
+                                            className={themeStatus}
+                                            value={entriesPerPage}
+                                            onChange={handleEntriesChange}
+                                        >
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                        </select>
                                         <p>entries per page</p>
-                                        <input type="text" placeholder='Search...' className={themeStatus}  />
+                                        <input
+                                            type="text"
+                                            placeholder="Search..."
+                                            className={themeStatus}
+                                            value={searchQuery}
+                                            onChange={handleSearchChange}
+                                        />
                                     </div>
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>
+                                                <th onClick={() => handleSort('name')}>
                                                     <p>Product Name</p>
                                                 </th>
-                                                <th>
+                                                <th onClick={() => handleSort('sku')}>
                                                     <p>SKU</p>
                                                 </th>
-                                                <th>
+                                                <th onClick={() => handleSort('category')}>
                                                     <p>Category</p>
                                                 </th>
-                                                <th>
+                                                <th onClick={() => handleSort('price')}>
                                                     <p>Price</p>
                                                 </th>
-                                                <th>
+                                                <th onClick={() => handleSort('qty')}>
                                                     <p>Qty</p>
                                                 </th>
-                                                <th>
+                                                <th onClick={() => handleSort('status')}>
                                                     <p>Status</p>
                                                 </th>
                                                 <th>
@@ -158,45 +228,55 @@ function ProductList() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {
-                                                productsList.map((product, index)=>{
-                                                    return (
-                                                        <tr>
-                                                            <td>
-                                                                <input type="checkbox" />
-                                                                <div className="img-container">
-                                                                    <img src={images[index]} alt="" />
-                                                                </div>
-                                                                <p>
-                                                                    {product.name}
-                                                                </p>
-                                                            </td>
-                                                            <td>
-                                                                <p>
-                                                                    {product.sku}
-                                                                </p>
-                                                            </td>
-                                                            <td>
-                                                                <p>
-                                                                    {product.category}
-                                                                </p>
-                                                            </td>
-                                                            <td>
-                                                                <p>
-                                                                    {product.qty}
-                                                                </p>
-                                                            </td>
-                                                            <td>
-                                                                <p className={product.status === "Sold Out" ? 'orange' :}>
-                                                                    {product}
-                                                                </p>
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
+                                            {currentProducts.map((product, index) => (
+                                                <tr key={index}>
+                                                    <td>
+                                                        <div className="container">
+                                                            <input type="checkbox" />
+                                                            <div className="img-container">
+                                                                <img src={product.image} alt="" />
+                                                            </div>
+                                                            <p>{product.name}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p>{product.sku}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>{product.category}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>{product.price}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>{product.qty}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p className={product.status === "Sold Out" ? 'orange' : 'blue'}>
+                                                            {product.status}
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p></p>
+                                                    </td>
+                                                    <td>
+                                                        <p>{/* Add your action buttons or links here */}</p>
+                                                    </td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
+                                    <ReactPaginate
+                                        previousLabel={<FaLongArrowAltLeft color={store.theme.textColor} />}
+                                        nextLabel={<FaLongArrowAltRight color={store.theme.textColor} />}
+                                        breakLabel={'...'}
+                                        pageCount={Math.ceil(filteredProducts.length / entriesPerPage)}
+                                        marginPagesDisplayed={2}
+                                        pageRangeDisplayed={5}
+                                        onPageChange={handlePageClick}
+                                        containerClassName={'pagination ' + themeStatus}
+                                        activeClassName={'active'}
+                                    />
                                 </div>
                             </div>
                         </div>
