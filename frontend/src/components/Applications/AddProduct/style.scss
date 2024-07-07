@@ -280,8 +280,13 @@
                                             border-radius: 10px;
                                             border: 1px solid $transparent-gray;
                                             font-weight: 700;
-
-                                            &.light {
+                                            &.dark-text{
+                                                &.active {
+                                                    background-color: #1f2028a6;
+                                                }
+                                                color: $gray-50;
+                                            }
+                                            &.light-text {
 
                                                 &.active {
                                                     border: 1px solid $blue;
@@ -289,14 +294,11 @@
                                                 }
                                             }
 
-                                            &.dark {
-                                                color: $gray-50;
 
-                                                &.active {
-                                                    background-color: #1f2028a6;
-                                                }
 
-                                            }
+
+
+                                            
                                         }
                                     }
                                 }

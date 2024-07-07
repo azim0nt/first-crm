@@ -18,7 +18,7 @@ function UserCards() {
     const cardStyle = {backgroundColor:store.theme.bgColor, color:store.theme.textColor}
     return ( 
         <>
-       <div className="user-cards-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+       <div className="user-cards-wrapper"  >
         <div className="user-cards-content">
             <div className="top">
                 <h3>

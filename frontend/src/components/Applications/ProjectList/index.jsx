@@ -9,18 +9,18 @@ function ProjectList() {
     const colors = ['#5c61f2','#ff9766','#61ae41','#44a8d7', '#e7ae2f','#f81f58']
     return ( 
         <>
-        <div className="project-list-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+        <div className={"project-list-wrapper "+store.theme+'-bg'}  > 
             <div className="project-list-content">
                 <div className="top">
                     <h3>Project List</h3> <PathToTab parent={'Project'} tab={'Project List'}/>
                 </div>
                 <div className="middle">
                     <div className="section-1">
-                        <div className="filter-card" style={{backgroundColor:store.theme.bgColor}}>
+                        <div className={"filter-card "+store.theme+'-cardd'}>
                             <div className="left">
-                                <button style={{color:store.theme.textColor}} className="btn 1">All</button>
-                                <button style={{color:store.theme.textColor}} className="btn 2">Doing</button>
-                                <button style={{color:store.theme.textColor}} className="btn 3">Done</button>
+                                <button className={"btn 1 "+store.theme+'-text'}>All</button>
+                                <button className={"btn 2 "+store.theme+'-text'}>Doing</button>
+                                <button className={"btn 3 "+store.theme+'-text'}>Done</button>
                             </div>
                             <div className="right">
                                 <Link to={'/project_create'} className="blue-btn">
@@ -30,12 +30,12 @@ function ProjectList() {
                         </div>
                     </div>
                     <div className="section-2">
-                        <div className="projects-board-card" style={{backgroundColor:store.theme.bgColor}}>
+                        <div className={"projects-board-card "+store.theme+'-cardd'}>
                             {
                                 projectData.map((project, i) =>{
                                     
                                     return (
-                                        <div className={`project ${i}`} key={i}  style={{backgroundColor:store.theme.backBgColor}}>
+                                        <div className={`project ${i} `+store.theme+'-bg'} key={i} >
                                             <div className="top-part">
                                                 <div><h4>{project.project}</h4> <span style={{backgroundColor:colors[i]}}>Doing</span></div> 
                                                 <div><span className='circle'></span><p className="where">{project.where}</p></div>

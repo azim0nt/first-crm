@@ -21,8 +21,8 @@ function DraggableItem({ name, remove }) {
       ref={drag}
       style={{
         opacity: isDragging ? 0.5 : 1,
-        backgroundColor: store.theme.backBgColor,
-        border: `1px solid ${store.theme.textColor}`,
+        backgroundColor: store.theme === 'dark'? '#10101c' : '#f2f5fa',
+        border: `1px solid ${store.theme === 'light'? '#10101c' : '#f2f5fa50'}`,
         color:store.theme.textColor,
 
       }}

@@ -77,7 +77,7 @@ function Ecommerce() {
     };
     return (
         <>
-            <div className="ecommerce-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+            <div className={"ecommerce-wrapper "+store.theme+'-bg'} > 
                 <div className="ecommerce-content">
                     <div className="top">
                         <h2>Ecommerce Dashboard</h2>
@@ -86,7 +86,7 @@ function Ecommerce() {
                     <div className="middle">
                         <div className="section-1">
                             <div className="four-cards">
-                                <div className="cardd 1"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className={"cardd 1 "+store.theme+'-cardd'}>
                                     <Circle color={'#5c61f2'} />
                                     <div className="info">
                                         <div className="total">
@@ -100,7 +100,7 @@ function Ecommerce() {
                                         <Bar data={barChartData} options={options}></Bar>
                                     </div>
                                 </div>
-                                <div className="cardd 2"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className={"cardd 2 "+store.theme+'-cardd'}>
                                     <Circle color={'#ff9766'} />
                                     <div className="info">
                                         <div className="total">
@@ -125,7 +125,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="cardd 3"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className={"cardd 3 "+store.theme+'-cardd'}>
                                     <Circle color={'#61ae41'} />
                                     <div className="info">
                                         <div className="total">
@@ -150,7 +150,7 @@ function Ecommerce() {
                                         }} options={options}></Line>
                                     </div>
                                 </div>
-                                <div className="cardd 4"  style={{backgroundColor:store.theme.bgColor, boxShadow:`  1px 1px 20px ${store.theme.bgColor}`}}>
+                                <div className={"cardd 4 "+store.theme+'-cardd'}>
                                     <Circle color={'#44A8D7'} />
                                     <div className="info">
                                         <div className="total">
@@ -175,7 +175,7 @@ function Ecommerce() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="daily-visitors-card" style={{backgroundColor:store.theme.bgColor}}>
+                            <div className={"daily-visitors-card "+store.theme+'-cardd'}    >
                                 <div className="left">
                                     <h4>Daily Visitors</h4>
                                     <div className="chart">
@@ -266,7 +266,7 @@ function Ecommerce() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="top-product-card"  style={{backgroundColor:store.theme.bgColor}}>
+                            <div className={"top-product-card "+store.theme+'-cardd'}>
                                 <h4>Top Product</h4>
                                 <p id='subtitle'>According to overall sales, the top 4 this week</p>
                                 <div className="cards">

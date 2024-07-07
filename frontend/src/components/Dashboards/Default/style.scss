@@ -89,16 +89,14 @@
                 .total-earnings-card {
                     width: 250px;
                     height: 350px;
-                    background-color: #fff;
+
                     position: relative;
                     padding: 20px 15px;
                     border-radius: 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    &:hover{
-                        box-shadow: 1px 1px 20px #97979762;
-                    }
+
                     #line-chart {
                         height: 200px;
                     }
@@ -108,16 +106,14 @@
                 .total-expenses-card {
                     width: 250px;
                     height: 350px;
-                    background-color: #fff;
+
                     position: relative;
                     padding: 20px 15px;
                     border-radius: 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    &:hover{
-                        box-shadow: 1px 1px 20px #97979762;
-                    }
+
                     #line-chart {
                         height: 200px;
                     }
@@ -126,12 +122,10 @@
                 .top-selling-product-card {
                     width: 500px;
                     height: 350px;
-                    background-color: #fff;
+
                     border-radius: 20px;
                     padding: 20px;
-                    &:hover{
-                        box-shadow: 1px 1px 20px #97979762;
-                    }
+
                     .cards {
                         display: flex;
                         flex-direction: column;
@@ -197,7 +191,7 @@
                     height: 400px;
                     border-radius: 20px;
                     padding: 10px 20px;
-                    background-color: #fff;
+
                     .growth-chart{
                         height: 330px;
                         margin-top: 20px;

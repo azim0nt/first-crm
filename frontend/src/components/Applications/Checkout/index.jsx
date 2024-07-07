@@ -9,7 +9,7 @@ function Checkout() {
     const inputStyle = {backgroundColor:store.theme.backBgColor, border:'none', outline:'none', width:'100%', padding:'10px 20px', borderRadius:'10px', color:store.theme.textColor}
     return ( 
         <>
-        <div className="checkout-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+        <div className="checkout-wrapper"  >
             <div className="checkout-content">
                 <div className="top">
                     <h3>Checkout</h3>
@@ -72,7 +72,7 @@ function Checkout() {
                                 </div>
                             </div>
                             <div className="right">
-                                <div className="defails" style={{backgroundColor:store.theme.backBgColor}}>
+                                <div className="defails"    >
                                     <div className='product-title'>
                                         <h3>Product</h3> <h3>Total</h3>
                                     </div>

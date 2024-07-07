@@ -8,12 +8,11 @@ import MasterCard from '../../../assets/images/mastercard.png'
 import PayPal from '../../../assets/images/paypal_2.png'
 function PaymentDetails() {
     const { store, setStore } = useContext(context)
-    const cardStyle = { backgroundColor: store.theme.bgColor }
-    const inputStyle = { backgroundColor: store.theme.backBgColor, border: '1px solid #88888840', outline: 'none', width: '100%', padding: '10px 20px', borderRadius: '5px', color: store.theme.textColor }
+   
 
     return (
         <>
-            <div className="payment-details-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"payment-details-wrapper "+store.theme+'-bg'}    > 
                 <div className="payment-details-content">
                     <div className="top">
                         <h3>Payment Details</h3>
@@ -21,15 +20,15 @@ function PaymentDetails() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="credit-card" style={cardStyle}>
+                            <div className={"credit-card "+store.theme+'-cardd'} >
                                 <div className="left">
                                     <h4>Credit card</h4>
                                     <div className="inputs">
-                                        <input type="text" style={inputStyle} placeholder='Card Number' />
-                                        <input type="text" style={inputStyle} placeholder='First Name' />
-                                        <input type="date" style={inputStyle} />
-                                        <input type="text" style={inputStyle} placeholder='Name on card' />
-                                        <select name="" id="" style={inputStyle}>
+                                        <input  className={store.theme+'-input'} type="text"  placeholder='Card Number' />
+                                        <input  className={store.theme+'-input'} type="text"  placeholder='First Name' />
+                                        <input  className={store.theme+'-input'} type="date"  />
+                                        <input  className={store.theme+'-input'} type="text"  placeholder='Name on card' />
+                                        <select className={store.theme+'-input'} name="" id="" >
                                             <option value="select_type">Select Type</option>
                                             <option value="master">Master</option>
                                             <option value="visa">Visa</option>
@@ -40,26 +39,26 @@ function PaymentDetails() {
                                     <img src={Card} alt="" />
                                 </div>
                             </div>
-                            <div className="debit-card" style={cardStyle}>
+                            <div className={"debit-card "+store.theme+'-cardd'} >
                                 <h4>Debit card</h4>
                                 <div className="fullname-card">
-                                    <input type="text" style={inputStyle} placeholder='Full name here' />
-                                    <input type="text" style={inputStyle} placeholder='Card number' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Full name here' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Card number' />
                                 </div>
                                 <div className="cvv-cvc-number">
-                                    <input type="text" style={inputStyle} placeholder='CVV number' />
-                                    <input type="text" style={inputStyle} placeholder='CVC' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='CVV number' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='CVC' />
                                 </div>
                                 <h4>Exripation Date</h4>
                                 <div className="select-year-month">
-                                    <select name="" id="" style={inputStyle}>
+                                    <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_moth">Select Month</option>
                                         <option value="jan">Jan</option>
                                         <option value="fab">Fab</option>
                                         <option value="march">March</option>
                                         <option value="april">April</option>
                                     </select>
-                                    <select name="" id="" style={inputStyle}>
+                                    <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_year">Select Year</option>
                                         <option value="2023">2023</option>
                                         <option value="2023">2023</option>
@@ -75,21 +74,21 @@ function PaymentDetails() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="cod-card" style={cardStyle}>
+                            <div className={"cod-card "+store.theme+'-cardd'} >
                                 <h4>COD</h4>
                                 <div className="first-last-name">
-                                    <input type="text" style={inputStyle} placeholder='First name' />
-                                    <input type="text" style={inputStyle} placeholder='Last name' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='First name' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Last name' />
                                 </div>
                                 <div className="pin-mobile-number">
-                                    <input type="text" style={inputStyle} placeholder='Pincode' />
-                                    <input type="text" style={inputStyle} placeholder='Enter mobile number' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Pincode' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Enter mobile number' />
                                 </div>
                                 <div className="state-city">
-                                    <input type="text" style={inputStyle} placeholder='State' />
-                                    <input type="text" style={inputStyle} placeholder='City' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='State' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='City' />
                                 </div>
-                                <textarea  name="" id="" style={inputStyle} placeholder='Address'>
+                                <textarea className={store.theme+'-input'}  name="" id=""  placeholder='Address'>
 
                                 </textarea>
                                 <div>
@@ -98,15 +97,15 @@ function PaymentDetails() {
                                     </button>
                                 </div>
                             </div>
-                            <div className="emi-card" style={cardStyle}>
+                            <div className={"emi-card "+store.theme+'-cardd'} >
                                 <h4>EMI</h4>
                                 <div className="first-last-name">
-                                    <input type="text" style={inputStyle} placeholder='First name' />
-                                    <input type="text" style={inputStyle} placeholder='Last name' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='First name' />
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Last name' />
                                 </div>
                                 <div className="pin-mobile-number">
-                                    <input type="text" style={inputStyle} placeholder='Pincode' />
-                                   <select name="" id="" style={inputStyle}>
+                                    <input  className={store.theme+'-input'} type="text"  placeholder='Pincode' />
+                                   <select className={store.theme+'-input'} name="" id="" >
                                     <option value="bank_name">Bank Name</option>
                                     <option value="sbi">SBI</option>
                                     <option value="icici">ICICI</option>
@@ -114,14 +113,14 @@ function PaymentDetails() {
                                     <option value="BOB">BOB</option>
                                    </select>
                                 </div>
-                                    <select name="" id="" style={inputStyle}>
+                                    <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_card">Select Card</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                     </select>
-                                    <select name="" id="" style={inputStyle}>
+                                    <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_card">Select Duration</option>
                                         <option value="2023-2023">2023-2023</option>
                                         <option value="2023-2023">2023-2023</option>
@@ -145,22 +144,22 @@ function PaymentDetails() {
                                         </button>
                                         </div>
                             </div>
-                            <div className="net-banking" style={cardStyle}>
+                            <div className={"net-banking "+store.theme+'-cardd'} >
                                 <h4>Net Banking</h4>
-                                <input type="text" style={inputStyle} placeholder='AC Holder name' />
-                                <input type="text" style={inputStyle} placeholder='Account number' />
+                                <input  className={store.theme+'-input'} type="text"  placeholder='AC Holder name' />
+                                <input  className={store.theme+'-input'} type="text"  placeholder='Account number' />
                                 <div className="bank-icfc-code">
-                                <select name="" id="" style={inputStyle}>
+                                <select className={store.theme+'-input'} name="" id="" >
                                     <option value="bank_name">Bank Name</option>
                                     <option value="sbi">SBI</option>
                                     <option value="icici">ICICI</option>
                                     <option value="kotak">KOTAK</option>
                                     <option value="BOB">BOB</option>
                                    </select>
-                                   <input type="text" style={inputStyle} placeholder='ICFC code' />
+                                   <input  className={store.theme+'-input'} type="text"  placeholder='ICFC code' />
                                 </div>
-                                <input type="text" style={inputStyle} placeholder='Enter mobile number'/>
-                                <input type="text" style={inputStyle} placeholder='Other Details'/>
+                                <input  className={store.theme+'-input'} type="text"  placeholder='Enter mobile number'/>
+                                <input  className={store.theme+'-input'} type="text"  placeholder='Other Details'/>
                                 <div><button className="blue-btn">Submit</button></div>
                             </div>
                         </div>

@@ -3,11 +3,7 @@ import { createContext } from 'react'
 
 const initialState = {
     totalPrice:null,
-    theme:{
-        bgColor:'#FFFFFF',
-        textColor:'#171829',
-        backBgColor:'#f2f5fa'
-    },
+    theme:'light',
     modalWindow:'none'
 }
 

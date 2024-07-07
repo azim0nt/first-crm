@@ -77,3 +77,19 @@ a{
   font-weight: 600;
 }
 
+%dark-bg{
+  background-color: $even-darker-blue;
+  color: $gray-50;
+}
+%light-bg{
+  background-color: $bg-color;
+  color: $dark-blue;
+}
+%dark-card{
+  background-color: $dark-blue;
+  
+}
+%light-card{
+  background-color: #fff;
+  
+}

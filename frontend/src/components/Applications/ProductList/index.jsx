@@ -38,8 +38,7 @@ import Product26 from '../../../assets/images/productList/image_26.png'
 function ProductList() {
     const { store, setStore } = useContext(context)
     const [displayMode, setDisplayMode] = useState('none')
-    const cardStyle = { backgroundColor: store.theme.bgColor }
-    const themeStatus = store.theme.bgColor === '#171829' ? 'dark' : 'none'
+    const themeStatus = store.theme.bgColor === 'dark' ? 'dark' : 'none'
     const images = [
         Product1,
         Product2,
@@ -124,7 +123,7 @@ function ProductList() {
 
     return (
         <>
-            <div className="product-list-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"product-list-wrapper "+store.theme+'-bg'}>
                 <div className="product-list-content">
                     <div className="top">
                         <h3>Product List</h3>
@@ -132,7 +131,7 @@ function ProductList() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="product-list-card" style={cardStyle}>
+                            <div className={"product-list-card "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <button className="filter-open" onClick={() => { setDisplayMode(displayMode === 'none' ? 'flex' : 'none') }}>
                                         {displayMode === 'none' ? <FaFilter color='#5c61f2' /> : <MdOutlineCancel size={25} color='#5c61f2' />}
@@ -142,32 +141,32 @@ function ProductList() {
                                     </div>
                                 </div>
                                 <div className="filter" style={{ display: displayMode }}>
-                                    <select className={themeStatus}>
+                                    <select  className={store.theme+'-input'}>
                                         <option selected="">Choose Product</option>
                                         <option value="1">Apple iphone 13 Pro</option>
                                         <option value="2">Wood Chair</option>
                                         <option value="3">M185 Compact Wireless Mouse</option>
                                     </select>
-                                    <select className={themeStatus}>
+                                    <select  className={store.theme+'-input'}>
                                         <option selected="">Choose Category</option>
                                         <option value="1">Furniture</option>
                                         <option value="2">Smart Gadgets</option>
                                         <option value="3">Electrics</option>
                                     </select>
-                                    <select className={themeStatus}>
+                                    <select  className={store.theme+'-input'}>
                                         <option selected="">Choose Sub Category</option>
                                         <option value="1">Smart Phones</option>
                                         <option value="2">Smart Watches</option>
                                         <option value="3">Wireless headphone</option>
                                     </select>
-                                    <select className={themeStatus}>
+                                    <select  className={store.theme+'-input'}>
                                         <option selected="">Status</option>
                                         <option value="1">Sold Out </option>
                                         <option value="2">In Stock</option>
                                         <option value="3">Pre Order</option>
                                         <option value="4">Limited Stock </option>
                                     </select>
-                                    <select className={themeStatus}>
+                                    <select  className={store.theme+'-input'}>
                                         <option selected="">Price</option>
                                         <option value="1">56000.00</option>
                                         <option value="2">19000.00</option>
@@ -178,8 +177,7 @@ function ProductList() {
                                 </div>
                                 <div className="bottom-part">
                                     <div className="search">
-                                        <select
-                                            className={themeStatus}
+                                        <select  className={store.theme+'-input'}
                                             value={entriesPerPage}
                                             onChange={handleEntriesChange}
                                         >
@@ -193,7 +191,7 @@ function ProductList() {
                                         <input
                                             type="text"
                                             placeholder="Search..."
-                                            className={themeStatus}
+                                             className={store.theme+'-input'}
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                         />
@@ -267,14 +265,14 @@ function ProductList() {
                                         </tbody>
                                     </table>
                                     <ReactPaginate
-                                        previousLabel={<FaLongArrowAltLeft color={store.theme.textColor} />}
-                                        nextLabel={<FaLongArrowAltRight color={store.theme.textColor} />}
+                                        previousLabel={<FaLongArrowAltLeft color={store.theme === 'dark' ? '#ffffff99': '#171829'} />}
+                                        nextLabel={<FaLongArrowAltRight color={store.theme === 'dark' ? '#ffffff99': '#171829'} />}
                                         breakLabel={'...'}
                                         pageCount={Math.ceil(filteredProducts.length / entriesPerPage)}
                                         marginPagesDisplayed={2}
                                         pageRangeDisplayed={5}
                                         onPageChange={handlePageClick}
-                                        containerClassName={'pagination ' + themeStatus}
+                                        containerClassName={'pagination ' + store.theme}
                                         activeClassName={'active'}
                                     />
                                 </div>

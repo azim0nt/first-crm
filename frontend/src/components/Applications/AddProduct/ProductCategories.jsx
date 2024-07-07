@@ -51,11 +51,11 @@ function ProductCategories() {
     }, []); // Empty dependency array ensures effect runs only once on mount
 
     return (
-        <div className={`product-categories ${store.theme.bgColor === '#171829' ? 'dark' : 'snow'}`}>
+        <div className={`product-categories`}>
             <div className="left-part">
                 <div className="add-category">
                     <h4>Add Category</h4>
-                    <select name="" id="" style={inputStyle}>
+                    <select className={store.theme+'-input'} name="" id="" style={inputStyle}>
                         <option value="toys_games">Toys & games</option>
                         <option value="sportswear">Sportswear</option>
                         <option value="jewellery">Jewellery</option>
@@ -73,7 +73,7 @@ function ProductCategories() {
                 </div>
                 <div className="publish-status">
                     <h4>Publish Status</h4>
-                    <select name="" id="" style={inputStyle}>
+                    <select className={store.theme+'-input'} name="" id="" style={inputStyle}>
                         <option value="publish">Publish</option>
                         <option value="drafts">Drafts</option>
                         <option value="unpublish">Unpublish</option>
@@ -93,7 +93,7 @@ function ProductCategories() {
                 </div>
                 <div className="publish-date-time">
                     <h4>Publish Date & Time</h4>
-                    <input type="text" style={inputStyle} />
+                    <input className={store.theme+'-input'} type="text" style={inputStyle} />
                 </div>
             </div>
 

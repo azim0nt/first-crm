@@ -52,3 +52,45 @@
         background-color: #00000050;
     }
 }
+.dark{
+    &-bg{
+        @extend %dark-bg;
+    }
+    &-cardd{
+        @extend %dark-card;
+        color: $gray-50
+    }
+    &-icon{
+        background-color: $even-darker-blue
+    }
+    &-text *{
+        color: $gray-50;
+    }
+    &-input{
+        background-color: $even-darker-blue;
+        color: $gray-50;
+
+    }
+
+    
+}
+.light{
+    &-bg{
+        @extend %light-bg;
+    }
+    &-icon{
+        background-color: $bg-color;
+    }
+    &-cardd{
+        @extend %light-card;
+    }
+    &-text{
+        color: $dark-blue;
+       
+    }
+    &-input{
+        background-color: $bg-color;
+        color: $dark-blue;
+    }
+
+}

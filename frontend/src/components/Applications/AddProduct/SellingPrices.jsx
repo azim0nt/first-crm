@@ -13,17 +13,17 @@ function SellingPrices(props) {
             <div className="initial-cost-and-selling-price">
                 <div className="initial-cost">
                     <h4>Inintial cost</h4>
-                    <input style={{backgroundColor:theme.bgColor, color:theme.textColor}} type="number" />
+                    <input className={store.theme+'-input'}     type="number" />
                 </div>
                 <div className="selling-prics">
                     <h4>Selling Price</h4>
-                    <input style={{backgroundColor:theme.bgColor, color:theme.textColor}} type="number" />
+                    <input className={store.theme+'-input'}     type="number" />
                 </div>
             </div>
             <div className="choose-currency-and-product-stocks">
                 <div className="choose-currency">
                     <h4>Choose your currency</h4>
-                    <select name="" id="" style={{backgroundColor:theme.bgColor, color:theme.textColor}}>
+                    <select className={store.theme+'-input'} name="" id=""    >
                         <option value="dollar">Dollar $</option>
                         <option value="dollar">Euro €</option>
                         <option value="dollar">Rupees ₹</option>
@@ -35,17 +35,17 @@ function SellingPrices(props) {
                 </div>
                 <div className="product-stocks">
                     <h4>Product stocks</h4>
-                    <input style={{backgroundColor:theme.bgColor, color:theme.textColor}} type="number" />
+                    <input className={store.theme+'-input'}     type="number" />
                 </div>
             </div>
             <div className="product-discount">
                 <h4>Types of product discount</h4>
                 <div className="btns">
-                <button className={`${themeStatus} ${activeBtn === 1 ? 'active': ''}`} onClick={()=>{handleClickBtn(1)}} >Fixed Price</button>
-                <button className={`${themeStatus} ${activeBtn === 2 ? 'active': ''}`} onClick={()=>{handleClickBtn(2)}}>BOGO(Buy one, Get one)</button>
-                <button className={`${themeStatus} ${activeBtn === 3 ? 'active': ''}`} onClick={()=>{handleClickBtn(3)}}>Seasonal or holiday discount</button>
-                <button className={`${themeStatus} ${activeBtn === 4 ? 'active': ''}`} onClick={()=>{handleClickBtn(4)}}>Percentage-based discount(%)</button>
-                <button className={`${themeStatus} ${activeBtn === 5 ? 'active': ''}`} onClick={()=>{handleClickBtn(5)}}>Volume or bulk discount</button>
+                <button className={`${activeBtn === 1 ? 'active': ''} ` +store.theme+'-text'} onClick={()=>{handleClickBtn(1)}} >Fixed Price</button>
+                <button className={`${activeBtn === 2 ? 'active': ''} ` +store.theme+'-text'} onClick={()=>{handleClickBtn(2)}}>BOGO(Buy one, Get one)</button>
+                <button className={`${activeBtn === 3 ? 'active': ''} ` +store.theme+'-text'} onClick={()=>{handleClickBtn(3)}}>Seasonal or holiday discount</button>
+                <button className={`${activeBtn === 4 ? 'active': ''} ` +store.theme+'-text'} onClick={()=>{handleClickBtn(4)}}>Percentage-based discount(%)</button>
+                <button className={`${activeBtn === 5 ? 'active': ''} ` +store.theme+'-text'} onClick={()=>{handleClickBtn(5)}}>Volume or bulk discount</button>
                 </div>
             </div>
         </div>

@@ -162,6 +162,20 @@
                                     }
                                 }
                             }
+                            &.light{
+                                li{
+                                    background-color: $bg-color;
+                                    a{
+                                        color: $dark-blue;
+                                    }
+                                    &.active{
+                                        a{
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            
+                            }
                             li{
                                 width: 30px ;
                                 height: 30px;

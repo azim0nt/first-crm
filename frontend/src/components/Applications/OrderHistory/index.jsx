@@ -21,7 +21,6 @@ import { FaStar } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 function OrderHistory() {
     const { store, setStore } = useContext(context)
-    const cardStyle = { backgroundColor: store.theme.bgColor }
 
 
     const [images1, setImages1] = useState([User1, User2, User3, User4, User5, User6, User7, User8, User9]);
@@ -48,7 +47,7 @@ function OrderHistory() {
 
     return (
         <>
-            <div className="order-history-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"order-history-wrapper "+store.theme+'-bg'}>
                 <div className="order-history-content">
                     <div className="top">
                         <h3>Recent History</h3>
@@ -56,13 +55,13 @@ function OrderHistory() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="new-orders-card" style={cardStyle}>
+                            <div className={"new-orders-card "+store.theme+'-cardd'}>
                                 <h4>New Orders</h4>
                                 <div className="cards">
                                     {
                                         images1.map((image, i) => {
                                             return (
-                                                <div className="cardd" key={i} style={cardStyle}>
+                                                <div className="cardd" key={i}>
                                                     <div className="left-part">
                                                         <img src={image} alt="" />
                                                     </div>
@@ -87,7 +86,7 @@ function OrderHistory() {
                                                     <div className="right-part">
                                                         <div>
                                                             <button  onClick={() => removeCard1(i)}>
-                                                                <ImCancelCircle color={store.theme.textColor}/>
+                                                                <ImCancelCircle  className={store.theme+'-text'}/>
                                                             </button>
                                                         </div>
                                                         <div>
@@ -102,13 +101,13 @@ function OrderHistory() {
                                     }
                                 </div>
                             </div>
-                            <div className="new-orders-card" style={cardStyle}>
+                            <div className={"new-orders-card "+store.theme+'-cardd'}>
                                 <h4>New Orders</h4>
                                 <div className="cards">
                                     {
                                         images2.map((image, i) => {
                                             return (
-                                                <div className="cardd" key={i} style={cardStyle}>
+                                                <div className="cardd" key={i}>
                                                     <div className="left-part">
                                                         <img src={image} alt="" />
                                                     </div>
@@ -148,13 +147,13 @@ function OrderHistory() {
                                     }
                                 </div>
                             </div>
-                            <div className="new-orders-card" style={cardStyle}>
+                            <div className={"new-orders-card "+store.theme+'-cardd'}>
                                 <h4>New Orders</h4>
                                 <div className="cards">
                                     {
                                         images3.map((image, i) => {
                                             return (
-                                                <div className="cardd" key={i} style={cardStyle}>
+                                                <div className="cardd" key={i}>
                                                     <div className="left-part">
                                                         <img src={image} alt="" />
                                                     </div>

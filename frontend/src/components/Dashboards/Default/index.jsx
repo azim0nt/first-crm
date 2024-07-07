@@ -104,7 +104,7 @@ function Default() {
     
     return (
         <>
-            <div className="default-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+            <div className={"default-wrapper "+store.theme+'-bg'}  > 
                 <div className="default-content">
                     <div className="top">
                         <h3>Default Dashboard</h3>
@@ -123,7 +123,7 @@ function Default() {
 
                                 </div>
                             </div>
-                            <div className="total-earnings-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
+                            <div className={"total-earnings-card "+store.theme+'-cardd'}  >
                                 <h4>
                                     Total Earnings
                                 </h4>
@@ -138,14 +138,14 @@ function Default() {
                                     </h2>
                                 </div>
                             </div>
-                            <div className="total-expenses-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
+                            <div className={"total-expenses-card "+store.theme+'-cardd'}  >
                                 <h4>
                                     Total Expenses
                                 </h4>
                                 <div id="bar-chart">
                                     <Bar data={barChartData} options={options}></Bar>
                                 </div>
-                                <div className="total-expenses">
+                                <div className={"total-expenses "+store.theme+'-cardd'}>
                                     <h2>
 
                                         $ {
@@ -154,7 +154,7 @@ function Default() {
                                     </h2>
                                 </div>
                             </div>
-                            <div className="top-selling-product-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
+                            <div className={"top-selling-product-card "+store.theme+'-cardd' } >
                                 <h4>
                                     Top Selling Product
                                 </h4>
@@ -184,10 +184,10 @@ function Default() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="recent-order-card" >
+                            <div className={"recent-order-card " +store.theme+'-cardd'} >
                                <OrdersTable data={userData} title={'R'} images={usersImages}/>
                             </div>
-                            <div className="our-growth-card"  style={{backgroundColor:store.theme.bgColor, boxShadow:'none'}}>
+                            <div className={"our-growth-card "+store.theme+'-cardd'}  >
                                 <h4>
                                     Our Growth
                                 </h4>

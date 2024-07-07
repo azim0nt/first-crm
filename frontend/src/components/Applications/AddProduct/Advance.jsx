@@ -192,8 +192,8 @@ function Advance() {
 
     const handleComponentChange = (comp) => { setActiveComponent(comp) }
     const { store } = useContext(context)
-    const bgColor = store.theme.bgColor
-    const themeStatus = bgColor === '#171829' ? 'dark' : 'light';
+    const bgColor = store.theme
+    const themeStatus = bgColor === 'dark' ? 'dark' : 'light';
     return (
         <>
             <div className="advance">

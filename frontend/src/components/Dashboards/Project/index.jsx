@@ -37,7 +37,7 @@ function Project() {
     };
     return (
         <>
-            <div className="project-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"project-wrapper "+store.theme+'-bg'}>
                 <div className="project-content">
                     <div className="top">
                         <h3>Project Dashboard</h3> <PathToTab parent={'Dashboad'} tab={'Project'} />
@@ -46,7 +46,7 @@ function Project() {
 
                         <div className="section-1">
                             <div className="two-cards">
-                                <div className="card n-1" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className={"card n-1 "+store.theme+'-cardd'}>
                                     <div className="top-part">
                                         <p>Website Design</p> <p>Running</p>
                                     </div>
@@ -66,7 +66,7 @@ function Project() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="card n-2" style={{ backgroundColor: store.theme.bgColor }}>
+                                <div className={"card n-2 "+store.theme+'-cardd'}>
                                     <div className="top-part">
                                         <p>NFT App Design</p> <p>Running</p>
                                     </div>
@@ -88,7 +88,7 @@ function Project() {
                                 </div>
 
                             </div>
-                            <div className="total-revenue-card" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"total-revenue-card "+store.theme+'-cardd'}>
                                 <div className="left">
                                     <h4>Total Revenue</h4>
                                     <div className="chart">
@@ -208,7 +208,7 @@ function Project() {
                                     <button className='blue-btn'>Increase</button>
                                 </div>
                             </div>
-                            <div className="upgrade-card" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"upgrade-card"} style={{backgroundColor:store.theme === 'dark'?'#171829': '#fff'}}>
                                 <h4>Upgrade Your Subscription Plan</h4>
                                 <p>The goal of this message is to welcome you to our app.</p>
                                 <div>
@@ -220,7 +220,7 @@ function Project() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="today-task-card" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
+                            <div className={"today-task-card "+store.theme+'-cardd'}>
                                 <div className="top"><h4>Today Task</h4></div>
                                 <div className="filters">
                                     <button className={filter === 'All' ? 'active' : ''} onClick={() => handleFilterChange('All')}>All</button>

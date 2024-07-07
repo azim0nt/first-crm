@@ -21,10 +21,10 @@ function ProductPage() {
     const { store, setStore } = useContext(context)
     const [text, setText] = useState('febric')
     const cardStyle = { backgroundColor: store.theme.bgColor }
-    const themeStatus = store.theme.textColor === '#171829' ? 'light' : 'dark'
+    const themeStatus = store.theme === 'light' ? 'light' : 'dark'
     return (
         <>
-            <div className="product-page-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"product-page-wrapper "+store.theme+'-bg'}    >
                 <div className="product-page-content">
                     <div className="top">
                         <h3>Product Page</h3>
@@ -32,7 +32,7 @@ function ProductPage() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="carousel-card" style={cardStyle}>
+                            <div className={"carousel-card "+store.theme+'-cardd'}>
                                 <Carousel width={'100%'} thumbWidth={70} infiniteLoop={true} showStatus={false} showArrows={false} showIndicators={false} emulateTouch={true} autoPlay={true}>
                                     <div className='image'><img src={Product1} alt="" /></div>
                                     <div className='image'><img src={Product2} alt="" /></div>
@@ -42,7 +42,7 @@ function ProductPage() {
                                     <div className='image'><img src={Product6} alt="" /></div>
                                 </Carousel>
                             </div>
-                            <div className="about-card" style={cardStyle}>
+                            <div className={"about-card "+store.theme+'-cardd'}>
                                 <h3>Women Pink shirt.</h3>
                                 <div className='price'>
                                     <p className="current-price">$26.00</p>
@@ -96,7 +96,7 @@ function ProductPage() {
                                 </div>
                             </div>
                             <div className="brand-and-delivery-cards">
-                                <div className="brand-card" style={cardStyle}>
+                                <div className={"brand-card "+store.theme+'-cardd'}>
                                     <Link to={'/product_cards'}>
                                         <h3>Brand</h3>
                                         <p>Clothing</p>
@@ -106,7 +106,7 @@ function ProductPage() {
                                         <p>ACCESSORIES</p>
                                     </Link>
                                 </div>
-                                <div className="delivery-card" style={cardStyle}>
+                                <div className={"delivery-card "+store.theme+'-cardd'}>
                                     <div>
                                         <span className="left">
                                             <ImTruck size={25} />
@@ -145,7 +145,7 @@ function ProductPage() {
                             </div>
                         </div>
                         <div className="section-2">
-                            <div className="more-details-card" style={cardStyle}>
+                            <div className={"more-details-card "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <button className={`${text ==='febric' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('febric') }}>
                                         Febric

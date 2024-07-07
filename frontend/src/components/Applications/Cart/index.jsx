@@ -15,7 +15,7 @@ function Cart() {
     const [product3, setProduct3] = useState(0)
     return ( 
         <>
-        <div className="cart-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+        <div className="cart-wrapper"  >
             <div className="cart-content">
                 <div className="top">
                     <h3>Cart</h3>
@@ -26,7 +26,7 @@ function Cart() {
                         <div className="cart-card" style={cardStyle}>
                             <h4>Cart</h4>
                             <table>
-                                <thead style={{backgroundColor:store.theme.backBgColor}}>
+                                <thead    >
                                     <tr>
                                         <th><p>Prdouct</p></th>
                                         <th><p>Prdouct Name</p></th>
@@ -148,7 +148,7 @@ function Cart() {
                                     <tr>
                                         <td colSpan={4}>
                                         <div className="coupan">
-                                            <input type="text" placeholder='Enter coupan code' style={{backgroundColor:store.theme.bgColor}}/> <button className='blue-btn'>Apply</button>
+                                            <input type="text" placeholder='Enter coupan code'    /> <button className='blue-btn'>Apply</button>
                                         </div>
                                         </td>
                                         <td>

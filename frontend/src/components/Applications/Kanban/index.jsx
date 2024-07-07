@@ -12,7 +12,7 @@ function Kanban() {
   const { store, useStore } = useContext(context)
   return (
     <>
-    <div className="kanban-wrapper" style={{backgroundColor:store.theme.backBgColor, color:store.theme.textColor}}>
+    <div className={"kanban-wrapper "+store.theme+'-bg'}>
       <div className="kanban-content">
         <div className="top">
           <h3>Kanban Board</h3>
@@ -20,19 +20,19 @@ function Kanban() {
         </div>
         <div className="middle">
           <div className="section-1">
-            <div className="default-demo-card"  style={{backgroundColor:store.theme.bgColor, color:store.theme.textColor}}>
+            <div className={"default-demo-card "+store.theme+'-cardd'}>
     <h4>Default Demo</h4>
               <DndProvider backend={HTML5Backend}>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <Column color={store.theme.backBgColor} items={items1} />
-          <Column color={store.theme.backBgColor} items={items2} />
-          <Column color={store.theme.backBgColor} items={items3} />
+          <Column color={store.theme === 'dark'? '#10101c' : '#f2f5fa'} items={items1} />
+          <Column color={store.theme === 'dark'? '#10101c' : '#f2f5fa'} items={items2} />
+          <Column color={store.theme === 'dark'? '#10101c' : '#f2f5fa'} items={items3} />
         </div>
       </DndProvider>
             </div>
           </div>
           <div className="section-2">
-            <div className="custom-board-card"  style={{backgroundColor:store.theme.bgColor, color:store.theme.textColor}}>
+            <div className="custom-board-card"     >
     <h4>Custom Board</h4>
               <DndProvider backend={HTML5Backend}>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>

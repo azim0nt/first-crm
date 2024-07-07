@@ -39,7 +39,7 @@ function Product() {
     const images = [Product1, Product2, Product3, Product4, Product5, Product6, Product7, Product8, Product9, Product10, Product11, Product12, Product13, Product14, Product15, Product16]
     return (
         <>
-            <div className="product-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className={"product-wrapper "+store.theme+'-bg'}>
                 <div className="product-content">
                     <div className="top">
                         <h3>Product</h3>
@@ -50,11 +50,11 @@ function Product() {
                             <div className="filters">
                                 <div className="grid-change">
                                     <div className="left">
-                                        <button style={{ backgroundColor: store.theme.bgColor }} onClick={() => { setGridCount(5) }}>
-                                            <LuLayoutGrid size={25} color={store.theme.textColor} />
+                                        <button     onClick={() => { setGridCount(5) }}>
+                                            <LuLayoutGrid size={25}  className={store.theme+'-text'} />
                                         </button>
-                                        <button style={{ backgroundColor: store.theme.bgColor }} onClick={() => { setGridCount(1) }}>
-                                            <LuList size={25} color={store.theme.textColor} />
+                                        <button     onClick={() => { setGridCount(1) }}>
+                                            <LuList size={25}  className={store.theme+'-text'} />
                                         </button>
                                         <button onClick={() => { setGridCount(2) }}>
                                             <span className="column-2">
@@ -89,7 +89,7 @@ function Product() {
                                     </div>
                                     <div className="right">
                                         <span>Showing Products 1 - 24 Of 200 Results</span>
-                                        <select style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
+                                        <select className={store.theme+'-cardd'}    >
                                             <option value="opt1">Featured</option>
                                             <option value="opt2">Lowest Prices</option>
                                             <option value="opt3">Highest Prices</option>
@@ -97,9 +97,9 @@ function Product() {
                                     </div>
                                 </div>
                                 <div className="filter-search">
-                                    <div className="filter" style={{ backgroundColor: store.theme.bgColor }}>
-                                        <div><span>Filters</span><span><button onClick={handleModal}><IoIosArrowDown size={20} color={store.theme.textColor} /></button></span></div>
-                                        <div className="modal-filter" style={{ backgroundColor: store.theme.bgColor, display: modalDisplay }}>
+                                    <div className="filter"    >
+                                        <div  className={store.theme+'-cardd'}><span>Filters</span><span><button onClick={handleModal}><IoIosArrowDown size={20}  className={store.theme+'-text'} /></button></span></div>
+                                        <div className={"modal-filter "+store.theme+'-cardd'} style={{display: modalDisplay }}>
                                             <div className="category">
                                                 <h4>Category</h4>
                                                 <span>
@@ -162,8 +162,8 @@ function Product() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="search" style={{ backgroundColor: store.theme.bgColor }}>
-                                        <input type="text" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }} placeholder='Search..' /><IoSearch size={25} color={store.theme.textColor} />
+                                    <div className={"search "+store.theme+'-cardd'} >
+                                        <input type="text"  className={store.theme+'-cardd'} placeholder='Search..' /><IoSearch size={25}  className={store.theme+'-text'} />
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@ function Product() {
                                 {
                                     productsCard.map((product, i) => {
                                         return (
-                                            <div className={`product n-${i + 1}`} style={{ backgroundColor: store.theme.bgColor }}>
+                                            <div className={`product n-${i + 1} `+store.theme+'-cardd'}   >
                                                 <div className="top-part">
                                                     <img src={images[i]} alt="" />
                                                 </div>

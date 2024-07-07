@@ -15,15 +15,15 @@ function UserProfile() {
     const { store, setStore } = useContext(context)
     return (
         <>
-            <div className="user-profile-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
-                <div className="user-profile-content">
+            <div className={"user-profile-wrapper "+store.theme+'-bg'}>  
+                <div className="user-profile-content ">
                     <div className="top">
                         <h3>User Profile</h3>
                         <PathToTab parent={'User'} tab={'User Profile'} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="profile-card" style={{ backgroundColor: store.theme.bgColor, color: store.theme.textColor }}>
+                            <div className={"profile-card "+store.theme+'-cardd' }>
                                 <div className="header">
                                     <img src={BgProfile} alt="" />
                                 </div>
@@ -83,7 +83,7 @@ function UserProfile() {
 
                         </div>
                         <div className="section-2">
-                            <div className="post 1" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"post 1 "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
                                     <span><p className="date">10 Hours ago</p></span>
@@ -97,7 +97,7 @@ function UserProfile() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="post two" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"post two "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
                                     <span><p className="date">10 Hours ago</p></span>
@@ -114,7 +114,7 @@ function UserProfile() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="post 3" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"post 3 "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
                                     <span><p className="date">10 Hours ago</p></span>
@@ -125,7 +125,7 @@ function UserProfile() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="post four" style={{ backgroundColor: store.theme.bgColor }}>
+                            <div className={"post four "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <span><img src={Avatar} alt="" /> <p className="name">JOHAN DIO</p></span>
                                     <span><p className="date">10 Hours ago</p></span>

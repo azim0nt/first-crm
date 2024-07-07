@@ -40,7 +40,7 @@ function Wishlist() {
     ]
     return (
         <>
-            <div className="wishlist-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className="wishlist-wrapper"    >
                 <div className="wishlist-content">
                     <div className="top">
                         <h3>Wishlist</h3>

@@ -11,7 +11,7 @@ function Pricing() {
 
     return (
         <>
-            <div className="pricing-wrapper" style={{ backgroundColor: store.theme.backBgColor, color: store.theme.textColor }}>
+            <div className="pricing-wrapper"    >
                 <div className="pricing-content">
                     <div className="top">
                         <h3>Pricing</h3>
