@@ -1,4 +1,5 @@
 import './style.scss'
+import { useState } from 'react';
 import Logo from '../../assets/images/logo.png'
 import Accordion from '../common/Accordion';
 import { NavLink } from 'react-router-dom';
@@ -70,11 +71,13 @@ const ecommerceItems = [
   }
 ]
 function General() {
+  const [isOpen, SetIsOpen] = useState('')
   return (
     <>
       <div className="general-wrapper">
         <div className="general-header">
           <div className="general-logo">
+
             <img src={Logo} alt="" />
           </div>
           <div className="general-toggle-sidebar">
@@ -102,7 +105,7 @@ function General() {
             <Accordion items={ecommerceItems}/>
             <NavLink to={'letter-box'}>Letter Box</NavLink>
             <Accordion items={usersItems}/>
-
+            <NavLink to={'bookmarks'}>Bookmarks</NavLink>
           </div>
         </div>
       </div>

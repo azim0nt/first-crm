@@ -58,8 +58,11 @@
     &-icon{
         background-color: $even-darker-blue
     }
-    &-text *{
+    &-text{
         color: $gray-50;
+        svg, path{
+            fill: $gray-50;
+        }
     }
     &-input{
         background-color: $even-darker-blue;
@@ -85,6 +88,9 @@
     }
     &-text{
         color: $dark-blue;
+        svg, path{
+            fill: $dark-blue;
+        }
        
     }
     &-input{
