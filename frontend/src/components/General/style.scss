@@ -6,6 +6,9 @@
     padding: 10px;
     width: 250px;
     overflow: hidden;
+    &.open{
+        display: flex;
+    }
     .general-header{
         width: inherit;
         height: auto;
@@ -44,3 +47,21 @@
         }
         }
     }
+    .mini-general{
+        display: none;
+
+    }
+@media(max-width:1200px){
+    .general-wrapper{
+        display: none;
+    }
+    .mini-general{
+        background-color: $dark-blue;
+        height: 100vh;
+        position: relative;
+        padding: 10px;
+        width: 50px;
+        display: flex;
+
+    }
+}

@@ -25,8 +25,8 @@ function Header() {
     }, [setStore]);
 
     return (
-        <div className={`header-wrapper ${store.theme}-cardd`}>
-            <div className="header-content">
+        <div className={`header-wrapper`}>
+            <div className={"header-content "+store.theme+'-cardd'}>
                 <div className="left">
                     <div className={`input-wrapper ${store.theme}-bg`}>
                         <IoSearch size={30} color="#6A7185" />{' '}

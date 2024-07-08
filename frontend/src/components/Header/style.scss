@@ -5,37 +5,47 @@
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.07);
     display: flex;
     align-items: center;
-
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden; // добавлено для предотвращения выхода содержимого за границы
     .header-content {
-        width: 100%;
-        display: flex;
+        width: 100%; // изменено с 86% на 100%
+        display: grid;
         justify-content: space-between;
         align-items: center;
         padding: 0 20px;
-        .left{
-            width: 40%;
-            .input-wrapper{
+        height: 100%; // изменено с inherit на 100%
+        position: absolute; // изменено с fixed на absolute
+        top: 0;
+        left: 0; // добавлено
+        right: 0; // добавлено
+        grid-template-columns: 1fr 1.5fr;
+        gap: 100px;
+        .left {
+
+            .input-wrapper {
                 width: 100%;
                 display: flex;
                 align-items: center;
-                svg{
+                svg {
                     margin: 10px;
                 }
-                input{
+                input {
                     width: 100%;
-                    background-color: transparent ;
+                    background-color: transparent;
                     border: none;
                     outline: none;
                     padding: 15px 0;
                 }
             }
         }
-        .right{
-            width: 35%;
+        .right {
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .icon{
+            .icon {
                 border-radius: 50%;
                 width: 45px;
                 height: 45px;
@@ -44,13 +54,12 @@
                 align-items: center;
                 cursor: pointer;
             }
-            .user{
+            .user {
                 display: flex;
                 gap: 5px;
-                .info{
-                    
+                .info {
                     display: flex;
-                    flex-direction: column ;
+                    flex-direction: column;
                     justify-content: center;
                 }
             }
