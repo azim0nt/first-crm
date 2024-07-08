@@ -23,15 +23,86 @@
         }
         .middle{
             .section-1{
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                gap: 20px;
                 .user-card{
                     padding: 20px;
                     border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap:10px ;
                     .user{
                         display: grid;
                         grid-template-columns: 0.5fr 5fr;
+                        gap: 10px;
+                        align-items: center;
+                    }
+                    .blue-btn{
+                        width: 100%;
+                        padding: 10px 20px;
+                        background-color: $light-blue;
+                        color: $blue;
+                        text-align: left;
+                        font-weight: 600;
                     }
                 }
             }
         }
     }
 }
+.bookmarks-modal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #00000050;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    // display: none;
+    justify-content: center;
+    align-items: center;
+    .modal-bg{
+        width: 500px;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        textarea{
+            width: 100%;
+            resize: vertical;
+            transition: 0s;
+            height: 100px;
+        }
+        .group-collection{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            div{
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .save-cancel{
+
+            .orange-btn{
+                @extend %orange-btn;
+                padding: 10px 20px;
+                margin-right:10px ;
+            }
+            .blue-btn{
+                @extend %blue-btn;
+                padding: 10px 20px;
+            }
+        }
+    }
+    &.open{
+        display: flex;
+    }
+    &.close{
+        display: none;
+    }
+
+   }
