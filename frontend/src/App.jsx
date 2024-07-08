@@ -70,7 +70,7 @@ function App() {
                 <Route path="checkout" element={<Checkout />} />
                 <Route path="pricing" element={<Pricing />} />
                 <Route path="letter-box" element={<LetterBox />} />
-                <Route path='bookmarks' element={<Bookmarks/>}/> 
+                <Route path='bookmarks' element={<Bookmarks/>}/>
               </Route>
 
               <Route path="login" element={<Login />} />
