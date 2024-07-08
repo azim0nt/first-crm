@@ -18,9 +18,9 @@ function ProjectList() {
                     <div className="section-1">
                         <div className={"filter-card "+store.theme+'-cardd'}>
                             <div className="left">
-                                <button className={"btn 1 "+store.theme+'-text'}>All</button>
-                                <button className={"btn 2 "+store.theme+'-text'}>Doing</button>
-                                <button className={"btn 3 "+store.theme+'-text'}>Done</button>
+                                <button className={"btn 1 "+store.theme+'-input'}>All</button>
+                                <button className={"btn 2 "+store.theme+'-input'}>Doing</button>
+                                <button className={"btn 3 "+store.theme+'-input'}>Done</button>
                             </div>
                             <div className="right">
                                 <Link to={'/project_create'} className="blue-btn">

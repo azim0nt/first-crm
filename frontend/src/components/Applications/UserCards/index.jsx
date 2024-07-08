@@ -15,10 +15,9 @@ import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from 
 function UserCards() {
     const {store, setStore} = useContext(context)
     const images = [User1, User2, User3, User4, User5, User6, User7, User8]
-    const cardStyle = {backgroundColor:store.theme.bgColor, color:store.theme.textColor}
     return ( 
         <>
-       <div className="user-cards-wrapper"  >
+       <div className={"user-cards-wrapper "+store.theme+'-bg'}  >
         <div className="user-cards-content">
             <div className="top">
                 <h3>
@@ -31,7 +30,7 @@ function UserCards() {
                     <div className="cards">
                         {userCardData.map((user, index)=>{
                             return (
-                                <div key={index} style={cardStyle} className='card $'>
+                                <div key={index} className={"card  "+store.theme+'-cardd'}>
                                     <div className="top-part">
                                         <div className="image-bg">
                                             <div>

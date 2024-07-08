@@ -4,14 +4,10 @@ import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab'
 function Pricing() {
     const { store, setStore } = useContext(context)
-    const cardStyle = { backgroundColor: store.theme.bgColor }
-    const darkCardStyle = {
-        backgroundColor: store.theme.backBgColor === '#f2f5fa' ? '#fff' : store.theme.backBgColor
-    };
 
     return (
         <>
-            <div className="pricing-wrapper"    >
+            <div className={"pricing-wrapper "+store.theme+'-bg'}    >
                 <div className="pricing-content">
                     <div className="top">
                         <h3>Pricing</h3>
@@ -19,12 +15,12 @@ function Pricing() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="become-member-card" style={{ backgroundColor: store.theme.bgColor === '#FFFFFF' ? '#FCFCFC' : store.theme.bgColor }}>
+                            <div className={"become-member-card "+store.theme+'-cardd'}>
                                 <h4>
                                     Become member
                                 </h4>
                                 <div className="cards">
-                                    <div className="card" style={darkCardStyle}>
+                                    <div className={"card "+store.theme+'-bg'} >
                                         <div className="circle n-1"></div>
                                         <div className="circle n-2"></div>
                                         <div className="title">
@@ -47,7 +43,7 @@ function Pricing() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="card" style={darkCardStyle}>
+                                    <div className={"card "+store.theme+'-bg'} >
                                         <div className="circle n-1"></div>
                                         <div className="circle n-2"></div>
                                         <div className="title">
@@ -70,7 +66,7 @@ function Pricing() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="card" style={darkCardStyle}>
+                                    <div className={"card "+store.theme+'-bg'} >
                                         <div className="circle n-1"></div>
                                         <div className="circle n-2"></div>
                                         <div className="title">
@@ -93,7 +89,7 @@ function Pricing() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="card" style={darkCardStyle}>
+                                    <div className={"card "+store.theme+'-bg'} >
                                         <div className="circle n-1"></div>
                                         <div className="circle n-2"></div>
                                         <div className="title">

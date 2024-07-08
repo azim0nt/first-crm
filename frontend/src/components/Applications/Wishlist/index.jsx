@@ -20,7 +20,6 @@ import User15 from '../../../assets/images/users-3/image_15.jpg'
 import { FaStar } from "react-icons/fa";
 function Wishlist() {
     const { store, setStore } = useContext(context)
-    const cardStyle = { backgroundColor: store.theme.bgColor }
     const images = [
         User1,
         User2,
@@ -40,7 +39,7 @@ function Wishlist() {
     ]
     return (
         <>
-            <div className="wishlist-wrapper"    >
+            <div className={"wishlist-wrapper "+store.theme+'-bg'}    >
                 <div className="wishlist-content">
                     <div className="top">
                         <h3>Wishlist</h3>
@@ -48,13 +47,13 @@ function Wishlist() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className="wishlist-card" style={cardStyle}>
+                            <div className={"wishlist-card "+store.theme+'-cardd'}>
                                 <h4>Wishlist</h4>
                                 <div className="cards">
                                     {
                                         images.map((image, i) =>{
                                             return (
-                                                <div className="cardd" key={i} style={cardStyle}>
+                                                <div className="cardd" key={i}>
                                                     <div className="left-part">
                                                         <img src={image} alt="" />
                                                     </div>

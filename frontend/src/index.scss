@@ -52,7 +52,7 @@
         background-color: #00000050;
     }
 }
-.dark{
+* .dark{
     &-bg{
         @extend %dark-bg;
     }
@@ -69,12 +69,16 @@
     &-input{
         background-color: $even-darker-blue;
         color: $gray-50;
-
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid $transparent-gray;
+        outline: none;
     }
 
     
 }
-.light{
+* .light{ 
     &-bg{
         @extend %light-bg;
     }
@@ -91,6 +95,11 @@
     &-input{
         background-color: $bg-color;
         color: $dark-blue;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 100%;
+        border: 1px solid $light-gray;
+        outline: none;
     }
 
 }

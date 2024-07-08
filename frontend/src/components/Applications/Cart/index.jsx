@@ -9,13 +9,12 @@ import FancyWatch from '../../../assets/images/fancy_watch.png'
 import ManShoes from '../../../assets/images/man_shoes.png'
 function Cart() {
     const {store, setStore} = useContext(context)
-    const cardStyle = {backgroundColor:store.theme.bgColor}
     const [product1, setProduct1] = useState(0)
     const [product2, setProduct2] = useState(0)
     const [product3, setProduct3] = useState(0)
     return ( 
         <>
-        <div className="cart-wrapper"  >
+        <div className={"cart-wrapper "+store.theme+'-bg'}  >  
             <div className="cart-content">
                 <div className="top">
                     <h3>Cart</h3>
@@ -23,10 +22,10 @@ function Cart() {
                 </div>
                 <div className="middle">
                     <div className="section-1">
-                        <div className="cart-card" style={cardStyle}>
+                        <div className={"cart-card "+store.theme+'-cardd'}>
                             <h4>Cart</h4>
                             <table>
-                                <thead    >
+                                <thead  className={store.theme+'-input'}>
                                     <tr>
                                         <th><p>Prdouct</p></th>
                                         <th><p>Prdouct Name</p></th>
@@ -51,17 +50,17 @@ function Cart() {
                                         </td>
                                         <td>
                                             <div className='counter'>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct1(product1 > 0 ? product1 -1 : product1)}}>
-                                                    <FaMinus color={store.theme.textColor}/>
+                                                    <FaMinus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                                 <div>
                                                     {product1}
                                                 </div>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct1(product1 + 1)}}>
-                                                    <FaPlus color={store.theme.textColor}/>
+                                                    <FaPlus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -87,17 +86,17 @@ function Cart() {
                                         </td>
                                         <td>
                                             <div className='counter'>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct2(product2 > 0 ? product2 -1 : product2)}}>
-                                                    <FaMinus color={store.theme.textColor}/>
+                                                    <FaMinus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                                 <div>
                                                     {product2}
                                                 </div>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct2(product2 + 1)}}>
-                                                    <FaPlus color={store.theme.textColor}/>
+                                                    <FaPlus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -123,17 +122,17 @@ function Cart() {
                                         </td>
                                         <td>
                                             <div className='counter'>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct3(product3 > 0 ? product3 -1 : product2)}}>
-                                                    <FaMinus color={store.theme.textColor}/>
+                                                    <FaMinus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                                 <div>
                                                     {product3}
                                                 </div>
-                                                <div style={{backgroundColor: store.theme.backBgColor}}>
+                                                <div>
                                                     <button onClick={()=> {setProduct3(product3 + 1)}}>
-                                                    <FaPlus color={store.theme.textColor}/>
+                                                    <FaPlus  className={store.theme+'-input'}/>
                                                     </button>
                                                 </div>
                                             </div>
@@ -148,7 +147,7 @@ function Cart() {
                                     <tr>
                                         <td colSpan={4}>
                                         <div className="coupan">
-                                            <input type="text" placeholder='Enter coupan code'    /> <button className='blue-btn'>Apply</button>
+                                            <input  className={store.theme+'-bg'} type="text" placeholder='Enter coupan code'    /> <button className='blue-btn'>Apply</button>
                                         </div>
                                         </td>
                                         <td>
