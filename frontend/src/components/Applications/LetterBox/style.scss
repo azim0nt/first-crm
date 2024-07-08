@@ -1,12 +1,14 @@
 @import '../../../assets/styles/settings';
 
-.letter-box-wrapper{
+.letter-box-wrapper {
     height: 100vh;
-   ::-webkit-scrollbar {
-       width: 0;
-       height: 0;
-   }
-    .letter-box-container{
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    .letter-box-container {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -17,48 +19,68 @@
             margin: 0 0 20px 0;
         }
 
-        .base_card{
-            background-color: $dark-blue;
-            width: 23%;
-            height: 100vh;
-            border-radius: 20px;
+        .section-1 {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
 
 
-            .compose-email{
+            .base_card {
+                background-color: $dark-blue;
+                height: 100vh;
+                border-radius: 20px;
                 padding: 20px;
-                width: 70%;
-                background-color: $blue;
-                border-radius: 10px;
-                margin: 0 auto;
+                &_2{
+                    border-radius: 20px;
+                    padding: 20px;
+                }
+                .compose-email {
+                    @extend %blue-btn;
+                    padding: 20px;
+                    width: 100%;
+                    border-radius: 10px;
+                    margin: 0 auto;
+                }
             }
+
         }
+
+
     }
 }
 
 
 
-
 /* Стили для модального окна */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .compose-message {
-    background-color: #2d2d2d;
+    background-color: $dark-blue;
     border-radius: 8px;
     padding: 20px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    bottom: 100px;
+    left: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-.compose-message input, .compose-message textarea {
-    width: 100%;
-    background-color: #121212;
-    border: 1px solid #444;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 10px;
-    color: #e0e0e0;
-}
+
 .compose-message textarea {
     height: 150px;
     resize: none;
 }
+
 .compose-message button {
     background-color: #3b3b3b;
     border: none;
@@ -68,13 +90,16 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
 .compose-message button:hover {
     background-color: #505050;
 }
+
 .compose-message .buttons {
     display: flex;
     justify-content: space-between;
 }
+
 .compose-message label {
     margin-top: 10px;
     display: block;
@@ -85,11 +110,17 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.section-2 {
+    width: 20%;
+    height: 30vh;
+    background-color: red
+}
