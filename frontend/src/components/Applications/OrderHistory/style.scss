@@ -1,8 +1,8 @@
 @import '../../../assets/styles/settings';
 
 .order-history-wrapper {
-    height: 100vh;
-    overflow: auto;
+    height: auto;
+     // overflow: auto;
 
     ::-webkit-scrollbar {
         width: 0;

@@ -1,0 +1,20 @@
+@import '../../../assets/styles/settings';
+
+.letter-box-wrapper{
+    height: 100vh;
+   ::-webkit-scrollbar {
+       width: 0;
+       height: 0;
+   }
+    .letter-box-container{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+    }
+}

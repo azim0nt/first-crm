@@ -99,8 +99,10 @@ function General() {
               <NavLink to={'kanban'}>Kanban Board</NavLink>
             
             </div>
-            <Accordion items={usersItems}/>
             <Accordion items={ecommerceItems}/>
+            <NavLink to={'letter-box'}>Letter Box</NavLink>
+            <Accordion items={usersItems}/>
+
           </div>
         </div>
       </div>

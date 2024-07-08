@@ -24,6 +24,7 @@ import Cart from './components/Applications/Cart';
 import Wishlist from './components/Applications/Wishlist';
 import Checkout from './components/Applications/Checkout';
 import Pricing from './components/Applications/Pricing';
+import LetterBox from './components/Applications/LetterBox';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -67,6 +68,7 @@ function App() {
                 <Route path="list_wish" element={<Wishlist />} />
                 <Route path="checkout" element={<Checkout />} />
                 <Route path="pricing" element={<Pricing />} />
+                <Route path="letter-box" element={<LetterBox />} />
               </Route>
 
               <Route path="login" element={<Login />} />

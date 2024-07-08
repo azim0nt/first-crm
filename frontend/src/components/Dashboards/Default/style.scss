@@ -3,7 +3,7 @@
 .default-wrapper {
     background: $bg-color;
     height: 100vh;
-    overflow: auto;
+     // overflow: auto;
 
     ::-webkit-scrollbar {
         width: 0;
@@ -182,10 +182,6 @@
             .section-2 {
                 display: flex;
                 gap: 20px;
-                .recent-order-card {
-                    
-                    
-                }
                 .our-growth-card{
                     width: 680px;
                     height: 400px;

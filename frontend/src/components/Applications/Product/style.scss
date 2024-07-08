@@ -1,8 +1,8 @@
 @import '../../../assets/styles/settings';
 
 .product-wrapper {
-    height: 100vh;
-    overflow: auto;
+    height: auto;
+     // overflow: auto;
 
     ::-webkit-scrollbar {
         width: 0;
