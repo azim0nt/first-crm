@@ -47,6 +47,64 @@
                         font-weight: 600;
                     }
                 }
+                .views{
+                    h3{
+                        color: $blue;
+                        margin-bottom: 10px;
+                    }
+                    div{
+                        margin-left: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 10px;
+                        button{
+                            padding: 10px 20px;
+                            width: 100%;
+                            font-weight: 600;
+                            border-radius: 5px;
+                            text-align: left;
+                            &.dark-text{
+                                &:hover{
+                                    background-color: $even-darker-blue;
+                                }
+                            }
+                        }
+                    }
+                }.tags{
+                    h3{
+                        color: $blue;
+                        margin-bottom: 10px;
+                    }
+                    div{
+                        margin-left: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 10px;
+                        button{
+                            padding: 10px 20px;
+                            width: 100%;
+                            font-weight: 600;
+                            border-radius: 5px;
+                            text-align: left;
+                            &.dark-text{
+                                &:hover{
+                                    background-color: $even-darker-blue;
+                                }
+                            }
+                        }
+                    }
+                }
+                .card-left{
+                    padding: 20px;
+                    border-radius: 20px;
+                    div{
+                        p{
+                            text-align: center;
+                        }
+                    }
+                }
             }
         }
     }
