@@ -43,16 +43,23 @@
         .right {
 
             display: flex;
-            justify-content: space-between;
+            justify-content: right;
             align-items: center;
-            .icon {
-                border-radius: 50%;
-                width: 45px;
-                height: 45px;
+            gap: 20px;
+            .icons{
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                cursor: pointer;
+                gap:20px;
+                .icon {
+                    border-radius: 50%;
+                    width: 45px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
             }
             .user {
                 display: flex;

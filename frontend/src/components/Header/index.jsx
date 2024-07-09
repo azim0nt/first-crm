@@ -26,7 +26,7 @@ function Header() {
 
     return (
         <div className={`header-wrapper`}>
-            <div className={"header-content "+store.theme+'-cardd'}>
+            <div className={"header-content " + store.theme + '-cardd'}>
                 <div className="left">
                     <div className={`input-wrapper ${store.theme}-bg`}>
                         <IoSearch size={30} color="#6A7185" />{' '}
@@ -34,22 +34,24 @@ function Header() {
                     </div>
                 </div>
                 <div className="right">
-                    <div className={`notifications icon ${store.theme}-icon`}>
-                        <IoMdNotifications size={20} color="#5c61f2" />
-                    </div>
-                    <div className={`bookmark icon ${store.theme}-icon`}>
-                        <FaBookmark size={20} color="#5c61f2" />
-                    </div>
-                    <div className={`theme icon ${store.theme}-icon`}>
-                        <button onClick={handleThemeChange}>
-                            <IoInvertMode size={20} color="#5c61f2" />
-                        </button>
-                    </div>
-                    <div className={`message icon ${store.theme}-icon`}>
-                        <MdEmail size={20} color="#5c61f2" />
-                    </div>
-                    <div className={`cart icon ${store.theme}-icon`}>
-                        <FaShoppingCart size={20} color="#5c61f2" />
+                    <div className="icons">
+                        <div className={`notifications icon ${store.theme}-icon`}>
+                            <IoMdNotifications size={20} color="#5c61f2" />
+                        </div>
+                        <div className={`bookmark icon ${store.theme}-icon`}>
+                            <FaBookmark size={20} color="#5c61f2" />
+                        </div>
+                        <div className={`theme icon ${store.theme}-icon`}>
+                            <button onClick={handleThemeChange}>
+                                <IoInvertMode size={20} color="#5c61f2" />
+                            </button>
+                        </div>
+                        <div className={`message icon ${store.theme}-icon`}>
+                            <MdEmail size={20} color="#5c61f2" />
+                        </div>
+                        <div className={`cart icon ${store.theme}-icon`}>
+                            <FaShoppingCart size={20} color="#5c61f2" />
+                        </div>
                     </div>
                     <div className="user">
                         <div className="avatar">
