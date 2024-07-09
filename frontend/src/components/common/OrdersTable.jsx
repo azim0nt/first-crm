@@ -73,13 +73,13 @@ function OrdersTable(props) {
                                         <thead>
                                             <tr>
                                                 <th><input type="checkbox" /></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('index')}>No</button>.</th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('fullname')}>CustomerName</button></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('id')}>ID</button></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('date')}>Date</button></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('city')}>City</button></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('status')}>Status</button></th>
-                                                <th><button  className={store.theme+'-input'} onClick={() => sortData('amount')}>Amount</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('index')}>No</button>.</th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('fullname')}>CustomerName</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('id')}>ID</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('date')}>Date</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('city')}>City</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('status')}>Status</button></th>
+                                                <th><button  className={store.theme+'-text'} onClick={() => sortData('amount')}>Amount</button></th>
                                             </tr>
                                         </thead>
                                         <tbody>

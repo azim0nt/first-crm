@@ -106,6 +106,7 @@ function General() {
             <NavLink to={'letter-box'}>Letter Box</NavLink>
             <Accordion items={usersItems}/>
             <NavLink to={'bookmarks'}>Bookmarks</NavLink>
+            <NavLink to={'calendar_basic'}>Calendar</NavLink>
           </div>
         </div>
       </div>
