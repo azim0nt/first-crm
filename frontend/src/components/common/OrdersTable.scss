@@ -1,7 +1,7 @@
 @import '../../assets/styles/settings';
 
 .order-table {
-    width: 900px;
+    width: 100%;
     background-color: #fff;
     border-radius: 20px;
     padding: 20px;
@@ -12,6 +12,7 @@
     .top-part {
         display: flex;
         justify-content: space-between;
+        width: 100%;
         .input{
             input{
                 border: none;
@@ -25,8 +26,9 @@
         flex-direction: column;
         gap: 30px;
         margin-top: 5px;
-
+        width: 100%;
         table {
+            width: 100%;
             tbody {
                 tr {
 
