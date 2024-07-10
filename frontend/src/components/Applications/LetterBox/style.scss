@@ -51,6 +51,27 @@
 
 
 
+
+.nav{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: $even-darker-blue;
+
+    .search{
+        padding: 10px;
+        background-color: #10101c;
+        border: none;
+        border-radius: 5px;
+        width: 30%;
+    }
+ }
+
+
+
+
 /* Стили для модального окна */
 .modal {
     display: flex;
@@ -123,4 +144,13 @@
     width: 20%;
     height: 30vh;
     background-color: red
+}
+
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
