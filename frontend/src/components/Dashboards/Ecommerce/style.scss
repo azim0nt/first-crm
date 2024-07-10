@@ -209,3 +209,19 @@
         transform: rotate(360deg);
     }
 }
+
+@media(max-width:1430px){
+    .ecommerce-wrapper{
+        .ecommerce-content{
+            .middle{
+                .section-1{
+                    .daily-visitors-card{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
