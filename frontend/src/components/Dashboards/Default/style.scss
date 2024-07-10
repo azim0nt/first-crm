@@ -29,7 +29,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-
+            width: 100%;
             .section-1 {
                 display: grid;
                 gap: 20px;
@@ -190,9 +190,8 @@
                 .recent-order-card{
                     width: 100%;
                     display: flex;
-                    .order-table{
-                        width: 100%;
-                    }
+                    flex-grow: 1;
+                    
                 }
                 .our-growth-card {
                     width: 100%;
@@ -277,13 +276,11 @@
         .default-content {
             .middle {
                 .section-22 {
-                    grid-template-columns: repeat(1, 1fr);
-
+                    display: flex;
+                    flex-direction: column;
                     .recent-order-card{
-                        grid-column: span 1;
                     }
                     .our-growth-card {
-                        grid-column: span 1;
                         .growth-chart {
                             width: 100%;
                         }
@@ -306,13 +303,26 @@
                     }
                 }
                 .section-22 {
-                    grid-template-columns: repeat(1, 1fr);
+                    display: flex;
+                    flex-direction: column;
 
                     .recent-order-card{
-                        grid-column: span 1;
+                        .order-table{
+                            table{
+                                tbody{
+                                    tr{
+                                        td{
+                                            img{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                     .our-growth-card {
-                        grid-column: span 1;
+                        // grid-column: span 1;
                         .growth-chart {
                             width: inherit;
                         }
@@ -327,8 +337,8 @@
     .default-wrapper {
         .default-content {
             .middle {
+                padding: 0 5%;
                 .section-1 {
-                    padding: 0 5%;
                     grid-template-columns: 1fr;
 
                     .top-selling-product-card {
@@ -336,7 +346,7 @@
                     }
                 }
                 .section-22 {
-                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-columns: 1fr;
 
                     .recent-order-card{
                         grid-column: span 1;

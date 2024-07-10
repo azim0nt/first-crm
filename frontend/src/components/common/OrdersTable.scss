@@ -1,18 +1,18 @@
 @import '../../assets/styles/settings';
 
 .order-table {
-    width: 100%;
+    flex-grow: 1;
     background-color: #fff;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-
+    width: 100%;
     .top-part {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        
         .input{
             input{
                 border: none;
@@ -26,9 +26,9 @@
         flex-direction: column;
         gap: 30px;
         margin-top: 5px;
-        width: 100%;
+        
         table {
-            width: 100%;
+            
             tbody {
                 tr {
 
@@ -40,7 +40,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: left;
-                            padding-left: 50px;
+                            // padding-left: 50px;
                             gap: 10px;
 
                             p {
