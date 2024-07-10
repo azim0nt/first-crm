@@ -27,11 +27,13 @@
            
             .section-1{
                 margin-top: 20px;
-                display: flex;
+                display: grid;
                 gap: 20px;
+                width: 100%;
+                grid-template-columns: 1fr 1fr;
                 .four-cards {
                     display: grid;
-                    width: 800px;
+                    width: 100%;
                     grid-template-columns: repeat(2, 1fr);
                     gap: 20px;
     
@@ -47,7 +49,6 @@
                         padding: 20px;
                         &:hover {
                             transform: translateY(-10px);
-                            box-shadow: 1px 1px 20px #97979762;
                             .circle{
                                 animation: rotate 2s linear infinite;
                             }
@@ -61,20 +62,23 @@
                     }
                 }
                 .daily-visitors-card{
-                    width: 770px;
+                    width: 100%;
                     padding: 20px;
 
-                    display: grid;
-                    grid-template-columns: 70% 30%;
+                    display: flex;
+                    
                     border-radius: 20px;
                     .left{
                         display: grid;
                         grid-template-columns: 100%;
+                        width: 70%;
                         .chart{
                             height: auto;
+                            width: 100%;
                         }
                     }
                     .right{
+                        width: 30%;
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
@@ -140,18 +144,16 @@
                             }
                         }
                     }
-                    &:hover{
-                        box-shadow: 1px 1px 20px #97979762;
-                    }
                 }
             }
             .section-2{
                 margin-top: 20px;
-                display: flex;
-                gap: 40px;
+                display: grid;
+                grid-template-columns: 0.4fr 0.6fr;
+                gap: 20px;
+                background-color: transparent;
+                width: 100%;
                 .top-product-card{
-                    width: 650px;
-                    height: 400px;
 
                     display: flex;
                     flex-direction: column;
@@ -205,5 +207,21 @@
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media(max-width:1430px){
+    .ecommerce-wrapper{
+        .ecommerce-content{
+            .middle{
+                .section-1{
+                    .daily-visitors-card{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
     }
 }

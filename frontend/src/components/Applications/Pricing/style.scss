@@ -1,8 +1,7 @@
 @import '../../../assets/styles/settings';
 
 .pricing-wrapper {
-    height: 100vh;
-     // overflow: auto;
+    min-height: 100vh;
 
     ::-webkit-scrollbar {
         width: 0;

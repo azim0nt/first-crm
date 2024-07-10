@@ -183,7 +183,7 @@ function Default() {
                                 </div>
                             </div>
                         </div>
-                        <div className="section-2">
+                        <div className="section-22">
                             <div className={"recent-order-card " +store.theme+'-cardd'} >
                                <OrdersTable data={userData} title={'R'} images={usersImages}/>
                             </div>

@@ -1,8 +1,12 @@
 import './style.scss'
 import { useState } from 'react';
-import Logo from '../../assets/images/logo.png'
+// import Logo from '../../assets/images/logo.png'
+import LogoIcon from '../../assets/images/aileet-icon.png'
 import Accordion from '../common/Accordion';
 import { NavLink } from 'react-router-dom';
+import { FaWallet, FaRegCalendarAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoBookmarksSharp } from "react-icons/io5";
 const generalItems = [
   {
     title: 'Dashboards',
@@ -43,45 +47,49 @@ const appItems = [
 ]
 const usersItems = [
   {
-    title:'Users',
-    icon:'FaHome',
-    content:[
-      {name:'User Profile', url:'user_profile'},
-      {name:'User Edit', url:'edit_profile'},
-      {name:'User Cards', url:'user_cards'}
+    title: 'Users',
+    icon: 'FaHome',
+    content: [
+      { name: 'User Profile', url: 'user_profile' },
+      { name: 'User Edit', url: 'edit_profile' },
+      { name: 'User Cards', url: 'user_cards' }
     ]
   }
 ]
 const ecommerceItems = [
   {
-    title:'Ecommerce',
-    icon:'FaHome',
-    content:[
-      {name:"Add Product", url:"add_products"},
-      {name:"Product", url:"product_cards"},
-      {name:"Product Page", url:"product_page"},
-      {name:"Product List", url:"list_products"},
-      {name:"Payment Details", url:"payment_details"},
-      {name:"Order History", url:"order_history"},
-      {name:"Cart", url:"cart"},
-      {name:"Wishlist", url:"list_wish"},
-      {name:"Checkout", url:"checkout"},
-      {name:"Pricing", url:"pricing"},
+    title: 'Ecommerce',
+    icon: 'FaHome',
+    content: [
+      { name: "Add Product", url: "add_products" },
+      { name: "Product", url: "product_cards" },
+      { name: "Product Page", url: "product_page" },
+      { name: "Product List", url: "list_products" },
+      { name: "Payment Details", url: "payment_details" },
+      { name: "Order History", url: "order_history" },
+      { name: "Cart", url: "cart" },
+      { name: "Wishlist", url: "list_wish" },
+      { name: "Checkout", url: "checkout" },
+      { name: "Pricing", url: "pricing" },
     ]
   }
 ]
 function General() {
-  const [isOpen, SetIsOpen] = useState('')
+  const [isFree, setIsFree] = useState('unfree')
   return (
     <>
-      <div className="general-wrapper">
+      <div className={"general-wrapper "+isFree}>
         <div className="general-header">
           <div className="general-logo">
-
-            <img src={Logo} alt="" />
+        <div className="left">
+          <img src={LogoIcon} width={40} alt="" />
+        </div>
+        <div className="right">
+          <p>AiLeet</p>  
+        </div>
           </div>
           <div className="general-toggle-sidebar">
-            <button>
+            <button onClick={()=>{setIsFree(isFree === 'unfree' ? 'free': 'unfree')}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" className="bi bi-layout-sidebar" viewBox="0 0 16 16">
                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2z" />
               </svg>
@@ -97,15 +105,38 @@ function General() {
           </div>
           <div id="applications">
             <p id="title">Applications</p>
-            <Accordion items={appItems}/>
+            <Accordion items={appItems} />
             <div className="kanban-board">
-              <NavLink to={'kanban'}>Kanban Board</NavLink>
-            
+              <div className='logo-link'>
+                <div className="left">
+                  <FaWallet size={15} color='#9FA8C1' />
+                </div>
+                <div className="right">
+                  <NavLink to={'kanban'}>Kanban Board</NavLink>
+                </div>
+              </div>
+
             </div>
-            <Accordion items={ecommerceItems}/>
-            <NavLink to={'letter-box'}>Letter Box</NavLink>
-            <Accordion items={usersItems}/>
-            <NavLink to={'bookmarks'}>Bookmarks</NavLink>
+            <Accordion items={ecommerceItems} />
+            <div className='logo-link'>
+              <div className="left">
+                <MdEmail size={15} color='#9FA8C1' />
+              </div>
+              <div className="right">
+                <NavLink to={'letter-box'}>Letter Box</NavLink>
+              </div>
+            </div>
+            <Accordion items={usersItems} />
+            <div className='logo-link'>
+              <div className="left"><IoBookmarksSharp size={15} color='#9FA8C1' /></div>
+              <div className="right"><NavLink to={'bookmarks'}>Bookmarks</NavLink></div>
+            </div>
+            <div className='logo-link'>
+              <div className="left"><FaRegCalendarAlt size={15} color='#9FA8C1' /></div>
+              <div className="right"><NavLink to={'calendar_basic'}>Calendar</NavLink></div>
+            </div>
+
+
           </div>
         </div>
       </div>
