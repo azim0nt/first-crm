@@ -1,10 +1,10 @@
 @import '../../../assets/styles/settings';
 
-.product-list-wrapper{
+.product-list-wrapper {
     height: auto;
     min-height: 100vh;
-    //  // overflow: auto;
     padding-bottom: 100px;
+
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -12,7 +12,8 @@
 
 
     scrollbar-width: none;
-    .product-list-content{
+
+    .product-list-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -22,19 +23,21 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
-            .section-1{
-                
-                .product-list-card{
+
+        .middle {
+            .section-1 {
+
+                .product-list-card {
                     border-radius: 20px;
                     padding: 20px;
-                   
-                    .top-part{
+
+                    .top-part {
                         display: flex;
                         justify-content: right;
                         gap: 20px;
                         align-items: center;
-                        .filter-open{
+
+                        .filter-open {
                             width: 40px;
                             height: 40px;
                             background-color: $light-blue;
@@ -44,150 +47,165 @@
                             border-radius: 5px;
                             cursor: pointer;
                         }
-                        .add-product{
-                            @extend %blue-btn;
-                            height: 40px;
-                            padding: 0 10px;
-                            a{
-                                width: 100%;
-                                height: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                color: #fff;
-                                gap: 10px;
+
+                        .add-product {
+                            button{
+                                @extend %blue-btn;
+                                padding: 10px;
                             }
                         }
                     }
-                    .filter{
+
+                    .filter {
                         display: flex;
                         justify-content: space-between;
                         gap: 50px;
                         margin: 20px 0;
-                        select{
+
+                        select {
                             width: 100%;
                             border: 1px solid $dark-blue;
                             padding: 10px 20px;
                             border-radius: 10px;
                             outline: none;
-                            &.dark{
+
+                            &.dark {
                                 background-color: $even-darker-blue;
                                 color: $gray-50;
                                 border: 1px solid $transparent-gray;
                             }
                         }
                     }
-                    .bottom-part{
+
+                    .bottom-part {
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        .search{
-                            display: flex;
+
+                        .search {
+                            display: grid;
                             gap: 10px;
                             justify-content: left;
                             align-items: center;
-                            select{
-                                border-radius:5px ;
+                            grid-template-columns: 1fr 1fr 4fr;
+                            select {
+                                border-radius: 5px;
                                 padding: 5px;
                                 border: 1px solid $even-darker-blue;
-                                &.dark{
+
+                                &.dark {
                                     background-color: $even-darker-blue;
                                     color: $gray-50;
                                     border: 1px solid $transparent-gray;
                                 }
                             }
-                            input{
-                                border-radius:5px ;
+
+                            input {
+                                border-radius: 5px;
                                 padding: 5px;
                                 border: 1px solid $even-darker-blue;
-                                &.dark{
+
+                                &.dark {
                                     background-color: $dark-blue;
                                     color: $gray-50;
                                     border: 1px solid $transparent-gray;
                                 }
                             }
                         }
-                        table{
+
+                        table {
                             width: 100%;
                             text-align: center;
-                            thead{
-                                tr{
-                                    th{
+
+                            thead {
+                                tr {
+                                    th {
                                         cursor: pointer;
                                     }
                                 }
                             }
-                            tbody{
-                                
-                                tr{
+
+                            tbody {
+
+                                tr {
                                     border: 2px solid $gray;
 
-                                    td{
+                                    td {
                                         margin-bottom: 10px;
                                         padding: 10px 0;
-                                        
-                                        .container{
-                                                display: flex;
+
+                                        .container {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 20px;
+
+                                            .img-container {
+                                                width: 50px;
+                                                height: 50px;
+                                                background-color: $transparent-blue;
+                                                display: grid;
+                                                justify-content: center;
                                                 align-items: center;
-                                                gap: 20px;
-                                                .img-container{
-                                                    width: 50px;
-                                                    height: 50px;
-                                                    background-color: $transparent-blue;
-                                                    display: grid;
-                                                    justify-content: center;
-                                                    align-items: center;
-                                                    border-radius: 2px;
-                                                    img{
-                                                        width: 40px;
-                                                        height: auto;
-                                                    }
+                                                border-radius: 2px;
+
+                                                img {
+                                                    width: 40px;
+                                                    height: auto;
                                                 }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                        ul{
+
+                        ul {
                             display: flex;
                             gap: 20px;
                             list-style-type: none;
-                        justify-content: right;
+                            justify-content: right;
 
-                            &.dark{
-                                li{
+                            &.dark {
+                                li {
                                     background-color: $even-darker-blue;
-                                    a{
+
+                                    a {
                                         color: #fff;
                                     }
                                 }
                             }
-                            &.light{
-                                li{
+
+                            &.light {
+                                li {
                                     background-color: $bg-color;
-                                    a{
+
+                                    a {
                                         color: $dark-blue;
                                     }
-                                    &.active{
-                                        a{
+
+                                    &.active {
+                                        a {
                                             color: #fff;
                                         }
                                     }
                                 }
-                            
+
                             }
-                            li{
-                                width: 30px ;
+
+                            li {
+                                width: 30px;
                                 height: 30px;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                                 border-radius: 5px;
                                 cursor: pointer;
-                                a{
+
+                                a {
                                     color: $even-darker-blue;
                                 }
-                                &.active{
+
+                                &.active {
                                     background-color: $blue;
                                 }
                             }
@@ -196,5 +214,66 @@
                 }
             }
         }
+    }
+}
+
+.modal-window-bg {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: #00000050;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+
+    .modal-window {
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .form {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .form-actions{
+                    margin-top: 25px;
+                    .blue-btn {
+                        @extend %blue-btn;
+                        width: 100%;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        display: flex;
+
+        * {
+            transition: 0s;
+        }
+    }
+
+    &.close {
+        display: none;
     }
 }

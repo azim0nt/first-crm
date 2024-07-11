@@ -2,12 +2,13 @@ import './style.scss'
 import { useContext, useState } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab'
-import productsList from '../../../db/productsList.json'
+
 import { Link } from 'react-router-dom'
 import { MdOutlineCancel } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import { FaFilter, FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import ReactPaginate from 'react-paginate';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import Product1 from '../../../assets/images/productList/image_1.png'
 import Product2 from '../../../assets/images/productList/image_2.png'
 import Product3 from '../../../assets/images/productList/image_3.png'
@@ -67,10 +68,230 @@ function ProductList() {
         Product25,
         Product26
     ]
+    const [productsList, setProductsList] = useState([
+        {
+            "name": "Apple Desktop 2024",
+            "sku": "02145YK796",
+            "category": "Laptops",
+            "price": "56000.00",
+            "qty": "13",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Apple iphone 13 Pro",
+            "sku": "56379FG3AW",
+            "category": "Smart Phones",
+            "price": "19000.00",
+            "qty": "48",
+            "status": "In Stock"
+        },
+        {
+            "name": "Headphones",
+            "sku": "33KR5689B1",
+            "category": "Smart Headphones",
+            "price": "10000.00",
+            "qty": "5",
+            "status": "In Stock"
+        },
+        {
+            "name": "wireless-headphone",
+            "sku": "AD6789HEY0",
+            "category": "Smart Headphones",
+            "price": "15000.00",
+            "qty": "4",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood Chair",
+            "sku": "456DF78DFQ",
+            "category": "Furniture",
+            "price": "99000.00",
+            "qty": "2",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood Chair",
+            "sku": "5633GD3K54",
+            "category": "Furniture",
+            "price": "1000.00",
+            "qty": "8",
+            "status": "Sold Out"
+        },
+        {
+            "name": "MacBook Air 13.3-inch",
+            "sku": "589KO8PPQ8",
+            "category": "Laptops",
+            "price": "45000.00",
+            "qty": "10",
+            "status": "Sold Out"
+        },
+        {
+            "name": "M185 Compact Wireless Mouse",
+            "sku": "02145YK796",
+            "category": "E-Commerce",
+            "price": "56000.00",
+            "qty": "13",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood chairs",
+            "sku": "568GH3LLQ2",
+            "category": "Furniture",
+            "price": "78000.00",
+            "qty": "50",
+            "status": "In Stock"
+        },
+        {
+            "name": "Smart watch",
+            "sku": "58FR7K34F6",
+            "category": "Electric",
+            "price": "25000.00",
+            "qty": "48",
+            "status": "Sold Out"
+        },
+        {
+            "name": "DVD",
+            "sku": "HG5667DFQ1",
+            "category": "Electric",
+            "price": "5600.00",
+            "qty": "10",
+            "status": "In Stock"
+        },
+        {
+            "name": "Speakers",
+            "sku": "02145YK796",
+            "category": "Electric",
+            "price": "12200.00",
+            "qty": "50",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Apple iphone 13 Pro",
+            "sku": "56379FG3AW",
+            "category": "Smart Phones",
+            "price": "19000.00",
+            "qty": "48",
+            "status": "In Stock"
+        },
+        {
+            "name": "Headphones",
+            "sku": "33KR5689B1",
+            "category": "Smart Headphones",
+            "price": "10000.00",
+            "qty": "5",
+            "status": "In Stock"
+        },
+        {
+            "name": "Wood chairs",
+            "sku": "568GH3LLQ2",
+            "category": "Furniture",
+            "price": "78000.00",
+            "qty": "50",
+            "status": "In Stock"
+        },
+        {
+            "name": "Smart watch",
+            "sku": "58FR7K34F6",
+            "category": "Electric",
+            "price": "25000.00",
+            "qty": "48",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Apple iphone 13 Pro",
+            "sku": "56379FG3AW",
+            "category": "Smart Phones",
+            "price": "19000.00",
+            "qty": "48",
+            "status": "In Stock"
+        },
+        {
+            "name": "Headphones",
+            "sku": "33KR5689B1",
+            "category": "Smart Headphones",
+            "price": "10000.00",
+            "qty": "5",
+            "status": "In Stock"
+        },
+        {
+            "name": "wireless-headphone",
+            "sku": "AD6789HEY0",
+            "category": "Smart Headphones",
+            "price": "15000.00",
+            "qty": "4",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood Chair",
+            "sku": "456DF78DFQ",
+            "category": "Furniture",
+            "price": "99000.00",
+            "qty": "2",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood Chair",
+            "sku": "5633GD3K54",
+            "category": "Furniture",
+            "price": "1000.00",
+            "qty": "8",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Apple Desktop 2024",
+            "sku": "02145YK796",
+            "category": "Laptops",
+            "price": "56000.00",
+            "qty": "13",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Apple iphone 13 Pro",
+            "sku": "56379FG3AW",
+            "category": "Smart Phones",
+            "price": "19000.00",
+            "qty": "48",
+            "status": "In Stock"
+        },
+        {
+            "name": "Headphones",
+            "sku": "33KR5689B1",
+            "category": "Smart Headphones",
+            "price": "10000.00",
+            "qty": "5",
+            "status": "In Stock"
+        },
+        {
+            "name": "wireless-headphone",
+            "sku": "AD6789HEY0",
+            "category": "Smart Headphones",
+            "price": "15000.00",
+            "qty": "4",
+            "status": "Sold Out"
+        },
+        {
+            "name": "Wood Chair",
+            "sku": "456DF78DFQ",
+            "category": "Furniture",
+            "price": "99000.00",
+            "qty": "2",
+            "status": "Sold Out"
+        }
+    ])
+    
     const [currentPage, setCurrentPage] = useState(0);
     const [entriesPerPage, setEntriesPerPage] = useState(10);
     const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'ascending' });
     const [searchQuery, setSearchQuery] = useState('');
+    const [isOpen, setIsOpen] = useState('close');
+    const [formData, setFormData] = useState({
+        name: '',
+        category: '',
+        price: '',
+        qty: '',
+        status: '',
+        image: null,
+    });
 
     const handlePageClick = (data) => {
         setCurrentPage(data.selected);
@@ -94,9 +315,49 @@ function ProductList() {
         setCurrentPage(0);
     };
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleImageChange = (e) => {
+        setFormData({ ...formData, image: e.target.files[0] });
+    };
+    function generateSKU() {
+        // Генерация пяти цифр
+        const digitsPart1 = Array.from({ length: 5 }, () => Math.floor(Math.random() * 10)).join('');
+      
+        // Генерация двух букв
+        const letters = Array.from({ length: 2 }, () => String.fromCharCode(65 + Math.floor(Math.random() * 26))).join('');
+      
+        // Генерация трех цифр
+        const digitsPart2 = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10)).join('');
+      
+        // Объединение всех частей
+        const sku = `${digitsPart1}${letters}${digitsPart2}`;
+        return sku;
+      }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newProduct = {
+            ...formData,
+            image: URL.createObjectURL(formData.image),
+        };
+        setProductsList([...productsList, newProduct]);
+        setFormData({
+            name: '',
+            category: '',
+            price: '',
+            qty: '',
+            status: '',
+            image: null,
+        });
+        setIsOpen('close');
+    };
+
     const combinedList = productsList.map((product, index) => ({
         ...product,
-        image: images[index]
+        image: images[index] || product.image,
     }));
 
     const sortedProducts = [...combinedList].sort((a, b) => {
@@ -120,10 +381,9 @@ function ProductList() {
 
     const offset = currentPage * entriesPerPage;
     const currentProducts = filteredProducts.slice(offset, offset + entriesPerPage);
-
     return (
         <>
-            <div className={"product-list-wrapper "+store.theme+'-bg'}>
+            <div className={"product-list-wrapper " + store.theme + '-bg'}>
                 <div className="product-list-content">
                     <div className="top">
                         <h3>Product List</h3>
@@ -131,42 +391,42 @@ function ProductList() {
                     </div>
                     <div className="middle">
                         <div className="section-1">
-                            <div className={"product-list-card "+store.theme+'-cardd'}>
+                            <div className={"product-list-card " + store.theme + '-cardd'}>
                                 <div className="top-part">
                                     <button className="filter-open" onClick={() => { setDisplayMode(displayMode === 'none' ? 'flex' : 'none') }}>
                                         {displayMode === 'none' ? <FaFilter color='#5c61f2' /> : <MdOutlineCancel size={25} color='#5c61f2' />}
                                     </button>
                                     <div className="add-product">
-                                        <Link to={'/add_products'}><FaPlus color='#fff' /> Add Product</Link>
+                                        <button onClick={() => { setIsOpen('open') }}><FaPlus color='#fff' /> Add Product</button>
                                     </div>
                                 </div>
                                 <div className="filter" style={{ display: displayMode }}>
-                                    <select  className={store.theme+'-input'}>
+                                    <select className={store.theme + '-input'}>
                                         <option selected="">Choose Product</option>
                                         <option value="1">Apple iphone 13 Pro</option>
                                         <option value="2">Wood Chair</option>
                                         <option value="3">M185 Compact Wireless Mouse</option>
                                     </select>
-                                    <select  className={store.theme+'-input'}>
+                                    <select className={store.theme + '-input'}>
                                         <option selected="">Choose Category</option>
                                         <option value="1">Furniture</option>
                                         <option value="2">Smart Gadgets</option>
                                         <option value="3">Electrics</option>
                                     </select>
-                                    <select  className={store.theme+'-input'}>
+                                    <select className={store.theme + '-input'}>
                                         <option selected="">Choose Sub Category</option>
                                         <option value="1">Smart Phones</option>
                                         <option value="2">Smart Watches</option>
                                         <option value="3">Wireless headphone</option>
                                     </select>
-                                    <select  className={store.theme+'-input'}>
+                                    <select className={store.theme + '-input'}>
                                         <option selected="">Status</option>
                                         <option value="1">Sold Out </option>
                                         <option value="2">In Stock</option>
                                         <option value="3">Pre Order</option>
                                         <option value="4">Limited Stock </option>
                                     </select>
-                                    <select  className={store.theme+'-input'}>
+                                    <select className={store.theme + '-input'}>
                                         <option selected="">Price</option>
                                         <option value="1">56000.00</option>
                                         <option value="2">19000.00</option>
@@ -177,7 +437,7 @@ function ProductList() {
                                 </div>
                                 <div className="bottom-part">
                                     <div className="search">
-                                        <select  className={store.theme+'-input'}
+                                        <select className={store.theme + '-input'}
                                             value={entriesPerPage}
                                             onChange={handleEntriesChange}
                                         >
@@ -191,7 +451,7 @@ function ProductList() {
                                         <input
                                             type="text"
                                             placeholder="Search..."
-                                             className={store.theme+'-input'}
+                                            className={store.theme + '-input'}
                                             value={searchQuery}
                                             onChange={handleSearchChange}
                                         />
@@ -265,8 +525,8 @@ function ProductList() {
                                         </tbody>
                                     </table>
                                     <ReactPaginate
-                                        previousLabel={<FaLongArrowAltLeft color={store.theme === 'dark' ? '#ffffff99': '#171829'} />}
-                                        nextLabel={<FaLongArrowAltRight color={store.theme === 'dark' ? '#ffffff99': '#171829'} />}
+                                        previousLabel={<FaLongArrowAltLeft color={store.theme === 'dark' ? '#ffffff99' : '#171829'} />}
+                                        nextLabel={<FaLongArrowAltRight color={store.theme === 'dark' ? '#ffffff99' : '#171829'} />}
                                         breakLabel={'...'}
                                         pageCount={Math.ceil(filteredProducts.length / entriesPerPage)}
                                         marginPagesDisplayed={2}
@@ -278,6 +538,96 @@ function ProductList() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className={"modal-window-bg " + isOpen}>
+
+                <div className={"modal-window " + store.theme + '-cardd'}>
+                    <div className="header">
+                        <h3>Create Project</h3>
+                        <span><h3>Close</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
+                    </div>
+                    <div className="form">
+                    <form onSubmit={handleSubmit} className="modal-form">
+                        <div className="form-group">
+                            <label>Product Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                required
+                                className={store.theme + '-input'}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Category</label>
+                            <select
+                                name="category"
+                                value={formData.status}
+                                onChange={handleInputChange}
+                                required
+                                className={store.theme + '-input'}
+                            >
+                                <option value="Laptops">Laptops</option>
+                                <option value="Smart Phones">Smart Phones</option>
+                                <option value="Electric">Electric</option>
+                                <option value="Smart Headphones">Smart Headphones</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                                <option value="Furniture">Furniture</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label>Price</label>
+                            <input
+                                type="number"
+                                name="price"
+                                value={formData.price}
+                                onChange={handleInputChange}
+                                required
+                                className={store.theme + '-input'}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Quantity</label>
+                            <input
+                                type="number"
+                                name="qty"
+                                value={formData.qty}
+                                onChange={handleInputChange}
+                                required
+                                className={store.theme + '-input'}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Status</label>
+                            <select
+                                name="status"
+                                value={formData.status}
+                                onChange={handleInputChange}
+                                required
+                                className={store.theme + '-input'}
+                            >
+
+                                <option value="In Stock">In Stock</option>
+                                <option value="Sold Out">Sold Out</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label>Product Image</label>
+                            <input
+                                type="file"
+                                name="image"
+                                onChange={handleImageChange}
+                                required
+                                className={store.theme + '-input'}
+                            />
+                        </div>
+                        <div className="form-actions">
+                            <button type="submit" className="blue-btn">Add Product</button>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>
