@@ -9,7 +9,7 @@
     }
 
 
-    .kanban-content {
+    .kanban-container {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -19,29 +19,50 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
+
+        .middle {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            .section-1{
-                .default-demo-card{
-                    padding: 20px;
-                    border-radius: 20px;
-                    h3{
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-            .section-2{
-                .custom-board-card{
-                    padding: 20px;
-                    border-radius: 20px;
-                    h3{
-                        margin-bottom: 10px;
-                    }
 
+            .section-1 {
+                .kanban-board {
+                    padding: 20px;
+                    border-radius: 20px;
+
+                    .boards {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: 20px;
+
+                        .board {
+                            width: 100%;
+                            border: 1px solid $light-blue;
+                            padding: 20px;
+                            border-radius: 10px;
+                            text-align: center;
+
+                            .bottom-part {
+                                margin-top: 40px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+
+                                .item {
+                                    border: 1px solid $light-blue;
+                                    padding: 50px;
+                                    border-radius: 10px;
+                                    &.item-shadowed{
+                                        background-color: $light-blue;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
                 }
             }
+
         }
     }
 }
