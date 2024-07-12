@@ -23,6 +23,45 @@
                 border-radius: 20px;
                 display: flex;
                 // border: 1px solid #{$gray50};
+                .left{
+                    .top-part{
+                        .input-container{
+                            display: flex;
+                            align-items: center;
+                            padding: 0 10px;
+                            input{
+                                border: none;
+                            }
+                        }
+                        .chat-contacts-container{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            height: 50px;
+                            
+                            button{
+                                width:100%;
+                                font-weight: 600;
+                                font-size: 20px;
+                                &.active{
+                                    border-bottom: 1px solid $blue;
+                                }
+                            }
+                        }
+                    }
+                    .bottom-part{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        height: 300px;
+                        overflow: scroll;
+                        .user-container{
+                            display: flex;
+                            align-items: center;
+                            border-bottom: 1px solid $light-gray;
+                            padding-bottom: 15px;
+                        }
+                    }
+                }
             }
         }
 

@@ -4,8 +4,114 @@ import {context} from '../../../store'
 import PathToTab from '../../common/PathToTab'
 import { FaSearch } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
+
+function Chat(store){
+    
+    return (
+        <>
+         <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div>
+                        <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div>                      <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div>                      <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                                <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">Hey, How are you?</div>
+                            </div>
+                        </div></>
+    )
+}
+function Contacts(store){
+    return (
+        <>
+         <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div> <div className="user-container">
+                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
+                            <div className="name">
+                            <div className="fullname">Cameron Williamson</div>
+                                <div className="last-message">+998919090909</div>
+                            </div></div>
+        </>
+    )
+}
 function PrivateChat() {
     const {store} = useContext(context)
+    const [activeComp, setActiveComp] = useState('Chat')
     return ( 
         <>
         <div className={"private-chat-wrapper "+store.theme+'-bg'}>
@@ -21,37 +127,27 @@ function PrivateChat() {
                     <div className="top-part">
                         <div className={"input-container "+store.theme+'-input'}>
                             <FaSearch className={store.theme+'-text'}/>
-                            <input type="text" placeholder="Search here..."/>
+                            <input className={store.theme+'-input'} type="text" placeholder="Search here..."/>
                         </div>
                         <div className="chat-contacts-container">
-                            <button>Chats</button><button>Contacts</button>
+                            <button onClick={()=>{setActiveComp('Chat')}} className={`${activeComp === 'Chat' ? 'active' : ''} ${store.theme}-text`}>Chats</button>
+                            <button onClick={()=>{setActiveComp('Contacts')}} className={`${activeComp === 'Contacts' ? 'active' : ''} ${store.theme}-text`}>Contacts</button>
                         </div>
                     </div>
                     <div className="bottom-part">
+                       {activeComp === "Chat" && <Chat store={store}/>} 
+                       {activeComp === 'Contacts' && <Contacts store={store}/>}
+                    </div>
+                </div>
+                <div className="right">
+                    <div className="top-part">
                         <div className="user-container">
-                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
-                            <div className="name">
-                                <div className="fullname">Cameron Williamson</div>
-                                <div className="last-message">Hey, How are you?</div>
+                            <div className="avatar">
+                                <RxAvatar className={store.theme+'-text'}/>
                             </div>
-                        </div>
-                        <div className="user-container">
-                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
-                            <div className="name">
+                                 <div className="name">
                                 <div className="fullname">Cameron Williamson</div>
-                                <div className="last-message">Hey, How are you?</div>
-                            </div>
-                        </div>                      <div className="user-container">
-                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
-                            <div className="name">
-                                <div className="fullname">Cameron Williamson</div>
-                                <div className="last-message">Hey, How are you?</div>
-                            </div>
-                        </div>                      <div className="user-container">
-                            <div className="avatar"><RxAvatar size={30} className={store.theme+'-text'}/></div>
-                            <div className="name">
-                                <div className="fullname">Cameron Williamson</div>
-                                <div className="last-message">Hey, How are you?</div>
+                                <div className="status">Online</div>
                             </div>
                         </div>
                     </div>
