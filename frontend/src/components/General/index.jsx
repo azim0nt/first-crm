@@ -74,6 +74,16 @@ const ecommerceItems = [
     ]
   }
 ]
+const chatItems = [
+  {
+    title:'Chat',
+    icon:'BiSolidMessageRounded',
+    content:[
+      {name:"Private Chat", url:"private_chat"},
+      {name:"Group Chat",url:"group_chat"}
+    ]
+  }
+]
 function General() {
   const [isFree, setIsFree] = useState('unfree')
   return (
@@ -135,6 +145,7 @@ function General() {
               <div className="left"><FaRegCalendarAlt size={15} color='#9FA8C1' /></div>
               <div className="right"><NavLink to={'calendar_basic'}>Calendar</NavLink></div>
             </div>
+            <Accordion items={chatItems}/>
 
 
           </div>

@@ -93,16 +93,18 @@ function Kanban() {
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
                   placeholder="New task title"
+                  className={store.theme+'-input'}
                 />
                 <select
                   value={selectedBoard}
                   onChange={(e) => setSelectedBoard(parseInt(e.target.value))}
+                  className={store.theme+'-input'}
                 >
                   {boards.map(board => (
                     <option key={board.id} value={board.id}>{board.title}</option>
                   ))}
                 </select>
-                <button onClick={handleAddTask}>Add Task</button>
+                <button className="blue-btn" onClick={handleAddTask}>Add Task</button>
               </div>
               <div className="boards">
                 {boards.map((board, i) => (

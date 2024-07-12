@@ -27,6 +27,7 @@ import Pricing from './components/Applications/Pricing';
 import LetterBox from './components/Applications/LetterBox';
 import Bookmarks from './components/Applications/Bookmarks';
 import Calendar from './components/Applications/Calendar';
+import PrivateChat from './components/Applications/PrivateChat';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -73,6 +74,7 @@ function App() {
                 <Route path="letter-box" element={<LetterBox />} />
                 <Route path='bookmarks' element={<Bookmarks/>}/>
                 <Route path='calendar_basic' element={<Calendar/>}/>
+                <Route path='private_chat' element={<PrivateChat/>}/>
               </Route>
 
               <Route path="login" element={<Login />} />

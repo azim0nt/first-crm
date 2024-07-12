@@ -1,0 +1,30 @@
+@import '../../../assets/styles/settings';
+.private-chat-wrapper{
+    min-height: 100vh;
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    .private-chat-container{
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+        }
+        .middle{
+            .private-chat-card{
+                padding: 20px;
+                border-radius: 20px;
+                display: flex;
+                // border: 1px solid #{$gray50};
+            }
+        }
+
+    }
+}
