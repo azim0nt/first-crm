@@ -1,0 +1,101 @@
+{
+    "translation": {
+        "default_dashboard": {
+            "title": "Oddiy panel",
+            "path_to_tab": {
+                "parent": "Panel",
+                "tab": "Oddiy"
+            },
+            "premium_card": {
+                "title": "Salom, Anna Miller.",
+                "description": "Adminlar klaniga xush kelibsiz! Shaxsiy kabinetimizga qiziqishingizni qadrlaymiz.",
+                "go_premium": "Premiumga o'tish"
+            },
+            "total_earnings_card": "Jami daromad",
+            "total_expenses_card": "Umumiy xarajatlar",
+            "top_selling_product_card": "Eng ko'p sotilgan mahsulot",
+            "our_growth_card": "Bizning o'sishimiz"
+        },
+        "ecommerce": {
+            "title": "Elektron tijorat paneli",
+            "path_to_tab": {
+                "parent": "Panel",
+                "tab": "Elektron tijorat"
+            },
+            "four_cards": {
+                "card_1": "Jami daromad",
+                "card_2": "Jami daromad",
+                "card_3": "Jami daromad",
+                "card_4": "Jami daromad"
+            },
+            "daily_visitors_card": "Kunlik tashrif buyuruvchilar",
+            "top_product_card": {
+                "title": "Eng yaxshi mahsulotlar",
+                "subtitle": "Jami sotuvlar soniga ko'ra, ushbu haftaning top-4 ligiga kirdi.",
+                "cards": {
+                    "card": "Erkaklar uchun uzun yengli kurtka"
+                }
+            }
+        },
+        "project": {
+            "title": "Loyiha paneli",
+            "path_to_tab": {
+                "parent": "Panel",
+                "tab": "Loyiha"
+            },
+            "two_cards": {
+                "card_1": {
+                    "name": "Veb-sayt dizayni",
+                    "status": "Ishda",
+                    "task_completed": "Vazifa bajarildi",
+                    "client": "Mijoz",
+                    "deadline": "Muddat"
+                },
+                "card_2": {
+                    "name": "NFT ilova dizayni",
+                    "status": "Ishda",
+                    "task_completed": "Vazifa bajarildi",
+                    "client": "Mijoz",
+                    "deadline": "Muddat"
+                }
+            },
+            "total_revenue_card": "Jami daromad",
+            "upgrade_card": {
+                "title": "Obunani yangilang",
+                "description": "Ko'proq xususiyatlarga va yaxshilangan xizmatlarga kirish huquqiga ega bo'ling",
+                "button": "Obunani yangilang"
+            },
+            "today_task_card": {
+                "title": "Bugungi vazifa",
+                "filters": {
+                    "all": "Hammasi",
+                    "important": "Muhim",
+                    "notes": "Eslatmalar",
+                    "links": "Havolalar"
+                }
+            }
+        },
+        "project_list": {
+            "title": "Loyihalar ro'yxati",
+            "path_to_tab": {
+                "parent": "Panel",
+                "tab": "Loyihalar ro'yxati"
+            },
+            "filter_card": {
+                "button": "Yangi loyiha yaratish"
+            },
+            "modal": {
+                "title": "Loyiha yaratish",
+                "close": "Yopish",
+                "project_name": "Loyiha nomi",
+                "where": "Qaerda",
+                "description": "Tavsif",
+                "issues": "Muammolar",
+                "resolved": "Hal qilingan",
+                "comment": "Izoh",
+                "how_complete_is_it": "Qanchalik tugallangan",
+                "add_new_project": "Yangi loyiha qo'shish"
+            }
+        }
+    }
+}

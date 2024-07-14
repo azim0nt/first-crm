@@ -13,12 +13,13 @@ import User1 from '../../../assets/images/users/1.png'
 import User2 from '../../../assets/images/users/2.png'
 import User3 from '../../../assets/images/users/3.png'
 import User4 from '../../../assets/images/users/4.png'
-
+import { useTranslation } from 'react-i18next'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 
 function Ecommerce() {
     const {store, setStore} = useContext(context)
+    const {t} = useTranslation()
     const usersImages = [User1, User2, User3, User4]
     const barChartData = {
         labels: priceData.map(item => `${item.price}$`),
@@ -80,8 +81,8 @@ function Ecommerce() {
             <div className={"ecommerce-wrapper "+store.theme+'-bg'} > 
                 <div className="ecommerce-content">
                     <div className="top">
-                        <h2>Ecommerce Dashboard</h2>
-                        <PathToTab parent={'Dashboard'} tab={'E-Commerce'} />
+                        <h2>{t('ecommerce.title')}</h2>
+                        <PathToTab parent={t('ecommerce.path_to_tab.parent')} tab={t('ecommerce.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
@@ -92,7 +93,7 @@ function Ecommerce() {
                                         <div className="total">
                                             <p>$73,927</p>
                                             <div className="title">
-                                                Total Revenue
+                                                {t('ecommerce.four_cards.card_1')}
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +107,7 @@ function Ecommerce() {
                                         <div className="total">
                                             <p>$73,927</p>
                                             <div className="title">
-                                                Total Revenue
+                                                {t('ecommerce.four_cards.card_2')}
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +132,7 @@ function Ecommerce() {
                                         <div className="total">
                                             <p>$73,927</p>
                                             <div className="title">
-                                                Total Revenue
+                                                {t('ecommerce.four_cards.card_3')}
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +157,7 @@ function Ecommerce() {
                                         <div className="total">
                                             <p>$73,927</p>
                                             <div className="title">
-                                                Total Revenue
+                                                {t('ecommerce.four_cards.card_4')}
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +178,7 @@ function Ecommerce() {
                             </div>
                             <div className={"daily-visitors-card "+store.theme+'-cardd'}    >
                                 <div className="left">
-                                    <h4>Daily Visitors</h4>
+                                    <h4>{t('ecommerce.daily_visitors_card')}</h4>
                                     <div className="chart">
                                         <Line data={{
                                             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July'],
@@ -267,15 +268,15 @@ function Ecommerce() {
                         </div>
                         <div className="section-2">
                             <div className={"top-product-card "+store.theme+'-cardd'}>
-                                <h4>Top Product</h4>
-                                <p id='subtitle'>According to overall sales, the top 4 this week</p>
+                                <h4>{t('ecommerce.top_product_card.title')}</h4>
+                                <p id='subtitle'></p>
                                 <div className="cards">
                                         <div className="cardd">
                                             <div className="image">
                                                 <img src={CardImage} alt="" />
                                             </div>
                                             <div className="about">
-                                                <h5>Full Sleeve Men Jacket</h5>
+                                                <h5>{t('ecommerce.top_product_card.cards.card')}</h5>
                                                 <span><p>$ 14.00 </p> <p>$ 15.00</p></span>
                                             </div>
                                         </div>
@@ -284,7 +285,7 @@ function Ecommerce() {
                                                 <img src={CardImage} alt="" />
                                             </div>
                                             <div className="about">
-                                                <h5>Full Sleeve Men Jacket</h5>
+                                                <h5>{t('ecommerce.top_product_card.cards.card')}</h5>
                                                 <span><p>$14.00 </p> <p>$15.00</p></span>
                                             </div>
                                         </div>
@@ -293,7 +294,7 @@ function Ecommerce() {
                                                 <img src={CardImage} alt="" />
                                             </div>
                                             <div className="about">
-                                                <h5>Full Sleeve Men Jacket</h5>
+                                                <h5>{t('ecommerce.top_product_card.cards.card')}</h5>
                                                 <span><p>$ 14.00 </p> <p>$ 15.00</p></span>
                                             </div>
                                         </div>

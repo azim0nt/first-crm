@@ -4,6 +4,7 @@ import { createContext } from 'react'
 const initialState = {
     totalPrice:null,
     theme:'light',
+    lang: 'en',
     modalWindow:'none'
 }
 

@@ -7,7 +7,7 @@ import productData from '../../../db/productData.json'
 import userData from '../../../db/userData.json'
 import { useState, useContext } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements } from 'chart.js';
-
+import { useTranslation } from 'react-i18next'
 import {context} from '../../../store'
 import Product1 from '../../../assets/images/products/1.png'
 import Product2 from '../../../assets/images/products/2.png'
@@ -27,6 +27,7 @@ function Default() {
     const images = [Product1, Product2, Product3, Product4]
     const usersImages = [User1, User2, User3, User4]
     const {store, setStore} = useContext(context)
+    const {t} = useTranslation()
     const totalPrices = priceData.reduce((accumulator, currentValue) => {
         return accumulator + currentValue.price;
     }, 0);
@@ -107,17 +108,17 @@ function Default() {
             <div className={"default-wrapper "+store.theme+'-bg'}  > 
                 <div className="default-content">
                     <div className="top">
-                        <h3>Default Dashboard</h3>
-                        <PathToTab parent={'Dashboad'} tab={'Default'} />
+                        <h3>{t('default_dashboard.title')}</h3>
+                        <PathToTab parent={t('default_dashboard.path_to_tab.parent')} tab={t('default_dashboard.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
                             <div className="premium-card">
                                 <div className="card-body">
                                     <div className="info">
-                                        <h1>Hello,Anna Miller.</h1>
-                                        <p>Welcome to the Admin clan!   We appreciate your interest in our dashboard.</p>
-                                        <button>Go Premium</button>
+                                        <h1>{t('default_dashboard.premium_card.title')}</h1>
+                                        <p>{t('default_dashboard.premium_card.description')}</p>
+                                        <button>{t('default_dashboard.premium_card.go_premium')}</button>
                                     </div>
                                     <div className="image"> <img src={Welcome} width={'100%'} alt="" /></div>
 
@@ -125,7 +126,7 @@ function Default() {
                             </div>
                             <div className={"total-earnings-card "+store.theme+'-cardd'}  >
                                 <h4>
-                                    Total Earnings
+                                    {t('default_dashboard.total_earnings_card')}
                                 </h4>
                                 <div id='line-chart' >
                                     <Line data={lineChartData} options={options} />
@@ -140,7 +141,7 @@ function Default() {
                             </div>
                             <div className={"total-expenses-card "+store.theme+'-cardd'}  >
                                 <h4>
-                                    Total Expenses
+                                {t('default_dashboard.total_expenses_card')}
                                 </h4>
                                 <div id="bar-chart">
                                     <Bar data={barChartData} options={options}></Bar>
@@ -156,7 +157,7 @@ function Default() {
                             </div>
                             <div className={"top-selling-product-card "+store.theme+'-cardd' } >
                                 <h4>
-                                    Top Selling Product
+                                    {t('default_dashboard.top_selling_product_card')}
                                 </h4>
                                 <div className="cards">
                                     {
@@ -189,7 +190,7 @@ function Default() {
                             </div>
                             <div className={"our-growth-card "+store.theme+'-cardd'}  >
                                 <h4>
-                                    Our Growth
+                                   {t('default_dashboard.our_growth_card')}
                                 </h4>
                                 <div className="growth-chart">
                                     <Line

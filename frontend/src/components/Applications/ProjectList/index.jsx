@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { context } from '../../../store';
 import { Link } from 'react-router-dom';
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import {useTranslation} from 'react-i18next'
 function ProjectList() {
     const { store, setStore } = useContext(context);
     const [isOpen, setIsOpen] = useState('close')
@@ -66,6 +67,8 @@ function ProjectList() {
         }
     ]);
 
+    // i18n 
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         project: '',
         where: '',
@@ -108,7 +111,7 @@ function ProjectList() {
             <div className={"project-list-wrapper " + store.theme + '-bg'}  >
                 <div className="project-list-content">
                     <div className="top">
-                        <h3>Project List</h3> <PathToTab parent={'Project'} tab={'Project List'} />
+                        <h3>{t('project_list.title')}</h3> <PathToTab parent={t('project_list.path_to_tab.parent')} tab={t('project_list.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
@@ -120,7 +123,7 @@ function ProjectList() {
                                 </div>
                                 <div className="right">
                                     <button className="blue-btn" onClick={() => { setIsOpen(isOpen === 'close' ? 'open' : 'close') }}>
-                                        Create New Project
+                                        {t('project_list.filter_card.button')}
                                     </button>
                                 </div>
                             </div>
@@ -164,27 +167,27 @@ function ProjectList() {
             <div className={"modal-window-bg " + isOpen}>
                 <div className={"modal-window " + store.theme + '-cardd'}>
                     <div className="header">
-                        <h3>Create Project</h3>
-                        <span><h3>Close</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
+                        <h3>{t('project_list.modal.title')}</h3>
+                        <span><h3>{t('project_list.modal.close')}</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
                     </div>
                     <div className="form">
                         {warning === 0 ? '' : <p style={{color:'red'}}>Заполните форму</p>}
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor="project">Project Name</label>
+                            <label htmlFor="project">{t('project_list.modal.project_name')}</label>
                             <input pattern='[a-zA-Z0-9]+' type="text" id='project' className={store.theme + '-input'} value={formData.project} onChange={handleChange} />
-                            <label htmlFor="where">Where</label>
+                            <label htmlFor="where">{t('project_list.modal.where')}</label>
                             <input type="text" id='where' className={store.theme + '-input'} value={formData.where} onChange={handleChange} />
-                            <label htmlFor="desc">Description</label>
+                            <label htmlFor="desc">{t('project_list.modal.description')}</label>
                             <input type="text" id='desc' className={store.theme + '-input'} value={formData.desc} onChange={handleChange} />
-                            <label htmlFor="Issues">Issues</label>
+                            <label htmlFor="Issues">{t('project_list.modal.issues')}</label>
                             <input type="number" id='Issues' className={store.theme + '-input'} value={formData.Issues} onChange={handleChange} />
-                            <label htmlFor="resolved">Resolved</label>
+                            <label htmlFor="resolved">{t('project_list.modal.resolved')}</label>
                             <input type="number" id='resolved' className={store.theme + '-input'} value={formData.resolved} onChange={handleChange} />
-                            <label htmlFor="comment">Comment</label>
+                            <label htmlFor="comment">{t('project_list.modal.comment')}</label>
                             <input type="number" id='comment' className={store.theme + '-input'} value={formData.comment} onChange={handleChange} />
-                            <label htmlFor="progress">How complete is it? {formData.progress}%</label>
+                            <label htmlFor="progress">{t('project_list.modal.how_complete_is_it')}? {formData.progress}%</label>
                             <input type="range" id='progress' className={store.theme + '-input'} value={formData.progress} onChange={handleChange} />
-                            <button type="submit" className='blue-btn'>Add New Project</button>
+                            <button type="submit" className='blue-btn'>{t('project_list.modal.add_new_project')}</button>
                         </form>
                     </div>
                 </div>

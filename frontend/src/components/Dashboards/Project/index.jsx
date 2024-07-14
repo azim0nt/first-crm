@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import tasksData from '../../../db/tasksData.json'
 import Upgrade from '../../../assets/images/upgrade.png'
 import OrdersTable from '../../common/OrdersTable'
+import { useTranslation } from 'react-i18next'
 
 import User1 from '../../../assets/images/users/1.png'
 import User2 from '../../../assets/images/users/2.png'
@@ -18,6 +19,7 @@ import User4 from '../../../assets/images/users/4.png'
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements);
 function Project() {
     const { store, setStore } = useContext(context)
+    const { t } = useTranslation()
     const usersImages = [User1, User2, User3, User4]
 
     const [tasks, setTasks] = useState(tasksData);
@@ -40,7 +42,7 @@ function Project() {
             <div className={"project-wrapper "+store.theme+'-bg'}>
                 <div className="project-content">
                     <div className="top">
-                        <h3>Project Dashboard</h3> <PathToTab parent={'Dashboad'} tab={'Project'} />
+                        <h3>{t('project.title')}</h3> <PathToTab parent={t('project.path_to_tab.parent')} tab={t('project.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
 
@@ -48,18 +50,18 @@ function Project() {
                             <div className="two-cards">
                                 <div className={"card n-1 "+store.theme+'-cardd'}>
                                     <div className="top-part">
-                                        <p>Website Design</p> <p>Running</p>
+                                        <p>{t('project.two_cards.card_1.name')}</p> <p>{t('project.two_cards.card_1.status')}</p>
                                     </div>
                                     <div className="middle-part">
-                                        <p>Task Completed: 8/10</p>
+                                        <p>{t('project.two_cards.card_1.task_completed')}: 8/10</p>
                                         <div className="chart-line">
                                             <div className="chart"></div>
                                         </div>
                                     </div>
                                     <div className="bottom-part">
                                         <div className="left">
-                                            <p>Client: Brave Wings</p>
-                                            <p>Deadline: 25 April 2024</p>
+                                            <p>{t('project.two_cards.card_1.client')}: Brave Wings</p>
+                                            <p>{t('project.two_cards.card_1.deadline')}: 25 April 2024</p>
                                         </div>
                                         <div className="right">
                                             <div className="rank"></div>
@@ -68,18 +70,18 @@ function Project() {
                                 </div>
                                 <div className={"card n-2 "+store.theme+'-cardd'}>
                                     <div className="top-part">
-                                        <p>NFT App Design</p> <p>Running</p>
+                                        <p>{t('project.two_cards.card_2.name')}</p> <p>{t('project.two_cards.card_2.status')}</p>
                                     </div>
                                     <div className="middle-part">
-                                        <p>Task Completed: 8/10</p>
+                                        <p>{t('project.two_cards.card_2.task_completed')}: 8/10</p>
                                         <div className="chart-line">
                                             <div className="chart"></div>
                                         </div>
                                     </div>
                                     <div className="bottom-part">
                                         <div className="left">
-                                            <p>Client: Brave Wings</p>
-                                            <p>Deadline: 25 April 2024</p>
+                                            <p>{t('project.two_cards.card_1.client')}: Brave Wings</p>
+                                            <p>{t('project.two_cards.card_1.deadline')}: 25 April 2024</p>
                                         </div>
                                         <div className="right">
                                             <div className="rank"></div>
@@ -90,7 +92,7 @@ function Project() {
                             </div>
                             <div className={"total-revenue-card "+store.theme+'-cardd'}>
                                 <div className="left">
-                                    <h4>Total Revenue</h4>
+                                    <h4>{t('project.total_revenue_card')}</h4>
                                     <div className="chart">
                                         <Bar data={{
                                             labels: [1, 2, 3, 4, 5, 6, 7],
@@ -209,11 +211,15 @@ function Project() {
                                 </div>
                             </div>
                             <div className={"upgrade-card"} style={{backgroundColor:store.theme === 'dark'?'#171829': '#fff'}}>
-                                <h4>Upgrade Your Subscription Plan</h4>
-                                <p>The goal of this message is to welcome you to our app.</p>
+                                <h4>{t('project.upgrade_card.title')}</h4>
+                                <p> 
+                                        {t('project.upgrade_card.description')}
+    
+                                </p>
                                 <div>
                                     <button className="blue-btn">
-                                        Go Premium
+                                        {t('project.upgrade_card.button')}
+
                                     </button>
                                 </div>
                                 <img src={Upgrade} alt="" />
@@ -221,12 +227,12 @@ function Project() {
                         </div>
                         <div className="section-2">
                             <div className={"today-task-card "+store.theme+'-cardd'}>
-                                <div className="top"><h4>Today Task</h4></div>
+                                <div className="top"><h4>{t('project.today_task_card.title')}</h4></div>
                                 <div className="filters">
-                                    <button className={filter === 'All' ? 'active' : ''} onClick={() => handleFilterChange('All')}>All</button>
-                                    <button className={filter === 'important' ? 'active' : ''} onClick={() => handleFilterChange('important')}>Important</button>
-                                    <button className={filter === 'notes' ? 'active' : ''} onClick={() => handleFilterChange('notes')}>Notes</button>
-                                    <button className={filter === 'links' ? 'active' : ''} onClick={() => handleFilterChange('links')}>Links</button>
+                                    <button className={filter === 'All' ? 'active' : ''} onClick={() => handleFilterChange('All')}>{t('project.today_task_card.filters.all')}</button>
+                                    <button className={filter === 'important' ? 'active' : ''} onClick={() => handleFilterChange('important')}>{t('project.today_task_card.filters.important')}</button>
+                                    <button className={filter === 'notes' ? 'active' : ''} onClick={() => handleFilterChange('notes')}>{t('project.today_task_card.filters.notes')}</button>
+                                    <button className={filter === 'links' ? 'active' : ''} onClick={() => handleFilterChange('links')}>{t('project.today_task_card.filters.links')}</button>
                                 </div>
                                 <div className="tasks">
                                     {
