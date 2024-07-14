@@ -121,14 +121,15 @@
                             width: 200px;
                             text-align: left;
                             border-radius: 10px;
-
+                            &.dark
                             &:after {
                                 content: '';
                                 position: absolute;
                                 width: 0;
                                 height: 0;
-
-                                border-top: 15px solid $dark-blue;
+                                &.dark-cardd{
+                                    border-top: 15px solid $dark-blue;
+                                }
 
                                 border-left: 15px solid transparent;
                                 border-right: 15px solid transparent;
@@ -140,7 +141,9 @@
                                 position: absolute;
                                 width: 0;
                                 height: 0;
-                                border-top: 17px solid $dark-blue;
+                                &.dark-cardd{
+                                    border-top: 15px solid $dark-blue;
+                                }
                                 border-left: 16px solid transparent;
                                 border-right: 16px solid transparent;
                                 top: -1px;
@@ -163,6 +166,7 @@
                                 position: absolute;
                                 width: 0;
                                 height: 0;
+                                
                                 border-bottom: 15px solid $blue;
                                 border-left: 15px solid transparent;
                                 border-right: 15px solid transparent;

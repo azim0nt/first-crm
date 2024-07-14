@@ -1,13 +1,3 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CurrentPage from './components/CurrentPage';
-import Default from './components/Dashboards/Default';
-import Ecommerce from './components/Dashboards/Ecommerce';
-import Project from './components/Dashboards/Project';
-import Login from './components/Login';
-import Register from './components/Register';
-import { useReducer,useContext } from 'react';
-import { context, initialState, globalReducer } from './store';
 import ProjectList from './components/Applications/ProjectList'
 import CreateNew from './components/Applications/CreateNew'
 import Kanban from './components/Applications/Kanban';
@@ -28,6 +18,17 @@ import LetterBox from './components/Applications/LetterBox';
 import Bookmarks from './components/Applications/Bookmarks';
 import Calendar from './components/Applications/Calendar';
 import PrivateChat from './components/Applications/PrivateChat';
+import CurrentPage from './components/CurrentPage';
+import Default from './components/Dashboards/Default';
+import Ecommerce from './components/Dashboards/Ecommerce';
+import Project from './components/Dashboards/Project';
+import GroupChat from './components/Applications/GroupChat';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
+import { useReducer,useContext } from 'react';
+import { context, initialState, globalReducer } from './store';
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
   const contextPayload = {
@@ -75,6 +76,7 @@ function App() {
                 <Route path='bookmarks' element={<Bookmarks/>}/>
                 <Route path='calendar_basic' element={<Calendar/>}/>
                 <Route path='private_chat' element={<PrivateChat/>}/>
+                <Route path='group_chat' element={<GroupChat/>}/>
               </Route>
 
               <Route path="login" element={<Login />} />

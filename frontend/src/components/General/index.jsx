@@ -136,16 +136,16 @@ function General() {
                 <NavLink to={'letter-box'}>Letter Box</NavLink>
               </div>
             </div>
-            <Accordion items={usersItems} />
-            <div className='logo-link'>
-              <div className="left"><IoBookmarksSharp size={15} color='#9FA8C1' /></div>
-              <div className="right"><NavLink to={'bookmarks'}>Bookmarks</NavLink></div>
-            </div>
             <div className='logo-link'>
               <div className="left"><FaRegCalendarAlt size={15} color='#9FA8C1' /></div>
               <div className="right"><NavLink to={'calendar_basic'}>Calendar</NavLink></div>
             </div>
             <Accordion items={chatItems}/>
+            <Accordion items={usersItems} />
+            <div className='logo-link'>
+              <div className="left"><IoBookmarksSharp size={15} color='#9FA8C1' /></div>
+              <div className="right"><NavLink to={'bookmarks'}>Bookmarks</NavLink></div>
+            </div>
 
 
           </div>
