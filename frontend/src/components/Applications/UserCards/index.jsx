@@ -11,19 +11,19 @@ import { useContext } from 'react'
 import {context} from '../../../store/'
 import PathToTab from '../../common/PathToTab'
 import userCardData from '../../../db/userCardData.json'
+import { useTranslation } from 'react-i18next'
 import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
 function UserCards() {
     const {store, setStore} = useContext(context)
+    const {t} = useTranslation()
     const images = [User1, User2, User3, User4, User5, User6, User7, User8]
     return ( 
         <>
        <div className={"user-cards-wrapper "+store.theme+'-bg'}  >
         <div className="user-cards-content">
             <div className="top">
-                <h3>
-                User Cards
-                </h3>
-                <PathToTab parent={'Users'} tab={'User Cards'}/>
+                <h3>{t('user_cards.title')}</h3>
+                <PathToTab parent={t('user_cards.path_to_tab.parent')} tab={t('user_cards.path_to_tab.tab')}/>
             </div>
             <div className="middle">
                 <div className="section-1">
@@ -57,15 +57,15 @@ function UserCards() {
                                         <div className="activ">
                                             <div className="posts">
                                                 <h5>460</h5>
-                                                <p>Posts</p>
+                                                <p>{t('user_cards.card.posts')}</p>
                                             </div>
                                             <div className="followers">
                                                 <h5>3.5k</h5>
-                                                <p>Followers</p>
+                                                <p>{t('user_cards.card.followers')}</p>
                                             </div>
                                             <div className="following">
                                                 <h5>724</h5>
-                                                <p>Following</p>
+                                                <p>{t('user_cards.card.following')}</p>
                                             </div>
                                         </div>
                                     </div>

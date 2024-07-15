@@ -160,6 +160,18 @@
                 "status": "Holat",
                 "price": "Narx"
             }
+        },
+        "user_cards": {
+            "title": "Foydalanuvchi kartochkalari",
+            "path_to_tab": {
+                "parent": "Foydalanuvchi",
+                "tab": "Foydalanuvchi kartochkalari"
+            },
+            "card": {
+                "posts": "Xabarlar",
+                "followers": "Poddonchilar",
+                "following": "Obunachilar"
+            }
         }
     }
 }
