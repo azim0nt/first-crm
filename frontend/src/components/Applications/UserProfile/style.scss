@@ -2,7 +2,8 @@
 
 .user-profile-wrapper {
     min-height: 100vh;
-
+    height: auto;
+    padding-bottom: 50px;
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -131,7 +132,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-
+                height: auto;
+                width: 100%;
+                background-color: transparent ;
                 .post {
                     border-radius: 20px;
                     padding: 20px;

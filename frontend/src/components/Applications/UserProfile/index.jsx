@@ -7,19 +7,21 @@ import Avatar from '../../../assets/images/avatar.jpg'
 import PostImage1 from '../../../assets/images/profile-style-img3.png'
 import PostImage2 from '../../../assets/images/profile-style-img.png'
 import PostImage3 from '../../../assets/images/img.png'
+import { useTranslation } from 'react-i18next'
 import { IoCall, IoNavigate } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
 
 function UserProfile() {
     const { store, setStore } = useContext(context)
+    const { t } = useTranslation()
     return (
         <>
             <div className={"user-profile-wrapper "+store.theme+'-bg'}>  
                 <div className="user-profile-content ">
                     <div className="top">
-                        <h3>User Profile</h3>
-                        <PathToTab parent={'User'} tab={'User Profile'} />
+                        <h3>{t('user_profile.title')}</h3>
+                        <PathToTab parent={t('user_profile.path_to_tab.parent')} tab={t('user_profile.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
@@ -32,11 +34,11 @@ function UserProfile() {
 
                                     <div className="left info">
                                         <span>
-                                            <p><MdEmail size={20} color={store.theme.textColor} /> Email</p>
+                                            <p><MdEmail size={20} color={store.theme.textColor} />{t('user_profile.profile_card.email')}</p>
                                             <p>Marekjecno@yahoo.com</p>
                                         </span>
                                         <span>
-                                            <p><FaRegCalendarAlt size={20} color={store.theme.textColor} /> BOD</p>
+                                            <p><FaRegCalendarAlt size={20} color={store.theme.textColor} /> {t('user_profile.profile_card.bod')}</p>
                                             <p>02 January 1988</p>
                                         </span>
                                     </div>
@@ -50,11 +52,11 @@ function UserProfile() {
                                     </div>
                                     <div className="right info">
                                         <span>
-                                            <p><IoCall size={20} color={store.theme.textColor} /> Contact Us</p>
+                                            <p><IoCall size={20} color={store.theme.textColor} />{t('user_profile.profile_card.contact_us')}</p>
                                             <p>India +91 123-456-7890</p>
                                         </span>
-                                        <span>
-                                            <p><IoNavigate size={20} color={store.theme.textColor} /> Location</p>
+                                        <span>  
+                                            <p><IoNavigate size={20} color={store.theme.textColor} />{t('user_profile.profile_card.location')}</p>
                                             <p>B69 Near Schoool Demo Home</p>
                                         </span>
                                     </div>

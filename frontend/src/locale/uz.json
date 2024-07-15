@@ -96,6 +96,70 @@
                 "how_complete_is_it": "Qanchalik tugallangan",
                 "add_new_project": "Yangi loyiha qo'shish"
             }
+        },
+        "kanban": {
+            "title": "Kanban doska",
+            "path_to_tab": {
+                "parent": "Panel",
+                "tab": "Kanban doska"
+            },
+            "kanban_board": {
+                "input": "Yangi vazifa nomi",
+                "boards": {
+                    "todo": "Jarayonda",
+                    "in_progress": "Ishda",
+                    "done": "Tugallandi"
+                },
+                "button": "Vazifa qo'shish"
+            }
+        },
+        "user_profile": {
+            "title": "Foydalanuvchi profil",
+            "path_to_tab": {
+                "parent": "Foydalanuvchi",
+                "tab": "Foydalanuvchi profil"
+            },
+            "profile_card": {
+                "email": "Elektron pochta",
+                "bod": "Tug'ilgan sana",
+                "contact_us": "Biz bilan bog'lanish",
+                "location": "Joylashuv"
+            }
+        },
+        "user_edit": {
+            "title": "Profilni tahrirlash",
+            "path_to_tab": {
+                "parent": "Foydalanuvchi",
+                "tab": "Profilni tahrirlash"
+            },
+            "my_profile_card": {
+                "title": "Mening profilim",
+                "bio": "O'zingiz haqingizda",
+                "email": "Elektron pochta",
+                "passwd": "Parol",
+                "website": "Veb-sayt",
+                "save": "Saqlash"
+            },
+            "edit_profile_card": {
+                "title": "Profilni tahrirlash",
+                "company": "Kompaniya",
+                "username": "Foydalanuvchi nomi",
+                "email": "Elektron pochta",
+                "first_name": "Ism",
+                "last_name": "Familiya",
+                "address": "Manzil",
+                "city": "Shahar",
+                "country": "Davlat",
+                "about_me": "O'zingiz haqingizda",
+                "button": "Profilni yangilash"
+            },
+            "projects": {
+                "title": "Loyihalarni qo'shing va yuklang",
+                "project_name": "Loyiha nomi",
+                "date": "Sana",
+                "status": "Holat",
+                "price": "Narx"
+            }
         }
     }
 }
