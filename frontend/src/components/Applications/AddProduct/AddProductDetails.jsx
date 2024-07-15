@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import ReactQuill from 'react-quill';
-
+import { useTranslation } from 'react-i18next';
 import { context } from '../../../store';
 
 function AddProductDetails() {
     const {store, setStore} = useContext(context)
     const theme = store.theme.textColor === '#171829' ? 'snow' : 'dark';
+    const {t} = useTranslation()
     const [editorHtml, setEditorHtml] = useState('');
     const modules = {
         toolbar: [
@@ -21,7 +22,7 @@ function AddProductDetails() {
         <>
             <div className="add-product-details">
                 <div className="product-title">
-                    <h4>Product Title</h4>
+                    <h4>{t('add_product.product_form.add_product_details.product_title')}</h4>
                     <input type="text" style={{border:`1px solid ${store.theme.textColor}`, color:store.theme.textColor}} />
                 </div>
             <ReactQuill  value={editorHtml} modules={modules} className={theme}  onChange={setEditorHtml} />

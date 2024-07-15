@@ -13,9 +13,10 @@ import ProductGallery from './ProductGallery';
 import ProductCategories from './ProductCategories';
 import SellingPrices from './SellingPrices';
 import Advance from './Advance';
+import {useTranslation} from 'react-i18next'
 function AddProduct() {
     const {store, setStore} = useContext(context)
-
+    const {t} = useTranslation()
     
     const [activeComponent, setActiveComponent] = useState('AddProductDetails');
 
@@ -27,13 +28,13 @@ function AddProduct() {
         <div className={"add-product-wrapper "+ store.theme+'-bg'}  >  
             <div className="add-product-content">
                 <div className="top">
-                    <h3>Add-Product</h3>
-                    <PathToTab parent={'ECommerce'} tab={'Add-Product'}/>
+                    <h3>{t('add_product.title')}</h3>
+                    <PathToTab parent={t('add_product.path_to_tab.parent')} tab={t('add_product.path_to_tab.tab')}/>
                 </div>
                 <div className="middle">
                     <div className="section-1">
                         <div className={"product-form-card "+store.theme+'-cardd'}>
-                            <h4>Product Form</h4>
+                            <h4>{t('add_product.product_form.title')}</h4>
                             <div className="body">
                                 <div className="left">
                                     <ul>
@@ -46,8 +47,8 @@ function AddProduct() {
                                             </div>
                                         </div>
                                         <div className="right-part" >
-                                            <b>Add Product Details</b>
-                                            <p>Add Product name & details</p>
+                                            <b>{t('add_product.product_form.add_product_details.title')}</b>
+                                            <p>{t('add_product.product_form.add_product_details.description')}</p>
                                         </div>
                                         </button>
                                     </div>   
@@ -61,8 +62,8 @@ function AddProduct() {
                                             </div>
                                         </div>
                                         <div className="right-part" >
-                                            <b>Product gallery</b>
-                                            <p>thumbnail & Add Product Gallery</p>
+                                            <b>{t('add_product.product_form.product_gallery.title')}</b>
+                                            <p>{t('add_product.product_form.product_gallery.description')}</p>
                                         </div>
                                         </button>
                                     </div> 
@@ -76,8 +77,8 @@ function AddProduct() {
                                             </div>
                                         </div>
                                         <div className="right-part" >
-                                            <b>Product Categories</b>
-                                            <p>Add Product category, Status and Tags</p>
+                                            <b>{t('add_product.product_form.product_categories.title')}</b>
+                                            <p>{t('add_product.product_form.product_categories.description')}</p>
                                         </div>
                                         </button>
                                     </div> 
@@ -91,8 +92,8 @@ function AddProduct() {
                                             </div>
                                         </div>
                                         <div className="right-part" >
-                                            <b>Selling prices</b>
-                                            <p>Add Product basic price & Discount</p>
+                                            <b>{t('add_product.product_form.selling_prices.title')}</b>
+                                            <p>{t('add_product.product_form.selling_prices.description')}</p>
                                         </div>
                                         </button>
                                     </div> 
@@ -106,8 +107,8 @@ function AddProduct() {
                                             </div>
                                         </div>
                                         <div className="right-part" >
-                                            <b>Advance</b>
-                                            <p>Add Meta details & Inventory details</p>
+                                            <b>{t('add_product.product_form.advance.title')}</b>
+                                            <p>{t('add_product.product_form.advance.description')}</p>
                                         </div>
                                         </button>
                                     </div> 
@@ -133,4 +134,4 @@ function AddProduct() {
      );
 }
 
-export default AddProduct;
+export default AddProduct; 
