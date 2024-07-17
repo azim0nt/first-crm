@@ -130,6 +130,7 @@ function AdditionalOptions(props) {
     )
 }
 function Shipping(props) {
+    const {t} = useTranslation()
     return (
         <>
             <div className="shipping">
@@ -154,13 +155,13 @@ function Shipping(props) {
                     </div>
                 </div>
                 <div className="weight">
-                    <h4>Weight (kg)</h4>
+                    <h4>{t('add_product.product_form.advance.shipping.weight.0')}</h4>
                     <input type="number" className={`${props.theme}-input`} />
-                    <h4>Decide if the product is a digital or physical item. Shipping may be necessary for real-world items.</h4>
+                    <h4>{t('add_product.product_form.advance.shipping.weight.1')}</h4>
                 </div>
                 <div className="dimensions">
                     <div className="length">
-                        <h4>Dimensions</h4>
+                        <h4>{t('add_product.product_form.advance.shipping.dimensions')}</h4>
                         <input type="number" className={`${props.theme}-input`} placeholder="Length[l]" />
                     </div>
                     <div className="width">
@@ -202,7 +203,7 @@ function Advance() {
                 <div className="top-part">
                     <button className={`${themeStatus} ${activeComponent === 'Inventory' ? 'active' : ''}`} onClick={() => handleComponentChange('Inventory')}>{t('add_product.product_form.advance.inventory.title')}</button>
                     <button className={`${themeStatus} ${activeComponent === 'Additional Options' ? 'active' : ''}`} onClick={() => handleComponentChange('Additional Options')}>{t('add_product.product_form.advance.additional_options.title')}</button>
-                    <button className={`${themeStatus} ${activeComponent === 'Shipping' ? 'active' : ''}`} onClick={() => handleComponentChange('Shipping')}></button>
+                    <button className={`${themeStatus} ${activeComponent === 'Shipping' ? 'active' : ''}`} onClick={() => handleComponentChange('Shipping')}>{t('add_product.product_form.advance.shipping.title')}</button>
                 </div>
                 <div className="bottom-part">
                     {activeComponent === 'Inventory' && <Inventory theme={themeStatus} />}
