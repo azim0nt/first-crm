@@ -307,7 +307,8 @@
                                 .top-part {
                                     width: 60%;
                                     margin-bottom: 20px;
-
+                                    display: grid;
+                                    grid-template-columns: repeat(3, 1fr);
                                     button {
                                         padding: 10px 50px;
                                         font-size: 16px;
