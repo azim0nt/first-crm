@@ -1,18 +1,19 @@
 import { useState, useContext, useRef, useEffect } from "react";
+import {useTranslation} from 'react-i18next'
 import { context } from "../../../store";
 import ReactQuill from 'react-quill';
 import Tagify from '@yaireo/tagify';
 import Tags from "@yaireo/tagify/dist/react.tagify"; // Ensure correct import path
 import "@yaireo/tagify/dist/tagify.css";
 function Inventory(props) {
+    const {t} = useTranslation()
+
     return (
         <>
             <div className="inventory">
                 <div className="stock-low">
                     <div className="stock-availability">
-                        <h4>
-                            Stock Availability
-                        </h4>
+                        <h4>{t('add_product.product_form.advance.inventory.stock_availability')}</h4>
                         <select name="" id="" className={props.theme}>
                             <option value="">In Stock</option>
                             <option value="">Out of stack</option>
@@ -20,7 +21,7 @@ function Inventory(props) {
                         </select>
                     </div>
                     <div className="low-stack">
-                        <h4>Low Stack</h4>
+                        <h4>{t('add_product.product_form.advance.inventory.low_stack')}</h4>
                         <select name="" className={props.theme} id="">
                             <option value="">Low Stack (5 or less)</option>
                             <option value="">Low Stack (10 or less)</option>
@@ -33,32 +34,32 @@ function Inventory(props) {
                 <div className="sku-stock-and-reststack-date-pre-order">
                     <div className="sku-stock-quantity">
                         <div className="sku">
-                            <h4>SKU</h4>
+                            <h4>{t('add_product.product_form.advance.inventory.sku')}</h4>
                             <input type="text" className={`${props.theme}-input`} />
                         </div>
                         <div className="stock-quantity">
-                            <h4>Stock Quantity</h4>
+                            <h4>{t('add_product.product_form.advance.inventory.stock_quantity')}</h4>
                             <input type="number" className={`${props.theme}-input`} />
                         </div>
                     </div>
                     <div className="restock-date-pre-order">
                         <div className="restock-date">
-                            <h4>Restock Date</h4>
+                            <h4>{t('add_product.product_form.advance.inventory.restock_date')}</h4>
                             <input type="number" className={`${props.theme}-input`} />
                         </div>
                         <div className="pre-order">
-                            <h4>Pre-Order</h4>
+                            <h4>{t('add_product.product_form.advance.inventory.pre_order')}</h4>
                             <input type="number" className={`${props.theme}-input`} />
                         </div>
                     </div>
                 </div>
                 <div className="allow-backorders">
-                    <h4>Allow Backorders</h4>
+                    <h4>{t('add_product.product_form.advance.inventory.allo_backorders.0')}</h4>
                     <div>
                         <div className="input">
                             <input type="checkbox" className="check" />
                         </div>
-                        <span><p className="gray">This is a digital Product</p><br /><p>Decide if the product is a digital or physical item. Shipping may be necessary for real-world items.</p></span>
+                        <span><p className="gray">{t('add_product.product_form.advance.inventory.allo_backorders.1')}</p></span>
                     </div>
                 </div>
             </div>
@@ -101,27 +102,28 @@ function AdditionalOptions(props) {
         }
 
     }, []);
+    const {t} = useTranslation()
     return (
 
         <>
             <div className="additional-options">
                 <div className="additional-tag-specific-tags">
                     <div className="additional-tag-title">
-                        <h4>Additional Tag Title</h4>
+                        <h4>{t('add_product.product_form.advance.additional_options.additional_tag_title.0')}</h4>
                         <input type="text" className={`${props.theme}-input`} />
-                        <h4>Add a new tag title. Keywords should be simple and accurate.</h4>
+                        <h4>{t('add_product.product_form.advance.additional_options.additional_tag_title.1')}</h4>
                     </div>
                     <div className="specific-tags">
-                        <h4>Specific Tags</h4>
+                        <h4>{t('add_product.product_form.advance.additional_options.specific_tags')}</h4>
                         <Tags tagifyRef={tagifyRef} settings={{}} value="watches,sports,clothes,battles" // Example value
                             onChange={e => console.log("CHANGED:", e.detail.value)}
                         />
                     </div>
                 </div>
                 <div className="additional-description">
-                    <h4>Additional Description</h4>
+                    <h4>{t('add_product.product_form.advance.additional_options.additional_description.0')}</h4>
                     <ReactQuill value={editorHtml} modules={modules} className={`${props.theme} editor`} onChange={setEditorHtml} />
-                    <h4>Enhance your SEO ranking with an added tag description for the product.</h4>
+                    <h4>{t('add_product.product_form.advance.additional_options.additional_description.1')}</h4>
                 </div>
             </div>
         </>
@@ -189,7 +191,7 @@ function Shipping(props) {
 }
 function Advance() {
     const [activeComponent, setActiveComponent] = useState('Inventory');
-
+    const {t} = useTranslation()
     const handleComponentChange = (comp) => { setActiveComponent(comp) }
     const { store } = useContext(context)
     const bgColor = store.theme
@@ -198,9 +200,9 @@ function Advance() {
         <>
             <div className="advance">
                 <div className="top-part">
-                    <button className={`${themeStatus} ${activeComponent === 'Inventory' ? 'active' : ''}`} onClick={() => handleComponentChange('Inventory')}>Inventory</button>
-                    <button className={`${themeStatus} ${activeComponent === 'Additional Options' ? 'active' : ''}`} onClick={() => handleComponentChange('Additional Options')}>Additional Options</button>
-                    <button className={`${themeStatus} ${activeComponent === 'Shipping' ? 'active' : ''}`} onClick={() => handleComponentChange('Shipping')}>Shipping</button>
+                    <button className={`${themeStatus} ${activeComponent === 'Inventory' ? 'active' : ''}`} onClick={() => handleComponentChange('Inventory')}>{t('add_product.product_form.advance.inventory.title')}</button>
+                    <button className={`${themeStatus} ${activeComponent === 'Additional Options' ? 'active' : ''}`} onClick={() => handleComponentChange('Additional Options')}>{t('add_product.product_form.advance.additional_options.title')}</button>
+                    <button className={`${themeStatus} ${activeComponent === 'Shipping' ? 'active' : ''}`} onClick={() => handleComponentChange('Shipping')}></button>
                 </div>
                 <div className="bottom-part">
                     {activeComponent === 'Inventory' && <Inventory theme={themeStatus} />}
