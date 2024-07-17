@@ -135,7 +135,7 @@ function Shipping(props) {
             <div className="shipping">
                 <div className="zip-city-state">
                     <div className="zip-code">
-                        <h4>Where can I pick up my order?</h4>
+                        <h4>{t('add_product.product_form.advance.shipping.zip_code')}</h4>
                         <input type="number" className={`${props.theme}-input`} placeholder="Zip code (10001)" />
                     </div>
                     <div className="city">
