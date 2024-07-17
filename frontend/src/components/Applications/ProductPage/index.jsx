@@ -11,6 +11,7 @@ import Product4 from '../../../assets/images/products-2/image_4.jpg'
 import Product5 from '../../../assets/images/products-2/image_5.jpg'
 import Product6 from '../../../assets/images/products-2/image_6.jpg'
 import { BsCart4 } from "react-icons/bs";
+import {useTranslation} from 'react-i18next'
 // import { MdEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { IoIosGift } from "react-icons/io";
@@ -20,6 +21,7 @@ import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegClock, FaShoppingBa
 function ProductPage() {
     const { store, setStore } = useContext(context)
     const [text, setText] = useState('febric')
+    const {t} = useTranslation()
     const cardStyle = { backgroundColor: store.theme.bgColor }
     const themeStatus = store.theme === 'light' ? 'light' : 'dark'
     return (
@@ -27,7 +29,7 @@ function ProductPage() {
             <div className={"product-page-wrapper "+store.theme+'-bg'}    >
                 <div className="product-page-content">
                     <div className="top">
-                        <h3>Product Page</h3>
+                        <h3>{t('product_page.title')}</h3>
                         <PathToTab parent={'ECommerce'} tab={'Product Page'} />
                     </div>
                     <div className="middle">
@@ -63,21 +65,21 @@ function ProductPage() {
                                 <div className="params">
                                     <ul>
                                         <li>
-                                            <b>Brand : </b> Pixelstrap
+                                            <b>{t('product_page.brand')} : </b> Pixelstrap
                                         </li>
                                         <li>
-                                            <b>Availability : </b><span className='green'>In stock</span>
+                                            <b>{t('product_page.Availability')} : </b><span className='green'>In stock</span>
                                         </li>
                                         <li>
-                                            <b>Seller : </b> 	ABC
+                                            <b>{t('product_page.Seller')} : </b> 	ABC
                                         </li>
                                         <li>
-                                            <b>Fabric : </b> 	Cotton
+                                            <b>{t('product_page.Fabric')} : </b> 	Cotton
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="share-it">
-                                    <h3>share it</h3>
+                                    <h3>{t('product_page.shareit')}</h3>
                                     <div className="icons">
                                         <a href="facebook.com"><FaFacebookF size={20} color={store.theme.textColor} /></a>
                                         <a href="google.com"><FaGoogle size={20} color={store.theme.textColor} /></a>
@@ -86,11 +88,11 @@ function ProductPage() {
                                     </div>
                                 </div>
                                 <div className="rate-now">
-                                    <h3>Rate Now</h3>
+                                    <h3>{t('product_page.RateNow')}</h3>
                                     <div className="btns">
-                                        <button className='blue-btn'><Link to={'/cart'}><FaShoppingBasket size={25} color='#fff' />Add To Cart</Link></button>
-                                        <button className='green-btn'><Link to={'/checkout'}><BsCart4 size={25} color='#fff' /> Buy Now</Link></button>
-                                        <button className='orange-btn'><Link to={'/list_wish'}><FaHeart size={25} color='#fff' />Add To WishList</Link></button>
+                                        <button className='blue-btn'><Link to={'/cart'}><FaShoppingBasket size={25} color='#fff' />{t('product_page.AddToCart')}</Link></button>
+                                        <button className='green-btn'><Link to={'/checkout'}><BsCart4 size={25} color='#fff' />{t('product_page.BuyNow')}</Link></button>
+                                        <button className='orange-btn'><Link to={'/list_wish'}><FaHeart size={25} color='#fff' />{t('product_page.AddToWishList')}</Link></button>
 
                                     </div>
                                 </div>
@@ -98,12 +100,12 @@ function ProductPage() {
                             <div className="brand-and-delivery-cards">
                                 <div className={"brand-card "+store.theme+'-cardd'}>
                                     <Link to={'/product_cards'}>
-                                        <h3>Brand</h3>
-                                        <p>Clothing</p>
-                                        <p>Bags</p>
-                                        <p>Footwear</p>
-                                        <p>Watches</p>
-                                        <p>ACCESSORIES</p>
+                                        <h3>{t('product_page.Brand')}</h3>
+                                        <p>{t('product_page.Clothing')}</p>
+                                        <p>{t('product_page.Bags')}</p>
+                                        <p>{t('product_page.Footwear')}</p>
+                                        <p>{t('product_page.Watches')}</p>
+                                        <p>c</p>
                                     </Link>
                                 </div>
                                 <div className={"delivery-card "+store.theme+'-cardd'}>
@@ -112,7 +114,7 @@ function ProductPage() {
                                             <ImTruck size={25} />
                                         </span>
                                         <span className="right">
-                                            <p>Free Shipping Free Shipping World Wide</p>
+                                            <p>{t('product_page.free')}</p>
                                         </span>
                                     </div>
                                     <div>
@@ -120,7 +122,7 @@ function ProductPage() {
                                             <FaRegClock size={25} />
                                         </span>
                                         <div className="right">
-                                            <p>24 X 7 Service Online Service For New Customer</p>
+                                            <p>{t('product_page.24x7')}</p>
                                         </div>
                                     </div>
                                     <div>
@@ -128,8 +130,7 @@ function ProductPage() {
                                             <IoIosGift size={25} />
                                         </span>
                                         <div className="right">
-                                            <p>Festival Offer
-                                                New Online Special Festivalr</p>
+                                            <p>{t('product_page.Festival')}</p>
                                         </div>
                                     </div>
                                     <div>
@@ -137,8 +138,7 @@ function ProductPage() {
                                             <FaRegCreditCard size={25} />
                                         </span>
                                         <div className="right">
-                                            <p>Online Payment
-                                                Contrary To Popular Belief.</p>
+                                            <p>{t('product_page.Online')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,23 +148,23 @@ function ProductPage() {
                             <div className={"more-details-card "+store.theme+'-cardd'}>
                                 <div className="top-part">
                                     <button className={`${text ==='febric' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('febric') }}>
-                                        Febric
+                                    {t('product_page.Febric')}
                                     </button>
                                     <button className={`${text ==='video' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('video') }}>
-                                        Video
+                                    {t('product_page.Video')}
                                     </button>
                                     <button className={`${text ==='details' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('details') }}>
-                                        Details
+                                    {t('product_page.Details')}
                                     </button>
                                     <button className={`${text ==='brand' ? 'active' : 'deactivated'} ${themeStatus}`} onClick={() => { setText('brand') }}>
-                                        Brand
+                                    {t('product_page.Brand')}
                                     </button>
                                 </div>
                                 <div className="bottom-part">
-                                    {text === 'febric' && <p>Refresh your wardrobe with this chic top. With an eye-catching square neck, this top also features pretty puff sleeves. Stunning pink colour Classic solid pattern Square neck Elasticated puff sleeves Belt included, Polyester fabric, machine wash.." Tee Stores is an Indian contemporary clothing brand. The product pages display a fine quality fabric with colorful description. We offer many vivid designs, art, styles that "combine heritage with modernity, simplicity, playfulness and street style"."</p>}
-                                    {text === 'video' && <p>Lorate Solid Men's Fashion Full Sleeves Latest Jacket for Men With Button Closure Long Sleeve Casual Torn Lycra Denim Jacket.</p>}
-                                    {text === 'details' &&<p>Rock Paper Scissors Various Dots Half Sleeves Girl’s Regular Fit T-Shirt I 100% Cotton T Shirt with Half Sleeve Round Neck I Regular Wear Solid Kids Tees and Black Sleeve.</p>}
-                                    {text === 'brand' && <p>Product Dimensions : 18 x 18 x 4 cm <br /> Date First Available : 31 March 2024 <br /> Manufacturer : Tee Stores <br /> Item part number : TS-WT721-XS-WHITE</p>}
+                                    {text === 'febric' && <p>{t('product_page.Refresh')}</p>}
+                                    {text === 'video' && <p>{t('product_page.Lorate')}</p>}
+                                    {text === 'details' &&<p>{t('product_page.Rock')}</p>}
+                                    {text === 'brand' && <p>{t('product_page.Product')}</p>}
                                 </div>
                             </div>
                         </div>
