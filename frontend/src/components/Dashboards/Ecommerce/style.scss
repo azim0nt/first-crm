@@ -2,9 +2,9 @@
 
 .ecommerce-wrapper {
 
-    height: 100vh;
+    min-height: 100vh;
     overflow: scroll;
-
+    padding-bottom: 50px;
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -215,6 +215,9 @@
         .ecommerce-content{
             .middle{
                 .section-1{
+                    .four-cards{
+                        grid-template-columns: repeat(1, 1fr);
+                    }
                     .daily-visitors-card{
                         display: flex;
                         flex-direction: column;
@@ -222,6 +225,30 @@
                     }
                 }
             }
+        }
+    }
+}
+@media(max-width:1020px){
+    .ecommerce-wrapper{
+        .ecommerce-content{
+            .middle{
+            .section-2{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            }
+        }
+    }
+}
+
+@media(max-width:660px){
+    .ecommerce-wrapper{
+        .ecommerce-content{
+            .middle{
+                .section-1{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
         }
     }
 }
