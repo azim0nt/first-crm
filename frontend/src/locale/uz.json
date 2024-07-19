@@ -343,6 +343,92 @@
                 "image": "Mahsulot rasmi",
                 "submit": "Mahsulot qo'shish"
             }
+        },
+        "payment_details": {
+            "title": "To'lov tafsilotlari",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "To'lov tafsilotlari"
+            },
+            "submit": "Yuborish",
+            "credit_card": {
+                "title": "Kredit karta",
+                "placeholders": ["Karta raqami", "Ism", "Kartadagi ism"]
+            },
+            "debit_card": {
+                "title": "Debet karta",
+                "placeholders": ["To'liq ism", "Karta raqami", "CVV-raqam"],
+                "expiration_date": ["Amal qilish muddati", "Yanv", "Fev", "Mar", "Apr"]
+            },
+            "cod_card": {
+                "title": "Yetkazib berishda to'lash",
+                "placeholders": ["Ism", "Familiya", "Pochta indeksi", "Telefon raqamini kiriting", "Shtat", "Shahar", "Manzil"]
+            },
+            "emi_card": {
+                "title": "Har oy teng to'lov",
+                "placeholders": ["Ism", "Familiya", "Pochta indeksi"]
+            },
+            "net_banking": {
+                "title": "Onlayn-banking",
+                "placeholders": ["Hisob egasining ismi", "Hisob raqami", "ICFC kodi", "Mobil raqamini kiriting", "Boshqa tafsilotlar"]
+            }
+        },
+        "order_history": {
+            "title": "Yaqin tarix",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Buyurtmalar tarixi"
+            },
+            "new_orders_card": "Yangi buyurtmalar"
+        },
+        "cart": {
+            "title": "Savatcha",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Savatcha"
+            },
+            "category": [
+                "Mahsulot",
+                "Mahsulot nomi",
+                "Narx",
+                "Miqdori",
+                "Harakat",
+                "Jami"
+            ],
+            "coupan": ["Kupon kodini kiriting", "Qo'llash"],
+            "total_price": "Jami narx",
+            "continue_shopping": "Sotib olishni davom ettiring",
+            "check_out": "To'lash"
+        },
+        "wishlist": {
+            "title": "Xohish ro'yxati",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Xohish ro'yxati"
+            }
+        },
+        "checkout": {
+            "title": "Buyurtma berish",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Buyurtma berish"
+            },
+            "billing_details": {
+                "title": "Buyurtma tafsilotlari",
+                "placeholders": [
+                    "Ism",
+                    "Familiya",
+                    "Telefon",
+                    "Email",
+                    "Mamlakat",
+                    "Yetkazib berish manzili",
+                    "Shahar",
+                    "Shtat",
+                    "Pochta indeksi",
+                    "Meni tekshirish"
+                ],
+                "defails": ["Mahsulot", "Jami", "Oraliq summa", "Yetkazib berish", "To'lovlarni tekshirish", "Yetkazib berishda to'lash", "Buyurtmani joylashtirish"]
+            }
         }
     }
 }

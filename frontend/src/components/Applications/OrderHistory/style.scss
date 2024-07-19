@@ -3,7 +3,8 @@
 .order-history-wrapper {
     height: auto;
      // overflow: auto;
-
+    min-height: 100vh;
+    padding-bottom: 50px;
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -77,6 +78,39 @@
                             }
 
                             grid-template-columns: 0.8fr 3fr 1fr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width:860px){
+    .order-history-wrapper{
+        .order-history-content{
+            .middle{
+                .section-1{
+                    .new-orders-card{
+                        .cards{
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:640px){
+    .order-history-wrapper{
+        .order-history-content{
+            .middle{
+                .section-1{
+                    .new-orders-card{
+                        .cards{
+                            grid-template-columns: repeat(1, 1fr);
                         }
                     }
                 }

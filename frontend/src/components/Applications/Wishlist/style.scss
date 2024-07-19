@@ -68,3 +68,33 @@
         }
     }
 }
+@media(max-width:960px){
+    .wishlist-wrapper{
+        .wishlist-content{
+            .middle{
+                .section-1{
+                    .wishlist-card{
+                        .cards{
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:640px){
+    .wishlist-wrapper{
+        .wishlist-content{
+            .middle{
+                .section-1{
+                    .wishlist-card{
+                        .cards{
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

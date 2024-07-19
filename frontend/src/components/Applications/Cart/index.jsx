@@ -7,8 +7,10 @@ import { FaPlus, FaMinus } from 'react-icons/fa';
 import { MdCancel } from "react-icons/md";
 import FancyWatch from '../../../assets/images/fancy_watch.png'
 import ManShoes from '../../../assets/images/man_shoes.png'
+import {useTranslation} from 'react-i18next'
 function Cart() {
     const {store, setStore} = useContext(context)
+    const {t} = useTranslation()
     const [product1, setProduct1] = useState(0)
     const [product2, setProduct2] = useState(0)
     const [product3, setProduct3] = useState(0)
@@ -17,22 +19,22 @@ function Cart() {
         <div className={"cart-wrapper "+store.theme+'-bg'}  >  
             <div className="cart-content">
                 <div className="top">
-                    <h3>Cart</h3>
-                    <PathToTab parent={'ECommerce'} tab={'Cart'}/>
+                    <h3>{t('cart.title')}</h3>
+                    <PathToTab parent={t('cart.path_to_tab.parent')} tab={t('cart.path_to_tab.tab')}/>
                 </div>
                 <div className="middle">
                     <div className="section-1">
                         <div className={"cart-card "+store.theme+'-cardd'}>
-                            <h4>Cart</h4>
+                            <h4>{t('cart.title')}</h4>
                             <table>
                                 <thead  className={store.theme+'-input'}>
                                     <tr>
-                                        <th><p>Prdouct</p></th>
-                                        <th><p>Prdouct Name</p></th>
-                                        <th><p>Price</p></th>
-                                        <th><p>Quantity</p></th>
-                                        <th><p>Action</p></th>
-                                        <th><p>Total</p></th>
+                                        <th><p>{t('cart.category.0')}</p></th>
+                                        <th><p>{t('cart.category.1')}</p></th>
+                                        <th><p>{t('cart.category.2')}</p></th>
+                                        <th><p>{t('cart.category.3')}</p></th>
+                                        <th><p>{t('cart.category.4')}</p></th>
+                                        <th><p>{t('cart.category.5')}</p></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -147,12 +149,12 @@ function Cart() {
                                     <tr>
                                         <td colSpan={4}>
                                         <div className="coupan">
-                                            <input  className={store.theme+'-bg'} type="text" placeholder='Enter coupan code'    /> <button className='blue-btn'>Apply</button>
+                                            <input  className={store.theme+'-bg'} type="text" placeholder={t('cart.coupan.0')}   /> <button className='blue-btn'>{t('cart.coupan.1')}</button>
                                         </div>
                                         </td>
                                         <td>
                                             <h3>
-                                                TotalPrice
+                                                {t('cart.total_price')}
                                             </h3>
                                         </td>
                                         <td>
@@ -163,14 +165,14 @@ function Cart() {
                                         <td colSpan={5}>
                                             <div className='btn'>
                                                 <button className="orange-btn">
-                                                    Continue Shopping
+                                                {t('cart.continue_shopping')}
                                                 </button>
                                             </div>
                                         </td>
                                         <td>
                                         <div className='btn-green'>
                                                 <button className="green-btn">
-                                                    Check out
+                                                {t('cart.check_out')}
                                                 </button>
                                             </div>
                                         </td>

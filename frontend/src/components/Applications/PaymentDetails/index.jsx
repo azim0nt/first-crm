@@ -50,14 +50,14 @@ function PaymentDetails() {
                                     <input  className={store.theme+'-input'} type="text"  placeholder={t('payment_details.debit_card.placeholders.2')}/>
                                     <input  className={store.theme+'-input'} type="text"  placeholder='CVC' />
                                 </div>
-                                <h4>{t('payment_details.debit_card.exripation_date.0')}</h4>
+                                <h4>{t('payment_details.debit_card.expiration_date.0')}</h4>
                                 <div className="select-year-month">
                                     <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_moth">Select Month</option>
-                                        <option value="jan">{t('payment_details.debit_card.exripation_date.1')}</option>
-                                        <option value="fab">{t('payment_details.debit_card.exripation_date.2')}</option>
-                                        <option value="march">{t('payment_details.debit_card.exripation_date.3')}</option>
-                                        <option value="april">{t('payment_details.debit_card.exripation_date.4')}</option>
+                                        <option value="jan">{t('payment_details.debit_card.expiration_date.1')}</option>
+                                        <option value="fab">{t('payment_details.debit_card.expiration_date.2')}</option>
+                                        <option value="march">{t('payment_details.debit_card.expiration_date.3')}</option>
+                                        <option value="april">{t('payment_details.debit_card.expiration_date.4')}</option>
                                     </select>
                                     <select className={store.theme+'-input'} name="" id="" >
                                         <option value="select_year">Select Year</option>

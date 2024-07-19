@@ -2,13 +2,11 @@
 
 .checkout-wrapper{
     min-height: 100vh;
-
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
     }
-
-
+    padding-bottom: 50px;
     scrollbar-width: none;
     .checkout-content{
         width: 95%;
@@ -56,7 +54,7 @@
                         }
                         .right{
                             .defails{
-                                width: 750px;
+                                width: 100%;
                                 height: 600px;
                                 padding: 40px;
                                 display: flex;
@@ -114,6 +112,9 @@
                                         align-items: center ;
                                         margin: 10px 0;
                                         gap: 10px;
+                                        input{
+                                            width: 30px;
+                                        }
                                     }
                                 }
                                 .btn{
@@ -126,6 +127,24 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media(max-width:800px){
+    .checkout-wrapper{
+        .checkout-content{
+            .middle{
+                .section-1{
+                    .billing-details-card{
+                        .content{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+
             }
         }
     }

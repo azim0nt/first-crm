@@ -18,8 +18,10 @@ import User13 from '../../../assets/images/users-3/image_13.jpg'
 import User14 from '../../../assets/images/users-3/image_14.jpg'
 import User15 from '../../../assets/images/users-3/image_15.jpg'
 import { FaStar } from "react-icons/fa";
+import {useTranslation} from 'react-i18next'
 function Wishlist() {
     const { store, setStore } = useContext(context)
+    const { t } = useTranslation();
     const images = [
         User1,
         User2,
@@ -42,13 +44,13 @@ function Wishlist() {
             <div className={"wishlist-wrapper "+store.theme+'-bg'}    >
                 <div className="wishlist-content">
                     <div className="top">
-                        <h3>Wishlist</h3>
-                        <PathToTab parent={'ECommerce'} tab={'Wishlist'} />
+                        <h3>{t('wishlist.title')}</h3>
+                        <PathToTab parent={t('wishlist.path_to_tab.parent')} tab={t('wishlist.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
                             <div className={"wishlist-card "+store.theme+'-cardd'}>
-                                <h4>Wishlist</h4>
+                                <h4>{t('wishlist.title')}</h4>
                                 <div className="cards">
                                     {
                                         images.map((image, i) =>{

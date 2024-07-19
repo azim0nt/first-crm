@@ -19,9 +19,10 @@ import User14 from '../../../assets/images/users-3/image_14.jpg'
 import User15 from '../../../assets/images/users-3/image_15.jpg'
 import { FaStar } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
+import {useTranslation} from 'react-i18next'
 function OrderHistory() {
     const { store, setStore } = useContext(context)
-
+    const {t} = useTranslation()
 
     const [images1, setImages1] = useState([User1, User2, User3, User4, User5, User6, User7, User8, User9]);
     const [images2, setImages2] = useState([User1, User2, User3, User4, User5, User6, User7, User8, User9]);
@@ -50,13 +51,13 @@ function OrderHistory() {
             <div className={"order-history-wrapper "+store.theme+'-bg'}>
                 <div className="order-history-content">
                     <div className="top">
-                        <h3>Recent History</h3>
-                        <PathToTab parent={'ECommerce'} tab={'Order History'} />
+                        <h3>{t('order_history.title')}</h3>
+                        <PathToTab parent={t('order_history.path_to_tab.parent')} tab={t('order_history.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
                             <div className={"new-orders-card "+store.theme+'-cardd'}>
-                                <h4>New Orders</h4>
+                                <h4>{t('order_history.new_orders_card')}</h4>
                                 <div className="cards">
                                     {
                                         images1.map((image, i) => {
@@ -102,7 +103,7 @@ function OrderHistory() {
                                 </div>
                             </div>
                             <div className={"new-orders-card "+store.theme+'-cardd'}>
-                                <h4>New Orders</h4>
+                                <h4>{t('order_history.new_orders_card')}</h4>
                                 <div className="cards">
                                     {
                                         images2.map((image, i) => {
@@ -148,7 +149,7 @@ function OrderHistory() {
                                 </div>
                             </div>
                             <div className={"new-orders-card "+store.theme+'-cardd'}>
-                                <h4>New Orders</h4>
+                                <h4>{t('order_history.new_orders_card')}</h4>
                                 <div className="cards">
                                     {
                                         images3.map((image, i) => {

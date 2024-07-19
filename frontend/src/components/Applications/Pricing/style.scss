@@ -29,10 +29,12 @@
                     border-radius: 20px;
 
                     .cards {
-                        display: flex;
-
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 30px;
                         .card {
                             display: flex;
+                            width: 100%;
                             flex-direction: column;
                             position: relative;
                             overflow: hidden;
@@ -114,6 +116,37 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1000px){
+    .pricing-wrapper{
+        .pricing-content{
+            .middle{
+                .section-1{
+                    .become-member-card{
+                        .cards{
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+@media(max-width:650px){
+    .pricing-wrapper{
+        .pricing-content{
+            .middle{
+                .section-1{
+                    .become-member-card{
+                        .cards{
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                    } 
                 }
             }
         }
