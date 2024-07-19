@@ -175,7 +175,7 @@ function Shipping(props) {
                 </div>
                 <div className="shipping-class">
 
-                    <h4>Shipping Class</h4>
+                    <h4>{t('add_product.product_form.advance.shipping.shipping_class    ')}</h4>
                     <select className={props.theme}>
                         <option selected="">Basic Shipping</option>
                         <option>Expedited Shipping</option>

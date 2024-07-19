@@ -10,7 +10,7 @@ import productsCard from '../../../db/productsCard.json'
 
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
-
+import { useTranslation } from 'react-i18next';
 
 import Product1 from '../../../assets/images/products-2/image_1.jpg'
 import Product2 from '../../../assets/images/products-2/image_2.jpg'
@@ -30,6 +30,7 @@ import Product15 from '../../../assets/images/products-2/image_15.jpg'
 import Product16 from '../../../assets/images/products-2/image_16.jpg'
 function Product() {
     const { store, setStore } = useContext(context)
+    const { t } = useTranslation()
     const cardStyle = { backgroundColor: store.theme.bgcolor }
     const [modalDisplay, setModalDisplay] = useState('none')
     const [gridCount, setGridCount] = useState(5)

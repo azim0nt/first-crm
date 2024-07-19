@@ -172,6 +172,129 @@
                 "followers": "Poddonchilar",
                 "following": "Obunachilar"
             }
+        },
+        "add_product": {
+            "title": "Mahsulot qo'shish",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Mahsulot qo'shish"
+            },
+            "product_form": {
+                "title": "Mahsulot formasi",
+                "add_product_details": {
+                    "title": "Mahsulot haqida ma'lumot qo'shish",
+                    "description": "Mahsulot nomi va tafsilotlarini qo'shing",
+                    "product_title": "Mahsulot nomi"
+                },
+                "product_gallery": {
+                    "title": "Mahsulot galereyasi",
+                    "description": "Kichik rasm va mahsulot galereyasini qo'shing",
+                    "product_image": "Mahsulot rasmi"
+                },
+                "product_categories": {
+                    "title": "Mahsulot kategoriyalari",
+                    "description": "Mahsulot kategoriyasini, holatini va teglari qo'shing",
+                    "add_category": [
+                        "Kategoriya qo'shish",
+                        "Mahsulotni kategoriya qo'shish mumkin"
+                    ],
+                    "create_new_category": "Yangi kategoriya yaratish",
+                    "publish_status": [
+                        "Nashr holati",
+                        "Holatini tanlang"
+                    ],
+                    "add_tag": [
+                        "Teg qo'shish",
+                        "Elementlar teglanishi mumkin"
+                    ],
+                    "publish_date_time": "Nashr sanasi va vaqti"
+                },
+                "selling_prices": {
+                    "title": "Sotish narxlari",
+                    "description": "Mahsulot uchun asosiy narx va chegirma qo'shing",
+                    "initial_cost": "Boshlang'ich narx",
+                    "selling_prics": "Sotish narxi",
+                    "choose_currency": "Valyutani tanlang",
+                    "product_stocks": "Mahsulot zaxiralari",
+                    "product_discount": {
+                        "title": "Mahsulot chegirmalari",
+                        "btns": [
+                            "O'zgartirilgan narx",
+                            "KOPO (Bitta sotib oling, bittasi bepul)",
+                            "Mavsumiy yoki bayram chegirmasi",
+                            "Foizli chegirma (%)",
+                            "Katta yoki ulgurji chegirma"
+                        ]
+                    }
+                },
+                "advance": {
+                    "title": "Oldinga siljish",
+                    "description": "Metama'lumotlar va inventar ma'lumotlarini qo'shing",
+                    "inventory": {
+                        "title": "Inventar",
+                        "stock_availability": "Zaxiralar mavjudligi",
+                        "low_stack": "Past zaxira",
+                        "sku": "Mahsulot kodi (SKU)",
+                        "stock_quantity": "Zaxira miqdori",
+                        "restock_date": "Zaxiralar to'ldirilish sanasi",
+                        "pre_order": "Oldindan buyurtma",
+                        "allo_backorders": [
+                            "Qo'shimcha buyurtmalarga ruxsat berish",
+                            "Bu raqamli mahsulot. Mahsulot raqamli yoki jismoniy ekanligini aniqlang. Haqiqiy mahsulotlar yetkazib berishni talab qilishi mumkin."
+                        ]
+                    },
+                    "additional_options": {
+                        "title": "Qo'shimcha variantlar",
+                        "additional_tag_title": [
+                            "Qo'shimcha teg sarlavhasi",
+                            "Yangi teg sarlavhasini qo'shing. Kalit so'zlar oddiy va aniq bo'lishi kerak."
+                        ],
+                        "specific_tags": "Maxsus teglari",
+                        "additional_description": [
+                            "Qo'shimcha tavsif",
+                            "SEO-ni yaxshilash uchun mahsulot tavsifini qo'shing."
+                        ]
+                    },
+                    "shipping": {
+                        "title": "Yetkazib berish",
+                        "zip_code": "Buyurtmani qaerdan olish mumkin?",
+                        "weight": [
+                            "Vazn (kg)",
+                            "Mahsulot raqamli yoki jismoniy ekanligini aniqlang. Haqiqiy mahsulotlar yetkazib berishni talab qilishi mumkin."
+                        ],
+                        "dimensions": "O'lchamlari",
+                        "shipping_class": "Yetkazib berish klassi"
+                    }
+                }
+            }
+        },
+        "product_page": {
+            "title": "Mahsulot sahifasi",
+            "brand": "Brend",
+            "Availability": "Mavjudlik",
+            "Seller": "Sotuvchi",
+            "Fabric": "Mato",
+            "shareit": "Ulashish",
+            "RateNow": "Hozir baholash",
+            "AddToCart": "Savatchaga qo'shish",
+            "BuyNow": "Hozir sotib olish",
+            "AddToWishList": "Tilaklar ro'yxatiga qo'shish",
+            "Brand": "Brend",
+            "Clothing": "Kiyim",
+            "Bags": "Sumkalar",
+            "Footwear": "Oyoq kiyim",
+            "Watches": "Soatlar",
+            "free": "Butun dunyo bo'ylab bepul yetkazib berish",
+            "24x7": "Yangi mijozlar uchun 24/7 onlayn xizmat",
+            "Festival": "Festival taklifi Yangi maxsus onlayn festival",
+            "Online": "Onlayn to'lov",
+            "Febric": "Mato",
+            "Video": "Video",
+            "Details": "Tafsilotlar",
+            "Refresh": "Bu zamonaviy top bilan garderobingizni yangilang. Ushbu topning jozibali to'rtburchak bo'yi chiroyli puff yenglari bilan to'ldirilgan. Ajoyib pushti rang. Klassik oddiy naqsh. To'rtburchak bo'yi. Elastik puff yenglari. Tarkibga poliesterdan tayyorlangan kamar kiradi, mashinada yuviladi. » Tee Stores – zamonaviy hind kiyim brendi. Mahsulot sahifalari ajoyib sifatli matolarni rang-barang tasvirlari bilan taqdim etadi. Biz yorqin dizaynlar, san'at asarlari, zamonaviylik bilan merosni birlashtiradigan, soddaligi, o'ynoqiligi va ko'cha uslubini o'z ichiga olgan uslublarni taklif etamiz.",
+            "Lorate": "Lorate Solid, erkaklar uchun modali eng so'nggi uzun yengli tugmachali kurtka, kundalik kiyiladigan denim kurtka.",
+            "Rock": "«Qaychi tosh qog'oz» Oddiy uzun yengli futbolka, 100% paxtadan tikilgan, bo'yin atrofida qisqa yengli. Oddiy qora rangli bolalar futbolkalari.",
+            "Product": "Mahsulot o'lchamlari: 18 x 18 x 4 sm <br /> Birinchi kirish sanasi: 31-mart 2024 yil <br /> Ishlab chiqaruvchi: Tee Stores <br /> Detal raqami: TS-WT721-XS-WHITE"
         }
     }
 }
