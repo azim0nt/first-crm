@@ -1,8 +1,8 @@
 @import '../../../assets/styles/settings';
 
-.payment-details-wrapper{
+.payment-details-wrapper {
     min-height: 100vh;
-
+    padding-bottom: 50px;
     ::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -10,7 +10,8 @@
 
 
     scrollbar-width: none;
-    .payment-details-content{
+
+    .payment-details-content {
         width: 95%;
         margin: 0 auto;
         padding-top: 20px;
@@ -20,159 +21,241 @@
             justify-content: space-between;
             margin: 0 0 20px 0;
         }
-        .middle{
+
+        .middle {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            .section-1{
-                display: flex;
+
+            .section-1 {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 3fr 1fr;
                 gap: 20px;
-                .credit-card{
+
+                .credit-card {
                     padding: 20px;
                     border-radius: 20px;
                     display: grid;
-                    grid-template-columns: 60% 40%;
+                    grid-template-columns: 2fr 1fr;
                     gap: 50px;
-                    width: 1050px;
-                    .left{
-                        h4{
+                    width: 100%;
+
+                    .left {
+                        h4 {
                             margin-bottom: 20px;
                         }
-                        .inputs{
+
+                        .inputs {
                             display: flex;
                             flex-direction: column;
                             gap: 15px;
                         }
                     }
-                    .right{
+
+                    .right {
                         display: flex;
                         // justify-content: center;
                         align-items: center;
-                        img{
+
+                        img {
                             max-width: 100%;
                         }
                     }
                 }
-                .debit-card{
+
+                .debit-card {
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
                     padding: 20px;
                     border-radius: 20px;
                     height: auto;
-                    width: 520px;
-                    .fullname-card{
+                    width: 100%;
+
+                    .fullname-card {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .cvv-cvc-number{
+
+                    .cvv-cvc-number {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .select-year-month{
+
+                    .select-year-month {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    div{
-                        .blue-btn{
+
+                    div {
+                        .blue-btn {
                             @extend %blue-btn;
                             padding: 10px 20px;
                         }
                     }
                 }
             }
-            .section-2{
-                display: flex;
+
+            .section-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                width: 100%;
                 gap: 20px;
-                .cod-card{
-                    width: 530px;
+
+                .cod-card {
+                    width: 100%;
                     border-radius: 20px;
                     padding: 20px;
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
-                    .first-last-name{
+
+                    .first-last-name {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .pin-mobile-number{
+
+                    .pin-mobile-number {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .state-city{
+
+                    .state-city {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    textarea{
+
+                    textarea {
                         resize: vertical;
                         transition: 0s;
                         height: 100px;
                     }
-                    div{
-                        .blue-btn{
+
+                    div {
+                        .blue-btn {
                             @extend %blue-btn;
                             padding: 10px 20px;
                         }
                     }
                 }
-                .emi-card{
+
+                .emi-card {
                     padding: 20px;
                     border-radius: 20px;
-                    width: 530px;
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
-                    .first-last-name{
+
+                    .first-last-name {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .pin-mobile-number{
+
+                    .pin-mobile-number {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    .cards-logo{
+
+                    .cards-logo {
                         display: flex;
                         justify-content: left;
                         align-items: center;
-                        div{
-                            img{
+
+                        div {
+                            img {
                                 width: 60px;
                             }
                         }
                     }
-                    div{
-                        .blue-btn{
-                            @extend %blue-btn;  
+
+                    div {
+                        .blue-btn {
+                            @extend %blue-btn;
                             padding: 10px 20px;
                         }
                     }
                 }
-                .net-banking{
-                    width: 530px;
+
+                .net-banking {
+                    width: 100%;
                     padding: 20px;
                     border-radius: 20px;
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
-                    .bank-icfc-code{
+
+                    .bank-icfc-code {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5px;
                     }
-                    div{
-                        .blue-btn{
+
+                    div {
+                        .blue-btn {
                             @extend %blue-btn;
                             padding: 10px 20px;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1250px) {
+    .payment-details-wrapper {
+        .payment-details-content {
+            .middle {
+                .section-1 {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1000px) {
+    .payment-details-wrapper {
+        .payment-details-content {
+            .middle {
+                .section-1 {
+                    .credit-card {
+                        display: block;
+
+                        .right {
+                            display: none;
+                        }
+                    }
+                }
+
+                .section-2 {
+                    grid-template-columns: 1fr 1fr;
+                    .net-banking{
+                        grid-column: span 2;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:730px){
+    .payment-details-wrapper{
+        .payment-details-content{
+            .middle{
+                .section-2{
+                    display: flex;
+                    flex-direction: column;
                 }
             }
         }

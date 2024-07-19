@@ -2,7 +2,7 @@ import './style.scss'
 import { useContext, useState } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab'
-
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom'
 import { MdOutlineCancel } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
@@ -40,6 +40,7 @@ function ProductList() {
     const { store, setStore } = useContext(context)
     const [displayMode, setDisplayMode] = useState('none')
     const themeStatus = store.theme.bgColor === 'dark' ? 'dark' : 'none'
+    const {t} = useTranslation()
     const images = [
         Product1,
         Product2,
@@ -324,16 +325,12 @@ function ProductList() {
         setFormData({ ...formData, image: e.target.files[0] });
     };
     function generateSKU() {
-        // Генерация пяти цифр
         const digitsPart1 = Array.from({ length: 5 }, () => Math.floor(Math.random() * 10)).join('');
       
-        // Генерация двух букв
         const letters = Array.from({ length: 2 }, () => String.fromCharCode(65 + Math.floor(Math.random() * 26))).join('');
       
-        // Генерация трех цифр
         const digitsPart2 = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10)).join('');
       
-        // Объединение всех частей
         const sku = `${digitsPart1}${letters}${digitsPart2}`;
         return sku;
       }
@@ -386,8 +383,8 @@ function ProductList() {
             <div className={"product-list-wrapper " + store.theme + '-bg'}>
                 <div className="product-list-content">
                     <div className="top">
-                        <h3>Product List</h3>
-                        <PathToTab parent={'ECommerce'} tab={'Product List'} />
+                        <h3>{t('product_list.title')}</h3>
+                        <PathToTab parent={t('product_list.path_to_tab.parent')} tab={t('product_list.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
@@ -397,7 +394,7 @@ function ProductList() {
                                         {displayMode === 'none' ? <FaFilter color='#5c61f2' /> : <MdOutlineCancel size={25} color='#5c61f2' />}
                                     </button>
                                     <div className="add-product">
-                                        <button onClick={() => { setIsOpen('open') }}><FaPlus color='#fff' /> Add Product</button>
+                                        <button onClick={() => { setIsOpen('open') }}><FaPlus color='#fff' />{t('product_list.add_product')}</button>
                                     </div>
                                 </div>
                                 <div className="filter" style={{ display: displayMode }}>
@@ -447,7 +444,7 @@ function ProductList() {
                                             <option value="20">20</option>
                                             <option value="25">25</option>
                                         </select>
-                                        <p>entries per page</p>
+                                        <p>{t('product_list.entries_per_page')}</p>
                                         <input
                                             type="text"
                                             placeholder="Search..."
@@ -456,33 +453,29 @@ function ProductList() {
                                             onChange={handleSearchChange}
                                         />
                                     </div>
+                                    <div className="table">
                                     <table>
                                         <thead>
                                             <tr>
                                                 <th onClick={() => handleSort('name')}>
-                                                    <p>Product Name</p>
+                                                    <p>{t("product_list.table.0")}</p>
                                                 </th>
                                                 <th onClick={() => handleSort('sku')}>
-                                                    <p>SKU</p>
+                                                    <p>{t("product_list.table.1")}</p>
                                                 </th>
                                                 <th onClick={() => handleSort('category')}>
-                                                    <p>Category</p>
+                                                    <p>{t("product_list.table.2")}</p>
                                                 </th>
                                                 <th onClick={() => handleSort('price')}>
-                                                    <p>Price</p>
+                                                    <p>{t("product_list.table.3")}</p>
                                                 </th>
                                                 <th onClick={() => handleSort('qty')}>
-                                                    <p>Qty</p>
+                                                    <p>{t("product_list.table.4")}</p>
                                                 </th>
                                                 <th onClick={() => handleSort('status')}>
-                                                    <p>Status</p>
+                                                    <p>{t("product_list.table.5")}</p>
                                                 </th>
-                                                <th>
-                                                    <p>Rating</p>
-                                                </th>
-                                                <th>
-                                                    <p>Action</p>
-                                                </th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -524,6 +517,7 @@ function ProductList() {
                                             ))}
                                         </tbody>
                                     </table>
+                                    </div>
                                     <ReactPaginate
                                         previousLabel={<FaLongArrowAltLeft color={store.theme === 'dark' ? '#ffffff99' : '#171829'} />}
                                         nextLabel={<FaLongArrowAltRight color={store.theme === 'dark' ? '#ffffff99' : '#171829'} />}
@@ -545,13 +539,13 @@ function ProductList() {
 
                 <div className={"modal-window " + store.theme + '-cardd'}>
                     <div className="header">
-                        <h3>Create Project</h3>
-                        <span><h3>Close</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
+                        <h3>{t('product_list.modal.title')}</h3>
+                        <span><h3>{t('product_list.modal.close')}</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
                     </div>
                     <div className="form">
                     <form onSubmit={handleSubmit} className="modal-form">
                         <div className="form-group">
-                            <label>Product Name</label>
+                            <label>{t('product_list.modal.product_name')}</label>
                             <input
                                 type="text"
                                 name="name"
@@ -562,7 +556,7 @@ function ProductList() {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Category</label>
+                            <label>{t('product_list.modal.category.0')}</label>
                             <select
                                 name="category"
                                 value={formData.status}
@@ -570,16 +564,16 @@ function ProductList() {
                                 required
                                 className={store.theme + '-input'}
                             >
-                                <option value="Laptops">Laptops</option>
-                                <option value="Smart Phones">Smart Phones</option>
-                                <option value="Electric">Electric</option>
-                                <option value="Smart Headphones">Smart Headphones</option>
-                                <option value="E-Commerce">E-Commerce</option>
-                                <option value="Furniture">Furniture</option>
+                                <option value="Laptops">{t('product_list.modal.category.1')}</option>
+                                <option value="Smart Phones">{t('product_list.modal.category.2')}</option>
+                                <option value="Electric">{t('product_list.modal.category.3')}</option>
+                                <option value="Smart Headphones">{t('product_list.modal.category.4')}</option>
+                                <option value="E-Commerce">{t('product_list.modal.category.5')}</option>
+                                <option value="Furniture">{t('product_list.modal.category.6')}</option>
                             </select>
                         </div>
                         <div className="form-group">
-                            <label>Price</label>
+                            <label>{t('product_list.modal.price')}</label>
                             <input
                                 type="number"
                                 name="price"
@@ -590,7 +584,7 @@ function ProductList() {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Quantity</label>
+                            <label>{t('product_list.modal.quantity')}</label>
                             <input
                                 type="number"
                                 name="qty"
@@ -601,7 +595,7 @@ function ProductList() {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Status</label>
+                            <label>{t('product_list.modal.status.0')}</label>
                             <select
                                 name="status"
                                 value={formData.status}
@@ -610,12 +604,12 @@ function ProductList() {
                                 className={store.theme + '-input'}
                             >
 
-                                <option value="In Stock">In Stock</option>
-                                <option value="Sold Out">Sold Out</option>
+                                <option value="In Stock">{t('product_list.modal.status.1')}</option>
+                                <option value="Sold Out">{t('product_list.modal.status.2')}</option>
                             </select>
                         </div>
                         <div className="form-group">
-                            <label>Product Image</label>
+                            <label>{t('product_list.modal.image')}</label>
                             <input
                                 type="file"
                                 name="image"
@@ -625,7 +619,7 @@ function ProductList() {
                             />
                         </div>
                         <div className="form-actions">
-                            <button type="submit" className="blue-btn">Add Product</button>
+                            <button type="submit" className="blue-btn">{t('product_list.modal.submit')}</button>
                         </div>
                     </form>
                     </div>

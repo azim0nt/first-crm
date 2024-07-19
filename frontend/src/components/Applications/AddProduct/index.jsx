@@ -35,7 +35,7 @@ function AddProduct() {
                     <div className="section-1">
                         <div className={"product-form-card "+store.theme+'-cardd'}>
                             <h4>{t('add_product.product_form.title')}</h4>
-                            <div className="body">
+                            <div className="body-container">
                                 <div className="left">
                                     <ul>
                                         <li>

@@ -295,6 +295,54 @@
             "Lorate": "Lorate Solid, erkaklar uchun modali eng so'nggi uzun yengli tugmachali kurtka, kundalik kiyiladigan denim kurtka.",
             "Rock": "«Qaychi tosh qog'oz» Oddiy uzun yengli futbolka, 100% paxtadan tikilgan, bo'yin atrofida qisqa yengli. Oddiy qora rangli bolalar futbolkalari.",
             "Product": "Mahsulot o'lchamlari: 18 x 18 x 4 sm <br /> Birinchi kirish sanasi: 31-mart 2024 yil <br /> Ishlab chiqaruvchi: Tee Stores <br /> Detal raqami: TS-WT721-XS-WHITE"
+        },
+        "calendar": {
+            "title": "Kalendar",
+            "path_to_tab": {
+                "parent": "Dasturlar",
+                "tab": "Asosiy kalendar"
+            },
+            "draggable_events": "Sudraluvchi voqealar"
+        },
+        "product_list": {
+            "title": "Mahsulotlar ro'yxati",
+            "path_to_tab": {
+                "parent": "Elektron tijorat",
+                "tab": "Mahsulotlar ro'yxati"
+            },
+            "add_product": "Mahsulot qo'shish",
+            "entries_per_page": "sahifadagi yozuvlar",
+            "table": [
+                "Mahsulot nomi",
+                "Artikul",
+                "Kategoriya",
+                "Narx",
+                "Miqdori",
+                "Holat"
+            ],
+            "modal": {
+                "title": "Loyiha yaratish",
+                "product_name": "Mahsulot nomi",
+                "close": "Yopish",
+                "category": [
+                    "Kategoriya",
+                    "Noutbuklar",
+                    "Smartfonlar",
+                    "Elektronika",
+                    "Aqlli naushniklar",
+                    "Elektron tijorat",
+                    "Mebel"
+                ],
+                "price": "Narx",
+                "quantity": "Miqdori",
+                "status": [
+                    "Holat",
+                    "Sotildi",
+                    "Mavjud"
+                ],
+                "image": "Mahsulot rasmi",
+                "submit": "Mahsulot qo'shish"
+            }
         }
     }
 }
