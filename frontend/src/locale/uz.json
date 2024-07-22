@@ -429,6 +429,32 @@
                 ],
                 "defails": ["Mahsulot", "Jami", "Oraliq summa", "Yetkazib berish", "To'lovlarni tekshirish", "Yetkazib berishda to'lash", "Buyurtmani joylashtirish"]
             }
+        },
+        "general":{
+            "dashboards":{
+                "title":"Panellar",
+                "content":["Odatiy","Elektron tijorat","Loyiha"]
+            },
+            "applications":{
+                "title":"Loyihalar",
+                "content":["Loyihalar ro'yxati","Yangi yaratish"]
+            },
+            "users":{
+                "title":"Foydalanuvchilar",
+                "content":["Profil","Tahrirlash","Foydalanuvchilar kartalari"]
+            },
+            "ecommerce":{
+                "title":"Elektron tijorat",
+                "content":["Mahsulot qo'shish","Mahsulot","Mahsulot sahifasi","Mahsulotlar ro'yxati","To'lov tafsilotlari","So'nggi tarix","Savatcha","Xohishlar ro'yxati","Tekshirish","Narxlar"]
+            },
+            "chat":{
+                "title":"Chat",
+                "content":["Shaxsiy yozishmalar","Guruh chati"]
+            },
+            "kanban":"Kanban taxtasi",
+            "letter_box":"Pochta qutisi",
+            "calendar":"Kalendar"
         }
+        
     }
 }

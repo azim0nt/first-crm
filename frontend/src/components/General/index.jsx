@@ -7,84 +7,69 @@ import { NavLink } from 'react-router-dom';
 import { FaWallet, FaRegCalendarAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoBookmarksSharp } from "react-icons/io5";
-const generalItems = [
-  {
-    title: 'Dashboards',
-    icon: 'FaHome',
-    content: [
-      { name: 'Default', url: 'dashboard_01' },
-      { name: 'Ecommerce', url: 'dashboard_02' },
-      { name: 'Project', url: 'dashboard_03' }
-    ]
-  },
-  {
-    title: 'Widgets',
-    icon: 'FaChartPie',
-    content: [
-      { name: 'Genaral', url: 'general_widget' },
-      { name: 'Chart', url: 'chart_widget' }
-    ]
-  },
-  {
-    title: 'Page Layout', icon: 'FaClipboardList',
-    content: [
-      { name: 'Boxed', url: 'box_layout' },
-      { name: 'RTL', url: 'layout_rtl' },
-      { name: 'Dark Layout', url: 'layout_dark' },
-      { name: 'Hide Nav Scroll', url: 'hide_on_scroll' }
-    ]
-  }
-];
-const appItems = [
-  {
-    title: 'Project',
-    icon: 'FaHome',
-    content: [
-      { name: 'Project List', url: 'projects' },
-      { name: 'Create New', url: 'project_create' },
-    ]
-  }
-]
-const usersItems = [
-  {
-    title: 'Users',
-    icon: 'FaHome',
-    content: [
-      { name: 'User Profile', url: 'user_profile' },
-      { name: 'User Edit', url: 'edit_profile' },
-      { name: 'User Cards', url: 'user_cards' }
-    ]
-  }
-]
-const ecommerceItems = [
-  {
-    title: 'Ecommerce',
-    icon: 'FaHome',
-    content: [
-      { name: "Add Product", url: "add_products" },
-      { name: "Product", url: "product_cards" },
-      { name: "Product Page", url: "product_page" },
-      { name: "Product List", url: "list_products" },
-      { name: "Payment Details", url: "payment_details" },
-      { name: "Order History", url: "order_history" },
-      { name: "Cart", url: "cart" },
-      { name: "Wishlist", url: "list_wish" },
-      { name: "Checkout", url: "checkout" },
-      { name: "Pricing", url: "pricing" },
-    ]
-  }
-]
-const chatItems = [
-  {
-    title:'Chat',
-    icon:'BiSolidMessageRounded',
-    content:[
-      {name:"Private Chat", url:"private_chat"},
-      {name:"Group Chat",url:"group_chat"}
-    ]
-  }
-]
+import {useTranslation} from 'react-i18next'
 function General() {
+  const {t} = useTranslation()
+  let generalItems = [
+    {
+      title: t('general.dashboards.title'),
+      icon: 'FaHome',
+      content: [
+        { name: t('general.dashboards.content.0'), url: 'dashboard_01' },
+        { name: t('general.dashboards.content.1'), url: 'dashboard_02' },
+        { name: t('general.dashboards.content.2'), url: 'dashboard_03' }
+      ]
+    }
+  ];
+  let appItems = [
+    {
+      title: t('general.applications.title'),
+      icon: 'FaHome',
+      content: [
+        { name: t('general.applications.content.0'), url: 'projects' },
+        { name: t('general.applications.content.1'), url: 'project_create' },
+      ]
+    }
+  ]
+  let usersItems = [
+    {
+      title: t('general.users.title'),
+      icon: 'FaHome',
+      content: [
+        { name: t('general.users.content.0'), url: 'user_profile' },
+        { name: t('general.users.content.1'), url: 'edit_profile' },
+        { name: t('general.users.content.2'), url: 'user_cards' }
+      ]
+    }
+  ]
+  let ecommerceItems = [
+    {
+      title: t('general.ecommerce.title'),
+      icon: 'FaHome',
+      content: [
+        { name: t('general.ecommerce.content.0'), url: "add_products" },
+        { name: t('general.ecommerce.content.1'), url: "product_cards" },
+        { name: t('general.ecommerce.content.2'), url: "product_page" },
+        { name: t('general.ecommerce.content.3'), url: "list_products" },
+        { name: t('general.ecommerce.content.4'), url: "payment_details" },
+        { name: t('general.ecommerce.content.5'), url: "order_history" },
+        { name: t('general.ecommerce.content.6'), url: "cart" },
+        { name: t('general.ecommerce.content.7'), url: "list_wish" },
+        { name: t('general.ecommerce.content.8'), url: "checkout" },
+        { name: t('general.ecommerce.content.9'), url: "pricing" },
+      ]
+    }
+  ]
+  let chatItems = [
+    {
+      title:t('general.chat.title'),
+      icon:'BiSolidMessageRounded',
+      content:[
+        {name:t('general.chat.content.0'), url:"private_chat"},
+        {name:t('general.chat.content.1'),url:"group_chat"}
+      ]
+    }
+  ]
   const [isFree, setIsFree] = useState('unfree')
   return (
     <>
@@ -122,7 +107,7 @@ function General() {
                   <FaWallet size={15} color='#9FA8C1' />
                 </div>
                 <div className="right">
-                  <NavLink to={'kanban'}>Kanban Board</NavLink>
+                  <NavLink to={'kanban'}>{t('general.kanban')}</NavLink>
                 </div>
               </div>
 
@@ -133,12 +118,12 @@ function General() {
                 <MdEmail size={15} color='#9FA8C1' />
               </div>
               <div className="right">
-                <NavLink to={'letter-box'}>Letter Box</NavLink>
+                <NavLink to={'letter-box'}>{t('general.letter_box')}</NavLink>
               </div>
             </div>
             <div className='logo-link'>
               <div className="left"><FaRegCalendarAlt size={15} color='#9FA8C1' /></div>
-              <div className="right"><NavLink to={'calendar_basic'}>Calendar</NavLink></div>
+              <div className="right"><NavLink to={'calendar_basic'}>{t('general.calendar')}</NavLink></div>
             </div>
             <Accordion items={chatItems}/>
             <Accordion items={usersItems} />
