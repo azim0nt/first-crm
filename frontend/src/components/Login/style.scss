@@ -1,0 +1,56 @@
+@import '../../assets/styles/settings';
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $even-darker-blue;
+    color: #fff;
+
+    .login-content {
+        background-color: $dark-blue;
+        width: 50vh;
+        padding: 0 50px;
+
+        .logo {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 50px;
+
+            }
+        }
+
+        .sign-in {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                border-radius: 20px;
+                input {
+                    padding: 10px 20px;
+                    background-color: $even-darker-blue;
+                    outline: none;
+                    border:1px solid $light-blue ;
+                    color: $gray-50;
+                    ::placeholder{
+                        color: $gray;
+                    }
+                    margin-bottom: 30px;
+                    border-radius: 10px;
+                }
+
+                button {
+                    @extend %blue-btn;
+                    padding: 10px 20px;
+                    margin: 50px 0;
+                }
+            }
+        }
+    }
+}
