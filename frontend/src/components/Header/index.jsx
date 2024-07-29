@@ -12,6 +12,8 @@ function Header() {
     const { store, setStore } = useContext(context);
     const { t, i18n } = useTranslation();
     const [currentLanguage, setCurrentLanguage] = useState(localStorage.getItem('language') || 'ru');
+    const [fullname, setFullname] = useState('Loading...');
+    const [error, setError] = useState(null); 
 
     const handleChangeLanguage = (language) => {
         setCurrentLanguage(language);
@@ -27,22 +29,49 @@ function Header() {
     };
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
-            setStore({ type: 'changeTheme', theme: storedTheme });
-        }
+        const fetchData = async () => {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                setStore({ type: 'changeTheme', theme: storedTheme });
+            }
 
-        const storedLanguage = localStorage.getItem('language');
-        if (storedLanguage) {
-            setCurrentLanguage(storedLanguage);
-            i18n.changeLanguage(storedLanguage);
-        }
-    }, [setStore, i18n]);
+            const storedLanguage = localStorage.getItem('language');
+            if (storedLanguage) {
+                setCurrentLanguage(storedLanguage);
+                i18n.changeLanguage(storedLanguage);
+            }
+
+            // const token = localStorage.token;
+            // console.log(token);
+            // try {
+            //     const response = await fetch(`${store.url}admin/get_section_profil`, {
+            //         method: 'GET',
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //             '-x-token': token,
+            //         },
+            //     });
+
+            //     if (response.status === 401) {
+            //         return;
+            //     }
+
+            //     if (response.status === 200) {
+            //         const data = await response.json();
+            //         setStore({ type: 'LOAD_PROFILE', profile: data });
+            //     }
+            // } catch (error) {
+            //     setError('An error occurred. Please try again.');
+            // }
+        };
+
+        fetchData();
+    }, [setStore, i18n, store.url]);
+    const profile_img = `${store.url}${store.profile?.profil_url}`;
 
     return (
         <div className={`header-wrapper`}>
             <div className={"header-content " + store.theme + '-cardd'}>
-   
                 <div className="content">
                     <div className="icons">
                         <div className={`notifications icon ${store.theme}-icon`}>
@@ -82,14 +111,14 @@ function Header() {
                     </div>
                     <div className="user">
                         <div className="avatar">
-                            <img src={Profile} alt="" />
+                            <img src={profile_img} alt="" />
                         </div>
                         <div className="info">
                             <div className="fullname">
-                                <p>Alen Miller</p>
+                                <p>{store.profile?.lastname} {store.profile?.firstname}</p>
                             </div>
                             <div className="profession">
-                                <p>UI Designer</p>
+                                <p>Admin</p>
                             </div>
                         </div>
                     </div>

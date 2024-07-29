@@ -8,6 +8,8 @@ function globalReducer(state, payload) {
             return { ...state, modalWindow: payload.modalWindow }
         case "CHANGE_LANG":
             return { ...state, lang: payload.currentLanguage }
+        case "LOAD_PROFILE":
+            return {...state, profile:payload.profile}
         default:
             return state;
     }

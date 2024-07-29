@@ -5,7 +5,9 @@ const initialState = {
     totalPrice:null,
     theme:'light',
     lang: 'en',
-    modalWindow:'none'
+    modalWindow:'none',
+    url : "http://192.168.100.11:4100",
+    profile:{}
 }
 
 const context = createContext()

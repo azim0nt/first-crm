@@ -5,7 +5,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import priceData from '../../../db/priceData.json'
 import productData from '../../../db/productData.json'
 import userData from '../../../db/userData.json'
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, elements } from 'chart.js';
 import { useTranslation } from 'react-i18next'
 import {context} from '../../../store'
@@ -26,6 +26,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 function Default() {
     const images = [Product1, Product2, Product3, Product4]
     const usersImages = [User1, User2, User3, User4]
+    
     const {store, setStore} = useContext(context)
     const {t} = useTranslation()
     const totalPrices = priceData.reduce((accumulator, currentValue) => {
@@ -103,6 +104,9 @@ function Default() {
         },
     };
     
+
+
+
     return (
         <>
             <div className={"default-wrapper "+store.theme+'-bg'}  > 

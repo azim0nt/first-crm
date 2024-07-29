@@ -7,16 +7,44 @@ import User5 from '../../../assets/images/users-2/user5.jpg'
 import User6 from '../../../assets/images/users-2/user6.jpg'
 import User7 from '../../../assets/images/users-2/user7.jpg'
 import User8 from '../../../assets/images/users-2/user8.jpg'
-import { useContext } from 'react'
+import { useContext,useEffect,useState } from 'react'
 import {context} from '../../../store/'
 import PathToTab from '../../common/PathToTab'
 import userCardData from '../../../db/userCardData.json'
 import { useTranslation } from 'react-i18next'
-import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaTwitter, FaInstagram, FaRegCalendarAlt , FaRegUserCircle} from "react-icons/fa";
 function UserCards() {
     const {store, setStore} = useContext(context)
+    const [users, setUsers] = useState([])
+    const [modal, setModal] = useState('active')
     const {t} = useTranslation()
-    const images = [User1, User2, User3, User4, User5, User6, User7, User8]
+    const images = [User1, User2, User3, User4, User5, User6, User7, User8];
+    // useEffect( async ()=>{
+
+    //     const token = localStorage.token;
+    //     console.log(token);
+    //     try {
+    //         const response = await fetch(`${store.url}admin/get_worker?${new URLSearchParams({page : 1, size : 1000}).toString()}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 '-x-token': token,
+    //             },
+    //         });
+
+    //         if (response.status === 401) {
+    //             return;
+    //         }
+
+    //         if (response.status === 200) {
+    //             const data = await response.json();
+    //             setUsers(data)
+    //         }
+    //     } catch (error) {
+    //         setError('An error occurred. Please try again.');
+    //     }   
+    // },[])
+    console.log(users)
     return ( 
         <>
        <div className={"user-cards-wrapper "+store.theme+'-bg'}  >
@@ -28,20 +56,24 @@ function UserCards() {
             <div className="middle">
                 <div className="section-1">
                     <div className="cards">
-                        {userCardData.map((user, index)=>{
+                        {users.map((user, index)=>{
                             return (
                                 <div key={index} className={"card  "+store.theme+'-cardd'}>
                                     <div className="top-part">
                                         <div className="image-bg">
                                             <div>
-                                            <img src={images[index]} alt="" />
+                                            <FaRegUserCircle size={70}/>
                                             </div>
                                         </div>
 
                                         <div className="name">
-                                            <h5>{user.fullname}</h5>
-                                            <p>{user.username}</p>
+                                            <h5>{user.lastname} {user.firstname}</h5>
+                                            <h5>{user.role_name}</h5>
+                                            <p>{user.email}</p>
+                                            <p>{user.name_oz}</p>
+                                            <p>{user.tuman_lotin}</p>
                                         </div>
+
                                     </div>
                                     <div className="middle-part">
                                     <div className="social-media">
@@ -76,6 +108,15 @@ function UserCards() {
                 </div>
             </div>
         </div>
+            <div className={`modalbg ${modal}`}>
+                <div className={`modal-content ${store.theme}-bg`}>
+                    <input type="text" className={`${store.theme}-input`} placeholder='Firstname' />
+                    <input type="text" className={`${store.theme}-input`} placeholder='Lastname' />
+                    <input type="email" className={`${store.theme}-input`} placeholder='Email' />
+                    <input type="password" className={`${store.theme}-input`} placeholder='Password' />
+                    <input type="password" className={`${store.theme}-input`} placeholder='Password' />
+                </div>
+            </div>
        </div>
         </>
      );
