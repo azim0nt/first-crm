@@ -5,8 +5,7 @@ const initialState = {
     totalPrice:null,
     theme:'light',
     lang: 'en',
-    modalWindow:'none',
-    url : "http://192.168.100.11:4100",
+    url : "http://192.168.100.11:4100/",
     profile:{}
 }
 

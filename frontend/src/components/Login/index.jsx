@@ -33,7 +33,7 @@ function Login() {
         const data = await response.json();
         const { token } = data;
         localStorage.setItem('token', token);
-        return window.location.href = '/dashboard_01';
+        return window.location.href = '/user_cards';
       }
     } catch (error) {
       setError('An error occurred. Please try again.');

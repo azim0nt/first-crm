@@ -41,28 +41,28 @@ function Header() {
                 i18n.changeLanguage(storedLanguage);
             }
 
-            // const token = localStorage.token;
-            // console.log(token);
-            // try {
-            //     const response = await fetch(`${store.url}admin/get_section_profil`, {
-            //         method: 'GET',
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //             '-x-token': token,
-            //         },
-            //     });
+            const token = localStorage.token;
+            console.log(token);
+            try {
+                const response = await fetch(`${store.url}admin/get_section_profil`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        '-x-token': token,
+                    },
+                });
 
-            //     if (response.status === 401) {
-            //         return;
-            //     }
+                if (response.status === 401) {
+                    return;
+                }
 
-            //     if (response.status === 200) {
-            //         const data = await response.json();
-            //         setStore({ type: 'LOAD_PROFILE', profile: data });
-            //     }
-            // } catch (error) {
-            //     setError('An error occurred. Please try again.');
-            // }
+                if (response.status === 200) {
+                    const data = await response.json();
+                    setStore({ type: 'LOAD_PROFILE', profile: data });
+                }
+            } catch (error) {
+                setError('An error occurred. Please try again.');
+            }
         };
 
         fetchData();
