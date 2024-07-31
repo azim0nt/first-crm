@@ -212,38 +212,23 @@ function UserCards() {
                                             </div>
                                             <div className="name">
                                                 <h5>{user.lastname} {user.firstname}</h5>
-                                                <h5>{user.role_name}</h5>
-                                                <p>{user.email}</p>
-                                                <p>{user.name_oz}</p>
-                                                <p>{user.tuman_lotin}</p>
+                                                <h5><b>Role: </b>{user.role_name}</h5>
+                                                <p><b>Email: </b>{user.email}</p>
+                                                <p><b>City: </b>{user.name_oz}</p>
+                                                <p><b>Region: </b>{user.tuman_lotin}</p>
                                             </div>
                                         </div>
                                         <div className="middle-part">
-                                            <div className="social-media">
+                                            {/* <div className="social-media">
                                                 <div className="icons">
                                                     <a href="https://facebook.com"><FaFacebookF size={15} color={'#5c61f2'} /></a>
                                                     <a href="https://google.com"><FaGoogle size={15} color={'#5c61f2'} /></a>
                                                     <a href="https://x.com"><FaTwitter size={15} color={'#5c61f2'} /></a>
                                                     <a href="https://instagram.com"><FaInstagram size={15} color={'#5c61f2'} /></a>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
-                                        <div className="bottom-part">
-                                            <div className="activ">
-                                                <div className="posts">
-                                                    <h5>460</h5>
-                                                    <p>{t('user_cards.card.posts')}</p>
-                                                </div>
-                                                <div className="followers">
-                                                    <h5>3.5k</h5>
-                                                    <p>{t('user_cards.card.followers')}</p>
-                                                </div>
-                                                <div className="following">
-                                                    <h5>724</h5>
-                                                    <p>{t('user_cards.card.following')}</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 ))}
                             </div>
