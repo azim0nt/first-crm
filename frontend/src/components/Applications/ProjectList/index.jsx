@@ -1,73 +1,61 @@
-import './style.scss'
+import './style.scss';
 import PathToTab from '../../common/PathToTab';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { context } from '../../../store';
-import { Link } from 'react-router-dom';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import {useTranslation} from 'react-i18next'
-function ProjectList() {
-    const { store, setStore } = useContext(context);
-    const [isOpen, setIsOpen] = useState('close')
-    const [warning, setWarning] = useState(0)
-    const colors = ['#5c61f2', '#ff9766', '#61ae41', '#44a8d7', '#e7ae2f', '#f81f58', '#5c61f2', '#ff9766', '#61ae41', '#44a8d7', '#e7ae2f', '#f81f58']
-    const [projectData, setProjectData] = useState([
-        {
-            "project": "Enzo admin Design",
-            "where": "Themeforest, australia",
-            "desc": "Enzo Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 12,
-            "resolved": 5,
-            "comment": 7,
-            "progress": 70
-        },
-        {
-            "project": "Govo admin Design",
-            "where": "Envato, australia",
-            "desc": "Govo Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 24,
-            "resolved": 24,
-            "comment": 40,
-            "progress": 45
-        },
-        {
-            "project": "Poco admin Design",
-            "where": "Themeforest, australia",
-            "desc": "Poco Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 40,
-            "resolved": 40,
-            "comment": 20,
-            "progress": 99
-        },
-        {
-            "project": "Xolo admin Design",
-            "where": "Themeforest, australia",
-            "desc": "Xolo Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 24,
-            "resolved": 24,
-            "comment": 40,
-            "progress": 13
-        },
-        {
-            "project": "Zeta admin Design",
-            "where": "Themeforest, australia",
-            "desc": "Zeta Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 12,
-            "resolved": 5,
-            "comment": 7,
-            "progress": 50
-        },
-        {
-            "project": "Tivo admin Design",
-            "where": "Themeforest, australia",
-            "desc": "Tivo Admin is a full featured, multipurpose, premium bootstrap admin template.",
-            "Issues": 12,
-            "resolved": 5,
-            "comment": 7,
-            "progress": 88
-        }
-    ]);
+import { useTranslation } from 'react-i18next';
 
-    // i18n 
+const CountdownTimer = ({ diedline }) => {
+    const calculateTimeLeft = (targetDate) => {
+      const now = new Date();
+      const endDate = new Date(targetDate);
+      const difference = endDate - now;
+  
+      if (difference <= 0) {
+        return { expired: true };
+      }
+  
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+      return {
+        expired: false,
+        days,
+        hours,
+        minutes,
+        seconds
+      };
+    };
+  
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(diedline));
+  
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setTimeLeft(calculateTimeLeft(diedline));
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    }, [diedline]);
+  
+    if (timeLeft.expired) {
+      return <span>Время истекло</span>;
+    }
+  
+    return (
+      <span>
+        {timeLeft.days} дней {timeLeft.hours} часов {timeLeft.minutes} минут {timeLeft.seconds} секунд
+      </span>
+    );
+  };
+  
+function ProjectList() {
+    const { store } = useContext(context);
+    const [isOpen, setIsOpen] = useState('close');
+    const [warning, setWarning] = useState(0);
+    const [projectData, setProjectData] = useState([]);
+    const token = localStorage.getItem('token'); // Исправлено для получения токена
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
         project: '',
@@ -79,6 +67,35 @@ function ProjectList() {
         progress: 0
     });
 
+    useEffect(() => {
+        console.log('Fetching data...');
+        const fetchData = async () => {
+            try {
+                const taskResponse = await fetch(`${store.url}admin/get_task/all`, { // Исправлено URL
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        '-x-token': `${token}`, // Используйте корректное название заголовка
+                    },
+                });
+
+                console.log('Response status:', taskResponse.status);
+
+                if (taskResponse.ok) {
+                    const data = await taskResponse.json();
+                    console.log('Fetched data:', data);
+                    setProjectData(data); // Устанавливаем данные в состояние
+                } else {
+                    console.log('Failed to fetch data with status:', taskResponse.status);
+                }
+            } catch (error) {
+                console.error('An error occurred while fetching tasks:', error);
+            }
+        };
+
+        fetchData();
+    }, [store.url, token]);
+
     const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData(prevState => ({
@@ -86,10 +103,11 @@ function ProjectList() {
             [id]: value
         }));
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.project === '' || formData.where === '' || formData.desc === '' || formData.Issues === '' || formData.resolved === '' || formData.comment === '') {
-            setWarning(1)
+            setWarning(1);
             return;
         }
         setProjectData(prevData => [...prevData, formData]);
@@ -105,13 +123,13 @@ function ProjectList() {
         setIsOpen('close');
     };
 
-
     return (
         <>
-            <div className={"project-list-wrapper " + store.theme + '-bg'}  >
+            <div className={"project-list-wrapper " + store.theme + '-bg'}>
                 <div className="project-list-content">
                     <div className="top">
-                        <h3>{t('project_list.title')}</h3> <PathToTab parent={t('project_list.path_to_tab.parent')} tab={t('project_list.path_to_tab.tab')} />
+                        <h3>{t('project_list.title')}</h3>
+                        <PathToTab parent={t('project_list.path_to_tab.parent')} tab={t('project_list.path_to_tab.tab')} />
                     </div>
                     <div className="middle">
                         <div className="section-1">
@@ -130,35 +148,15 @@ function ProjectList() {
                         </div>
                         <div className="section-2">
                             <div className={"projects-board-card " + store.theme + '-cardd'}>
-                                {
-                                    projectData.map((project, i) => {
-
-                                        return (
-                                            <div className={`project ${i} ` + store.theme + '-bg'} key={i} >
-                                                <div className="top-part">
-                                                    <div><h4>{project.project}</h4> <span style={{ backgroundColor: colors[i] }}>Doing</span></div>
-                                                    <div><span className='circle'></span><p className="where">{project.where}</p></div>
-                                                </div>
-                                                <div className="middle-part">
-                                                    <p className="desc">
-                                                        {project.desc}
-                                                    </p>
-                                                    <div className="statistics">
-                                                        <div><p>Issues</p><p style={{ color: colors[i] }}>{project.Issues}</p></div>
-                                                        <div><p>Resolved</p><p style={{ color: colors[i] }}>{project.resolved}</p></div>
-                                                        <div><p>Romment</p><p style={{ color: colors[i] }}>{project.comment}</p></div>
-                                                    </div>
-                                                </div>
-                                                <div className="bottom-part">
-                                                    <p>{project.progress}%</p>
-                                                    <div className='progress'>
-                                                        <div style={{ width: `${project.progress}%`, backgroundColor: colors[i] }}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    })
-                                }
+                                {projectData.map((project, i) => (
+                                    <div className={`project ${i} ` + store.theme + '-bg'} key={i}>
+                                        <ul>
+<li><b>Name: </b>{project.name}</li>
+                                            <li><b>Description: </b>{project.description}</li>
+                                            <li><b>Diedline: </b><CountdownTimer diedline={project.diedline} /></li>
+                                        </ul>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -168,10 +166,15 @@ function ProjectList() {
                 <div className={"modal-window " + store.theme + '-cardd'}>
                     <div className="header">
                         <h3>{t('project_list.modal.title')}</h3>
-                        <span><h3>{t('project_list.modal.close')}</h3> <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}><IoIosCloseCircleOutline size={30} className={store.theme + '-text'} /></button></span>
+                        <span>
+                            <h3>{t('project_list.modal.close')}</h3>
+                            <button onClick={() => { setIsOpen(isOpen === 'open' ? 'close' : 'open') }}>
+                                <IoIosCloseCircleOutline size={30} className={store.theme + '-text'} />
+                            </button>
+                        </span>
                     </div>
                     <div className="form">
-                        {warning === 0 ? '' : <p style={{color:'red'}}>Заполните форму</p>}
+                        {warning === 0 ? '' : <p style={{ color: 'red' }}>Заполните форму</p>}
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="project">{t('project_list.modal.project_name')}</label>
                             <input pattern='[a-zA-Z0-9]+' type="text" id='project' className={store.theme + '-input'} value={formData.project} onChange={handleChange} />
