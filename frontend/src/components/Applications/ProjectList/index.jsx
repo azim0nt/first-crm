@@ -4,58 +4,14 @@ import { useContext, useState, useEffect } from 'react';
 import { context } from '../../../store';
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
+import CountdownTimer from './CountdownTimer';
 
-const CountdownTimer = ({ diedline }) => {
-    const calculateTimeLeft = (targetDate) => {
-      const now = new Date();
-      const endDate = new Date(targetDate);
-      const difference = endDate - now;
-  
-      if (difference <= 0) {
-        return { expired: true };
-      }
-  
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-  
-      return {
-        expired: false,
-        days,
-        hours,
-        minutes,
-        seconds
-      };
-    };
-  
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(diedline));
-  
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setTimeLeft(calculateTimeLeft(diedline));
-      }, 1000);
-  
-      return () => clearInterval(timer);
-    }, [diedline]);
-  
-    if (timeLeft.expired) {
-      return <span>Время истекло</span>;
-    }
-  
-    return (
-      <span>
-        {timeLeft.days} дней {timeLeft.hours} часов {timeLeft.minutes} минут {timeLeft.seconds} секунд
-      </span>
-    );
-  };
-  
 function ProjectList() {
     const { store } = useContext(context);
     const [isOpen, setIsOpen] = useState('close');
     const [warning, setWarning] = useState(0);
     const [projectData, setProjectData] = useState([]);
-    const token = localStorage.getItem('token'); // Исправлено для получения токена
+    const token = localStorage.getItem('token');
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
         project: '',
@@ -71,11 +27,11 @@ function ProjectList() {
         console.log('Fetching data...');
         const fetchData = async () => {
             try {
-                const taskResponse = await fetch(`${store.url}admin/get_task/all`, { // Исправлено URL
+                const taskResponse = await fetch(`${store.url}admin/get_task/all`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                        '-x-token': `${token}`, // Используйте корректное название заголовка
+                        '-x-token': `${token}`,
                     },
                 });
 
@@ -84,7 +40,7 @@ function ProjectList() {
                 if (taskResponse.ok) {
                     const data = await taskResponse.json();
                     console.log('Fetched data:', data);
-                    setProjectData(data); // Устанавливаем данные в состояние
+                    setProjectData(data);
                 } else {
                     console.log('Failed to fetch data with status:', taskResponse.status);
                 }
@@ -122,7 +78,7 @@ function ProjectList() {
         });
         setIsOpen('close');
     };
-
+    console.log(projectData)
     return (
         <>
             <div className={"project-list-wrapper " + store.theme + '-bg'}>
@@ -151,9 +107,9 @@ function ProjectList() {
                                 {projectData.map((project, i) => (
                                     <div className={`project ${i} ` + store.theme + '-bg'} key={i}>
                                         <ul>
-<li><b>Name: </b>{project.name}</li>
+                                            <li><b>Name: </b>{project.name}</li>
                                             <li><b>Description: </b>{project.description}</li>
-                                            <li><b>Diedline: </b><CountdownTimer diedline={project.diedline} /></li>
+                                            <li><b>Diedline: </b><CountdownTimer deadline={project.diedline} /></li>
                                         </ul>
                                     </div>
                                 ))}

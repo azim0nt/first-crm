@@ -1,5 +1,5 @@
 import './style.scss'
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { context } from '../../../store'
 import PathToTab from '../../common/PathToTab'
 import { useTranslation } from 'react-i18next';
@@ -39,7 +39,9 @@ import Product26 from '../../../assets/images/productList/image_26.png'
 function ProductList() {
     const { store, setStore } = useContext(context)
     const [displayMode, setDisplayMode] = useState('none')
-    const themeStatus = store.theme.bgColor === 'dark' ? 'dark' : 'none'
+    const [OpenModal, setOpenModal] = useState('')
+    const [categoryName,setCategoryName] = useState('')
+    const [categories,setCategories] = useState([])
     const {t} = useTranslation()
     const images = [
         Product1,
@@ -378,6 +380,65 @@ function ProductList() {
 
     const offset = currentPage * entriesPerPage;
     const currentProducts = filteredProducts.slice(offset, offset + entriesPerPage);
+    const token = localStorage.token;
+    const [error, setError] = useState(null);
+
+    const handleSubmitAddCategory = async (event) => {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+
+        try {
+            const response = await fetch(`${store.url}admin/add_caterogies`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    '-x-token': token
+                },
+                body: JSON.stringify({ name: categoryName }) // Отправляем данные категории в теле запроса
+            });
+
+            if (response.status === 202) {
+                const responseData = await response.json();
+                setError(responseData.error);
+            } else if (response.status === 201) {
+                alert('Категория успешно добавлена');
+                setCategoryName('');
+                setOpenModal(''); 
+            } else {
+                const responseData = await response.json();
+                setError(responseData.error || 'Неизвестная ошибка');
+            }
+        } catch (error) {
+            alert('Произошла ошибка. Пожалуйста, попробуйте снова.', error);
+        }
+    };
+    useEffect(()=>{
+        const fetchData = async () => {
+            try {
+                const taskResponse = await fetch(`${store.url}admin/get_caterogies?page=1&size=100`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        '-x-token': `${token}`,
+                    },
+                });
+
+                console.log('Response status:', taskResponse.status);
+
+                if (taskResponse.ok) {
+                    const data = await taskResponse.json();
+                    console.log('Fetched data:', data);
+                    setCategories(data);
+                } else {
+                    console.log('Failed to fetch data with status:', taskResponse.status);
+                }
+            } catch (error) {
+                console.error('An error occurred while fetching tasks:', error);
+            }
+        };
+
+        fetchData();
+    },[store.url, token])
+    console.log(categories)
     return (
         <>
             <div className={"product-list-wrapper " + store.theme + '-bg'}>
@@ -395,6 +456,7 @@ function ProductList() {
                                     </button>
                                     <div className="add-product">
                                         <button onClick={() => { setIsOpen('open') }}><FaPlus color='#fff' />{t('product_list.add_product')}</button>
+                                        <button onClick={() => { setIsOpenModal('open') }}>Добавить Категорию</button>
                                     </div>
                                 </div>
                                 <div className="filter" style={{ display: displayMode }}>
@@ -623,6 +685,19 @@ function ProductList() {
                         </div>
                     </form>
                     </div>
+                </div>
+            </div>
+            <div className={"modal-add-category-bg "+OpenModal}>
+                <div className="modal-add-category">
+                <form onSubmit={handleSubmitAddCategory}>
+                    <input
+                        type="text"
+                        placeholder='Имя Категории'
+                        value={categoryName}
+                        onChange={(e) => setCategoryName(e.target.value)}
+                    />
+                    <button type='submit' className='blue-btn'>Добавить</button>
+                </form>
                 </div>
             </div>
         </>
