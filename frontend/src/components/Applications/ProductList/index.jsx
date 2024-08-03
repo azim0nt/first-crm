@@ -439,6 +439,55 @@ function ProductList() {
         fetchData();
     },[store.url, token])
     console.log(categories)
+    const [productTypeData, setProductTypeData] = useState({
+        id: '', 
+        name: ''
+      });
+    
+      // Обработчик изменения значения категории
+      const handleCategoryChange = (e) => {
+        setProductTypeData({
+          ...productTypeData,
+          id: Number(e.target.value) // Преобразуем значение в число
+        });
+      };
+    
+      // Обработчик изменения значения имени типа продукта
+      const handleNameChange = (e) => {
+        setProductTypeData({
+          ...productTypeData,
+          name: e.target.value
+        });
+      };
+    
+      // Функция для отправки данных на бэкенд (примеры проверки и отправки данных)
+
+      const handleSubmitProductType = async () => {
+ 
+        try {
+            const response = await fetch(`${store.url}admin/add_product_types`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    '-x-token': token
+                },
+                body: JSON.stringify(productTypeData) // Отправляем данные категории в теле запроса
+            });
+
+            if (response.status === 202) {
+                const responseData = await response.json();
+                setError(responseData.error);
+            } else if (response.status === 201) {
+                alert('Категория успешно добавлена');
+            } else {
+                const responseData = await response.json();
+                setError(responseData.error || 'Неизвестная ошибка');
+            }
+        } catch (error) {
+            alert('Произошла ошибка. Пожалуйста, попробуйте снова.', error);
+        }
+      };
+        console.log(productTypeData)
     return (
         <>
             <div className={"product-list-wrapper " + store.theme + '-bg'}>
@@ -456,7 +505,7 @@ function ProductList() {
                                     </button>
                                     <div className="add-product">
                                         <button onClick={() => { setIsOpen('open') }}><FaPlus color='#fff' />{t('product_list.add_product')}</button>
-                                        <button onClick={() => { setIsOpenModal('open') }}>Добавить Категорию</button>
+                                        <button onClick={() => { setOpenModal('open') }}>Добавить Категорию</button>
                                     </div>
                                 </div>
                                 <div className="filter" style={{ display: displayMode }}>
@@ -688,18 +737,43 @@ function ProductList() {
                 </div>
             </div>
             <div className={"modal-add-category-bg "+OpenModal}>
-                <div className="modal-add-category">
+                <div className={`modal-add-category ${store.theme}-cardd`}>
+                    <button onClick={()=>{setOpenModal('')}}><IoIosCloseCircleOutline size={40} className={store.theme+'-text'}/></button>
                 <form onSubmit={handleSubmitAddCategory}>
                     <input
                         type="text"
                         placeholder='Имя Категории'
                         value={categoryName}
                         onChange={(e) => setCategoryName(e.target.value)}
+                        className={`${store.theme}-input`}
                     />
                     <button type='submit' className='blue-btn'>Добавить</button>
                 </form>
                 </div>
             </div>
+            <div className="modal-product-type-bg">
+      <div className={`modal-product-type-content ${store.theme}-cardd`}>
+        <select
+          value={productTypeData.id}
+          onChange={handleCategoryChange}
+          className={`${store.theme}-input`}
+        >
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder='Product type name'
+          className={`${store.theme}-input`}
+          value={productTypeData.name}
+          onChange={handleNameChange}
+        />
+        <button onClick={handleSubmitProductType}>Submit</button>
+      </div>
+    </div>
         </>
     );
 }

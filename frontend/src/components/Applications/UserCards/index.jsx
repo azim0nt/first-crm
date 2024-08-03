@@ -187,6 +187,16 @@ function UserCards() {
                     const roleData = await roleResponse.json();
                     setRoles(roleData);
                 }
+                const workerResponse = await fetch(`${store.url}worker/getprofile`,{
+                    headers: {
+                        'Content-Type': 'application/json',
+                        '-x-token': token,
+                    },
+                })
+                if (workerResponse.status === 200) {
+                    const workerData = await workerResponse.json();
+                    setRoles(workerData);
+                }
             } catch (error) {
                 setError('An error occurred. Please try again.');
             }
@@ -200,10 +210,12 @@ function UserCards() {
             fetchRegions(selectedCityId);
         }
     }, [selectedCityId, store.url, token]);
+    console.log(users)
     
     return (
         <>
             <div className={`user-cards-wrapper ${store.theme}-bg`}>
+ 
                 <div className="user-cards-content">
                     <div className="top">
                         <h3>{t('user_cards.title')}</h3>
@@ -220,7 +232,7 @@ function UserCards() {
                                         <div className="top-part">
                                             <div className="image-bg">
                                                 <div>
-                                                    <FaRegUserCircle size={70} />
+                                                    <img src={`${store.url+user.url}`} alt="" />
                                                 </div>
                                             </div>
                                             <div className="name">

@@ -5,7 +5,7 @@ import { context } from '../../store';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [email, setEmail] = useState('jamshid14092002@gmail.com');
+  const [email, setEmail] = useState('mexroj@gmail.com');
   const [passwd, setPasswd] = useState('!Jamshid14092002');
   const [error, setError] = useState(null);
   const { store } = useContext(context);
@@ -23,7 +23,7 @@ function Login() {
     e.preventDefault();
    
     try {
-      const response = await fetch(`${store.url}admin/login`, {
+      const response = await fetch(`${store.url}worker/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
